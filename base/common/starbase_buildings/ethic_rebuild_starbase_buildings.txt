@@ -1,0 +1,235 @@
+offworld_trading_company = {
+	icon = "GFX_starbase_offworld_trading_company"
+	construction_days = 360
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_space_trading
+			is_gestalt = no
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		has_starbase_module = trading_hub
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+	}
+	triggered_station_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_corporate_dominion
+			}
+		}
+		trade_value_add = 4
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_trading_posts
+			}
+		}
+		trade_value_mult = 0.02
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 1
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count < 2
+			}
+		}
+		trade_value_add = 2
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 2
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count < 3
+			}
+		}
+		trade_value_add = 4
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 3
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count < 4
+			}
+		}
+		trade_value_add = 6
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 4
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count < 5
+			}
+		}
+		trade_value_add = 8
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 5
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count < 6
+			}
+		}
+		trade_value_add = 10
+	}
+	triggered_station_modifier = {
+		potential = {
+			hidden_trigger = {
+				exists = this
+			}
+			count_starbase_modules = {
+				type = trading_hub
+				count >= 6
+			}
+		}
+		trade_value_add = 12
+	}
+	custom_tooltip = sm_offworld_trading_company_desc_modifier
+	show_in_tech = "tech_space_trading"
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = trading_hub
+				count < 3
+			}
+		}
+	}
+}
+
+resource_silo = {
+	icon = "GFX_spaceport_module_resource_silo"
+	construction_days = 180
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 50
+		}
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_technology = tech_construction_templates }
+			}
+		}
+		country_resource_max_add = 5000
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_global_production_strategy
+			}
+		}
+		country_resource_max_add = 10000
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_extremely_efficient_storage
+			}
+		}
+		country_resource_max_add = 5000
+	}
+
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+	}
+}
+
+ring_bureaucracy_hub = {
+	icon = "GFX_orbitalring_bureaucracy_hub"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_effective_bureaucracy
+			is_gestalt = no
+		}
+		is_orbital_ring = yes
+	}
+	
+	country_modifier = {
+		country_admin_cap_mult = 0.1
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+			rare_crystals = 300
+		}
+
+		upkeep = {
+			energy = 2
+			rare_crystals = 1
+		}
+	}
+
+	show_in_tech = "tech_effective_bureaucracy"
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 0
+	}
+}

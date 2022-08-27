@@ -1,0 +1,879 @@
+situation_economic_circle = {
+    picture = GFX_evt_dark_alley
+    category = positive
+	
+    desc = ethic_economic_circle_desc
+	
+    on_start = {
+	}
+	on_abort = {
+		hidden_effect = {
+			destroy_situation = this
+			set_timed_country_flag = { which = rec_economic_collapse years = 12 }
+		}
+	}
+    on_fail = {
+		#custom_tooltip = deficit_situation_finish_tooltip
+		hidden_effect = { destroy_situation = this }
+        #set_global_flag=ETHIC_NOT_START_ECONOMIC_CRISIS
+	}
+    start_value = 50
+    stages = {
+        rec_circle_1 = { # 危机 进度0-10 增长<-0.5
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+			end = 10
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.101 }
+			}
+            hidden_effect = {
+                owner = {
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+			modifier = {
+                pop_lifestyle_trade_mult = -0.87
+				
+                planet_crime_mult = 0.50
+                planet_stability_add = -25 
+				
+                pop_cat_ruler_happiness = -0.2
+                pop_cat_specialist_happiness = -0.5
+                pop_cat_worker_happiness = -0.7
+				
+			    job_mogul_per_pop = -0.03
+                job_merchant_per_pop = -0.10
+                job_clerk_per_pop = -0.20
+
+                pop_growth_speed_reduction = 0.45
+				
+				pop_government_ethic_attraction = -0.5
+				pop_ethic_socialism_attraction_mult = 0.33
+			}
+			on_monthly = {
+				events = {
+					ethic_economic.991
+				}
+			}
+        }
+        rec_circle_2 = { # 衰退 进度10-30 增长<0
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+            end = 30
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.102 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                pop_lifestyle_trade_mult = -0.55
+				
+                planet_crime_mult = 0.25
+                planet_stability_add = -15
+				
+                pop_cat_ruler_happiness = -0.1
+                pop_cat_specialist_happiness = -0.3
+                pop_cat_worker_happiness = -0.5
+				
+                job_merchant_per_pop = -0.05
+                job_clerk_per_pop = -0.10
+
+                pop_growth_speed_reduction = 0.25
+				
+				pop_government_ethic_attraction = -0.25
+				pop_ethic_socialism_attraction_mult = 0.15
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.992
+				}
+			}
+        }
+        rec_circle_3 = { # 低迷 进度30-50 增长<1
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_green
+            end = 50
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.103 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                pop_lifestyle_trade_mult = -0.22
+				
+                planet_crime_mult = 0.10
+                planet_stability_add = -5
+				
+                pop_cat_specialist_happiness = -0.1
+                pop_cat_worker_happiness = -0.2
+				
+                job_clerk_per_pop = -0.05
+
+                pop_growth_speed_reduction = 0.05
+				
+				pop_government_ethic_attraction = -0.05
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.993
+				}
+			}
+        }
+        rec_circle_4 = { # 繁荣 进度50-70 增长<2
+            icon = GFX_situation_stage_3
+            icon_background = GFX_situation_stage_frame_blue
+            end = 70
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.104 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                pop_lifestyle_trade_mult = 0.10
+				planet_building_build_speed_mult = 0.15
+
+                pop_category_rulers_consumer_goods_upkeep_mult = 0.25
+                pop_category_specialists_consumer_goods_upkeep_mult = 0.15
+				
+                pop_happiness = 0.05
+                pop_cat_worker_happiness = -0.05
+				
+                job_merchant_per_pop = 0.05 
+
+                pop_growth_speed = 0.05
+				
+				pop_government_ethic_attraction = 0.05
+				pop_ethic_capitalism_attraction_mult = 0.1
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.994
+				}
+			}
+        }
+        rec_circle_5 = { # 极度繁荣 进度70-90 增长<3
+            icon = GFX_situation_stage_4
+            icon_background = GFX_situation_stage_frame_blue
+            end = 90
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.104 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                pop_lifestyle_trade_mult = 0.25
+				planet_building_build_speed_mult = 0.35
+				
+                pop_happiness = 0.10
+                pop_cat_worker_happiness = -0.05
+
+                pop_category_rulers_consumer_goods_upkeep_mult = 0.5
+                pop_category_specialists_consumer_goods_upkeep_mult = 0.25
+                pop_category_workers_consumer_goods_upkeep_mult = 0.05
+				
+                job_merchant_per_pop = 0.10
+
+                pop_growth_speed = 0.15
+				
+				pop_ethic_capitalism_attraction_mult = 0.2
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.995
+				}
+			}
+        }
+        rec_circle_6 = { # 过热 进度90-100 增长>3
+            icon = GFX_situation_stage_5
+            icon_background = GFX_situation_stage_frame_green
+            end = 100
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.104 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                pop_lifestyle_trade_mult = 0.65
+                country_trade_fee = -0.15
+				planet_building_build_speed_mult = 0.15
+				
+                pop_happiness = 0.15
+                pop_cat_worker_happiness = -0.10
+
+                pop_category_rulers_consumer_goods_upkeep_mult = 1
+                pop_category_specialists_consumer_goods_upkeep_mult = 0.5
+                pop_category_workers_consumer_goods_upkeep_mult = 0.15
+				
+                job_merchant_per_pop = 0.20
+
+                pop_growth_speed = -0.1
+				
+				pop_ethic_capitalism_attraction_mult = 0.5
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.996
+				}
+			}
+        }
+    }
+    on_monthly = {
+		events = {
+            ethic_economic.1 # 统一经济机制检测
+			ethic_economic.990 # 通用经济事件集
+        }
+	}
+
+    monthly_progress = {
+        base = 0
+        
+        modifier = { # 体制因素
+            desc = economic_factor_civics
+            add = rec_situation_add_civic
+            #NOT = { has_situation_flag = economic_crisis }
+        }
+        modifier = { # 市场因素
+            desc = economic_factor_market
+            add = rec_situation_add_market
+            OR = {
+                NOT = { has_situation_flag = economic_crisis }
+                owner = { has_valid_civic = civic_triple_the_profit }
+            }
+        }
+        modifier = { # 法令因素
+            desc = economic_factor_edicts
+            add = rec_situation_add_edict
+            NOT = { has_situation_flag = economic_crisis }
+        }
+        modifier = { # 措施因素
+            desc = economic_factor_approach
+            add = rec_situation_add_approach
+        }
+        modifier = { # 剥削因素
+            desc = economic_factor_exploit
+            add = rec_situation_add_exploit
+			NOT = { check_variable = { which = rec_situation_add_exploit value = 0 } }
+        }
+        
+       modifier = { # 战争因素
+           desc = economic_factor_war
+           add = rec_situation_add_war
+           NOT = { check_variable = { which = rec_situation_add_war value = 0 } }
+       }
+        
+        # 经济危机时
+        modifier = { # 经济危机 -2x
+            desc = ethic_economic_crisis
+            add = value:crisis_situation_decline
+            has_situation_flag = economic_crisis
+        }
+        
+        
+        # 危机距离
+        modifier = {
+            desc = ethic_economic_crisis_distance
+            add = 0.4
+            has_situation_flag = economic_crisis_distance_low
+        } # 低危机
+        modifier = {
+            desc = ethic_economic_crisis_distance
+            add = 0.2
+            has_situation_flag = economic_crisis_distance_middle
+        } # 中危机
+        modifier = {
+            desc = ethic_economic_crisis_distance
+            add = -0.2
+            has_situation_flag = economic_crisis_distance_high
+        } # 高危机
+        
+        
+        # 经济自平衡
+        modifier = {
+            desc = ethic_economic_balance_desc
+            add = value:economy_stage_rebalance_1
+            situation_progress <= 10
+            situation_progress > 0
+        }
+        modifier = {
+            desc = ethic_economic_balance_desc
+            add = value:economy_stage_rebalance_2
+            situation_progress <= 70
+            situation_progress > 10
+        }
+        modifier = {
+            desc = ethic_economic_balance_desc
+            add = value:economy_stage_rebalance_3
+            situation_progress <= 90
+            situation_progress > 70
+        }
+        modifier = {
+            desc = ethic_economic_balance_desc
+            add = value:economy_stage_rebalance_4
+            situation_progress <= 100
+            situation_progress > 90
+        }
+
+        #           modifier = {
+        #               desc = ethic_outside_desc
+        #               add = -50
+        #               owner = {
+        #                   has_country_flag = ETHIC_WIN_WAR
+        #               }
+        #           } #某些情况下战胜-50*1个月
+        #           modifier = {
+        #               desc = ethic_outside_desc
+        #               add = 50
+        #               owner = {
+        #                   has_country_flag = ETHIC_LOSE_WAR
+        #               }
+        #           } #某些情况下战败-50*1个月
+        
+        #突变
+        modifier = {
+            desc = ethic_outside_desc
+            add = -0.5
+            owner = {
+                has_country_flag = ETHIC_COLONY_RECENTLY
+            }
+        } #每殖民一个星球-0.5*10
+    }
+
+## 经济措施
+# 自由放任
+# 打击过热(非社会主义)
+# 控制商品经济(社会主义)
+# 发起经济刺激
+# 控制面板
+
+    approach = { # 自由放任 0
+        name = ethic_economic_free
+        icon = GFX_situation_approach_this_is_fine
+	    icon_background = GFX_situation_approach_bg_yellow
+        default = yes
+        on_select = {
+            custom_tooltip = ethic_economic_free_tooltip
+            hidden_effect = {
+                rec_approach_set_default = yes
+            }
+        }
+		ai_weight = {
+			weight = 5
+		}
+    }
+		
+    approach = { # 打击市场过热 20
+        name = ethic_economic_cooling
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_yellow
+        potential = {
+            situation_progress > 65
+            owner = {
+                NOR = {
+                    has_ethic = ethic_socialism
+                    has_ethic = ethic_fanatic_socialism
+                }
+            }
+        }
+        modifier = {
+            trade_value_mult = -0.15
+            pop_happiness = -0.05
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_cooling_tooltip
+            hidden_effect = {
+                rec_approach_set_cooling = yes
+            }
+        }
+    }
+    approach = { # 控制商品经济 21
+        name = ethic_economic_control
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_yellow
+        potential = {
+            situation_progress > 65
+            owner = {
+                OR = {
+                    has_ethic = ethic_socialism
+                    has_ethic = ethic_fanatic_socialism
+                }
+            }
+        }
+        modifier = {
+            trade_value_mult = -0.20
+            pop_happiness = -0.05
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_control_tooltip
+            hidden_effect = {
+                rec_approach_set_control = yes
+            }
+        }
+    }
+    
+    approach = { # 发起经济刺激 90
+        name = ethic_economic_stimulation
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_green
+        potential = { situation_progress < 35 }
+        resources = {
+            category = situations
+            upkeep = {
+                energy = 1
+                mult = owner.trigger:num_pops
+            }
+        }
+        modifier = {
+            pop_category_rulers_consumer_goods_upkeep_mult = 0.5
+            pop_category_specialists_consumer_goods_upkeep_mult = 0.25
+            pop_category_workers_consumer_goods_upkeep_mult = 0.05
+            trade_value_mult = 0.15
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_stimulation_tooltip
+            hidden_effect = {
+                rec_approach_set_stimulation = yes
+            }
+        }
+        ai_weight = {
+            weight = 10
+            modifier = {
+                factor = 0
+                situation_progress < 25
+            }
+        }
+    }
+    
+    approach = { # 魅魔酱的完美经济学教室
+        name = ethic_economic_classroom
+        icon = GFX_situation_approach_heart
+        icon_background = GFX_situation_approach_bg_green
+        potential = { NOT = { has_situation_flag = Coli_been_killed } }
+        resources = {
+            category = situations
+            cost = {
+                energy = 1
+            }
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_classroom_tooltip
+            hidden_effect = {
+                #rec_approach_classroom = yes 似乎没有必要，反正马上要改回去
+                situation_event = { id = ethic_economic.93 }
+                set_situation_approach = ethic_economic_free
+                rec_approach_set_default = yes
+            }
+        }
+        ai_weight = {
+            weight = 0
+        }
+    }
+    
+    on_progress_complete = {
+        hidden_effect = {
+            situation_event = {
+                #unity_deficit.110
+            }
+        }
+    }
+}
+
+situation_economic_planned = {
+    picture = GFX_evt_dark_alley
+    category = positive
+	
+    desc = ethic_economic_planned_desc
+	
+    on_start = {
+	}
+	on_abort = {
+	}
+    on_fail = {
+		hidden_effect = { destroy_situation = this }
+	}
+    start_value = 50
+    stages = {
+        rep_circle_1 = { # 统一配给 进度0-20
+            icon = GFX_situation_stage_3
+            icon_background = GFX_situation_stage_frame_red
+			end = 20
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.101 }
+			}
+            hidden_effect = {
+                owner = {
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+			modifier = {
+                trade_value_reduction = 0.85
+                planet_jobs_worker_produces_mult = -0.87
+				
+                planet_crime_mult = 0.50
+                planet_stability_add = -25 
+				
+                pop_cat_ruler_happiness = -0.2
+                pop_cat_specialist_happiness = -0.5
+                pop_cat_worker_happiness = -0.7
+				
+			    job_mogul_per_pop = -0.03
+                job_merchant_per_pop = -0.10
+                job_clerk_per_pop = -0.20
+
+                pop_growth_speed_reduction = 0.45
+				
+				pop_government_ethic_attraction = -0.5
+				pop_ethic_socialism_attraction_mult = 0.33
+			}
+			on_monthly = {
+				events = {
+					ethic_economic.991
+				}
+			}
+        }
+        rep_circle_2 = { # 配给主导 进度20-40
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_red
+            end = 40
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.102 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                trade_value_reduction = 0.65
+                planet_jobs_worker_produces_mult = -0.55
+				
+                planet_crime_mult = 0.25
+                planet_stability_add = -15
+				
+                pop_cat_ruler_happiness = -0.1
+                pop_cat_specialist_happiness = -0.3
+                pop_cat_worker_happiness = -0.5
+				
+                job_merchant_per_pop = -0.05
+                job_clerk_per_pop = -0.10
+
+                pop_growth_speed_reduction = 0.25
+				
+				pop_government_ethic_attraction = -0.25
+				pop_ethic_socialism_attraction_mult = 0.15
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.992
+				}
+			}
+        }
+        rep_circle_3 = { # 双轨制 进度40-60
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_green
+            end = 60
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.103 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                trade_value_reduction = 0.15
+                planet_jobs_worker_produces_mult = -0.22
+				
+                planet_crime_mult = 0.10
+                planet_stability_add = -5
+				
+                pop_cat_specialist_happiness = -0.1
+                pop_cat_worker_happiness = -0.2
+				
+                job_clerk_per_pop = -0.05
+
+                pop_growth_speed_reduction = 0.05
+				
+				pop_government_ethic_attraction = -0.05
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.993
+				}
+			}
+        }
+        rep_circle_4 = { # 商品为主 进度60-80
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_blue
+            end = 80
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.104 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                trade_value_mult = 0.15
+                planet_jobs_worker_produces_mult = 0.10
+				planet_building_build_speed_mult = 0.15
+
+                pop_category_rulers_consumer_goods_upkeep_mult = 0.5
+                pop_category_specialists_consumer_goods_upkeep_mult = 0.25
+                pop_category_workers_consumer_goods_upkeep_mult = 0.05
+				
+                pop_happiness = 0.05
+                pop_cat_worker_happiness = -0.05
+				
+                job_merchant_per_pop = 0.03
+                job_clerk_per_pop = 0.05
+
+                pop_growth_speed = 0.05
+				
+				pop_government_ethic_attraction = 0.05
+				pop_ethic_capitalism_attraction_mult = 0.1
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.994
+				}
+			}
+        }
+        rep_circle_5 = { # 集体资本主义 进度80-100
+            icon = GFX_situation_stage_3
+            icon_background = GFX_situation_stage_frame_blue
+            end = 100
+            on_first_enter = {
+				#situation_event = { id = ethic_economic.104 }
+			}
+            hidden_effect = {
+                owner = {
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_1
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_2
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_3
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_4
+                    set_country_flag = ETHIC_ECONOMIC_STAGE_5
+                    remove_country_flag = ETHIC_ECONOMIC_STAGE_6
+                }
+            }
+            modifier = {
+                trade_value_mult = 0.45
+                planet_jobs_worker_produces_mult = 0.25
+				planet_building_build_speed_mult = 0.35
+				
+                pop_happiness = 0.10
+                pop_cat_worker_happiness = -0.05
+
+                pop_category_rulers_consumer_goods_upkeep_mult = 1
+                pop_category_specialists_consumer_goods_upkeep_mult = 0.5
+                pop_category_workers_consumer_goods_upkeep_mult = 0.1
+				
+                job_merchant_per_pop = 0.10
+                job_clerk_per_pop = 0.05
+
+                pop_growth_speed = 0.15
+				
+				pop_ethic_capitalism_attraction_mult = 0.2
+            }
+			on_monthly = {
+				events = {
+					ethic_economic.995
+				}
+			}
+        }
+    }
+    on_monthly = {
+		events = {
+        }
+	}
+
+    monthly_progress = {
+        base = 0
+        
+        modifier = { # 体制因素
+            desc = economic_factor_civics
+            add = rec_situation_add_civic
+            #NOT = { has_situation_flag = economic_crisis }
+        }
+        modifier = { # 措施因素
+            desc = economic_factor_approach
+            add = rec_situation_add_approach
+        }
+    }
+
+
+    approach = { # 漠视变革 0
+        name = ethic_economic_free
+        icon = GFX_situation_approach_this_is_fine
+	    icon_background = GFX_situation_approach_bg_yellow
+        default = yes
+        modifier = {
+            trade_value_mult = 0.05
+            #pop_cat_ruler_happiness=0.05
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_free_tooltip
+            hidden_effect = {
+                rec_approach_set_default = yes
+            }
+        }
+		ai_weight = {
+			weight = 5
+		}
+    }
+		
+    approach = { # 推进配给化改革 20
+        name = ethic_economic_cooling
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_yellow
+        potential = {
+            situation_progress > 65
+            owner = {
+                NOR = {
+                    has_ethic = ethic_socialism
+                    has_ethic = ethic_fanatic_socialism
+                }
+            }
+        }
+        modifier = {
+            trade_value_mult = -0.15
+            pop_happiness = -0.05
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_cooling_tooltip
+            hidden_effect = {
+                rec_approach_set_cooling = yes
+            }
+        }
+    }
+    approach = { # 推进商品化改革 21
+        name = ethic_economic_control
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_yellow
+        potential = {
+            situation_progress > 65
+            owner = {
+                OR = {
+                    has_ethic = ethic_socialism
+                    has_ethic = ethic_fanatic_socialism
+                }
+            }
+        }
+        modifier = {
+            trade_value_mult = -0.20
+            pop_happiness = -0.05
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_control_tooltip
+            hidden_effect = {
+                rec_approach_set_control = yes
+            }
+        }
+    }
+    
+    approach = { # 打击改革倾向 90
+        name = ethic_economic_stimulation
+        icon = GFX_situation_approach_this_is_fine
+        icon_background = GFX_situation_approach_bg_green
+        potential = { situation_progress < 35 }
+        resources = {
+            category = situations
+            upkeep = {
+                energy = 1
+                mult = owner.trigger:num_pops
+            }
+        }
+        modifier = {
+            pop_category_rulers_consumer_goods_upkeep_mult = 0.5
+            pop_category_specialists_consumer_goods_upkeep_mult = 0.25
+            pop_category_workers_consumer_goods_upkeep_mult = 0.05
+            trade_value_mult = 0.15
+        }
+        on_select = {
+            custom_tooltip = ethic_economic_stimulation_tooltip
+            hidden_effect = {
+                rec_approach_set_stimulation = yes
+            }
+        }
+        ai_weight = {
+            weight = 10
+            modifier = {
+                factor = 0
+                situation_progress < 25
+            }
+        }
+    }
+    
+    on_progress_complete = {
+        hidden_effect = {
+            situation_event = {
+                #unity_deficit.110
+            }
+        }
+    }
+}

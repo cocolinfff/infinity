@@ -1,0 +1,623 @@
+@leader_unity_upkeep = 2
+
+admiral = {
+	can_lead_navy = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_admirals
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_anarchism
+				}
+			}
+			unity = 1
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+				}
+			}
+			energy = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					NOR = {
+						has_valid_civic = civic_feudal_realm
+			            has_valid_civic = civic_eternal_kingship
+						has_valid_civic = civic_aristocratic_elite
+						has_valid_civic = civic_martial_brotherhood
+					}
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_martial_brotherhood
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			unity = 1
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_feudal_realm
+				}
+			}
+			consumer_goods = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			energy = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+				}
+			}
+			energy = 2
+			minerals = 2
+			alloys = 1
+			multiplier = trigger:has_skill
+		}
+	}
+
+	default_category = admiral
+}
+
+general = {
+	can_lead_army = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_generals
+		cost = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+				}
+			}
+			energy = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					NOR = {
+						has_valid_civic = civic_feudal_realm
+			            has_valid_civic = civic_eternal_kingship
+						has_valid_civic = civic_aristocratic_elite
+						has_valid_civic = civic_martial_brotherhood
+					}
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_martial_brotherhood
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_anarchism
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			unity = 1
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_feudal_realm
+				}
+			}
+			consumer_goods = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			energy = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+					is_lithoid = no
+				}
+			}
+			energy = 2
+			food = 2
+			minerals = 2
+			multiplier = trigger:has_skill
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+					is_lithoid = yes
+				}
+			}
+			energy = 2
+			minerals = 4
+			multiplier = trigger:has_skill
+		}
+	}
+
+	default_category = general
+}
+
+scientist = {
+	can_research = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_scientists
+		cost = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+				}
+			}
+			energy = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_anarchism
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					NOR = {
+						has_valid_civic = civic_feudal_realm
+			            has_valid_civic = civic_eternal_kingship
+						has_valid_civic = civic_aristocratic_elite
+					}
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			unity = 1
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_feudal_realm
+				}
+			}
+			consumer_goods = 2
+		}
+		produces = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+					has_ethic = ethic_materialist
+				}
+			}
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
+			multiplier = trigger:has_skill
+		}
+		produces = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+			physics_research = 1
+			engineering_research = 1
+			society_research = 1
+			multiplier = trigger:has_skill
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			energy = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+				}
+			}
+			physics_research = 0.5
+			engineering_research = 0.5
+			society_research = 0.5
+			multiplier = trigger:has_skill
+		}
+	}
+	default_category = scientist
+}
+
+governor = {
+	can_govern_planet = yes
+	max_trait_points = 1
+	can_have_traits = yes
+	resources = {
+		category = leader_governors
+		cost = {
+			trigger = {
+				owner = {
+				    is_regular_empire = yes
+				}
+			}
+			energy = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					has_valid_civic = civic_anarchism
+				}
+			}
+			unity = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_regular_empire = yes
+					NOR = {
+						has_valid_civic = civic_feudal_realm
+			            has_valid_civic = civic_eternal_kingship
+						has_valid_civic = civic_aristocratic_elite
+					}
+				}
+			}
+			unity = @leader_unity_upkeep
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			unity = 1
+			consumer_goods = 1
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    has_valid_civic = civic_feudal_realm
+				}
+			}
+			consumer_goods = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_machine_empire = yes
+				}
+			}
+			energy = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = no
+				}
+			}
+			food = 2
+		}
+		cost = {
+			trigger = {
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+			multiplier = owner.value:leader_cost
+		}
+		upkeep = {
+			trigger = {
+				has_leader_upkeep = yes
+				owner = {
+				    is_hive_empire = yes
+					is_lithoid = yes
+				}
+			}
+			minerals = 2
+		}
+		produces = {
+			trigger = {
+				is_idle = no
+				exists = owner
+				owner = {
+					has_valid_civic = civic_aristocratic_elite
+				}
+			}
+			unity = 1
+			multiplier = trigger:has_skill
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+					is_lithoid = no
+				}
+			}
+			energy = 2
+			food = 2
+			consumer_goods = 1
+			multiplier = trigger:has_skill
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_valid_civic = civic_superhuman_economy
+					is_lithoid = yes
+				}
+			}
+			energy = 2
+			minerals = 2
+			consumer_goods = 1
+			multiplier = trigger:has_skill
+		}
+	}
+	default_category = governor
+}
+
+ruler = {
+	can_rule_empire = yes
+	max_trait_points = 2
+	can_have_traits = yes
+	default_category = ruler
+}
+
+envoy = {
+	can_be_envoy = yes
+	default_category = envoy
+	assignment_cooldown = 360
+	can_have_traits = no
+}

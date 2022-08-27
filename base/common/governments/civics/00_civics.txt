@@ -1,0 +1,138 @@
+# 用以覆盖原版民政和放置不好分类的特殊民政
+
+################
+#   主题民政
+################
+
+#人民帝国
+civic_galactic_sovereign_people = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_galactic_sovereign_people.dds"
+	description = civic_tooltip_galactic_sovereign_people_effects
+	potential = {
+		civics = {
+			value = civic_galactic_sovereign_people
+		}
+	}
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_base_influence_produces_add = 6
+		diplo_weight_mult = 0.4
+		envoys_add = 1
+		country_government_civic_points_add = 1
+	}
+}
+
+#浴火重生
+civic_rise_from_the_ashes = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_vilified.dds"
+	potential = {
+		civics = {
+			OR = {
+				value = civic_galactic_sovereign
+				value = civic_galactic_sovereign_people
+				value = civic_galactic_sovereign_megacorp
+			}
+		}
+	}
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_unity_produces_mult = 0.5
+		country_base_influence_produces_add = 1
+		diplo_weight_mult = 0.25
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_decision_enact_speed_mult = 0.5
+	}
+}
+
+#家族企业
+civic_family_business = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		ethics = {
+			value = ethic_fanatic_capitalism
+		}
+		authority = {
+			value = auth_imperial
+		}
+	}
+	random_weight = {
+		base = 5
+	}
+	modifier = {
+		planet_branch_offices_cost_mult = -0.5
+		country_trade_attractiveness = 0.25
+		branch_office_value_mult = 0.25
+		planet_jobs_produces_mult = 0.05
+		planet_stability_add = 5
+		pop_demotion_time_mult = 1
+		planet_immigration_pull_mult = -0.5
+		empire_size_penalty_mult = 0.5
+		pop_cat_ruler_political_power = 4
+	}
+}
+
+#工人合作社
+civic_world_cooperative = {
+	description = civic_tooltip_world_cooperative_effects
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	random_weight = {
+		base = 50
+	}
+	possible = {
+		authority = {
+			OR = {
+				value = auth_democratic
+				value = auth_oligarchic
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_ruthless_competition
+				value = civic_criminal_heritage
+			}
+		}
+		ethics = {
+			OR = {
+				value = ethic_socialism
+			}
+			NOT = {
+				value = ethic_authoritarian
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+	}
+	modifier = {
+		planet_branch_offices_cost_mult = -0.5
+		country_trade_attractiveness = 0.25
+		branch_office_value_mult = 0.25
+		country_society_tech_research_speed = 0.1
+		job_labour_hero_per_pop = 0.02
+		planet_pops_organics_food_upkeep_mult = 0.15
+		planet_pops_organics_minerals_upkeep_mult = 0.15
+		empire_size_penalty_mult = 0.5
+	}
+}
