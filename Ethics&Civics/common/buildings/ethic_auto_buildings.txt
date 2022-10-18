@@ -1,0 +1,142 @@
+#自动化工坊
+building_automated_workshop = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = manufacturing
+	potential = {
+		exists = owner
+		owner = { has_technology = auto_workshop }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			consumer_goods = 25
+		}
+		upkeep = {
+			minerals = 40
+			energy = 5
+		}	
+	}
+	triggered_desc = {
+		text = mod_planet_buildings_consumer_goods_produces_and_cost_desc
+	}
+}
+
+#自动化农场
+building_automated_farm = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = resource
+	potential = {
+		exists = owner
+		owner = { has_technology = auto_farm }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			food = 50
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	triggered_desc = {
+		text = mod_planet_buildings_food_produces_and_cost_desc
+	}
+}
+
+
+#自动化矿井
+building_automated_mine = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = resource
+	potential = {
+		exists = owner
+		owner = { has_technology = auto_mine }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			minerals = 40
+		}
+		upgrades = {
+			energy = 5
+		}
+	}
+	triggered_desc = {
+		text = mod_planet_buildings_minerals_produces_and_cost_desc
+	}
+}
+
+
+#自动化发电厂
+building_automated_power_plant = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = resource
+	potential = {
+		exists = owner
+		owner = { has_technology = auto_power }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			energy = 60
+		}
+		upkeep = {
+			minerals = 5
+		}
+	}
+
+	triggered_desc = {
+		text = mod_planet_buildings_energy_produces_and_cost_desc
+	}
+}
+
+
+#自动化冶炼厂
+building_automated_smelter = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+	category = manufacturing
+	potential = {
+		exists = owner
+		owner = { has_technology = auto_smelter }
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}
+		produces = {
+			alloys = 20
+		}
+		upkeep = {
+			minerals = 50
+			energy = 5
+		}
+	}
+
+	triggered_desc = {
+		text = mod_planet_buildings_alloys_produces_and_cost_desc
+	}
+}
+

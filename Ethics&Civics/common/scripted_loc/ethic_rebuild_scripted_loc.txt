@@ -1,0 +1,410 @@
+
+#文化工作者effect
+defined_text = {
+	name = GetCultureWorkerEgalAuthOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_egalitarian = yes
+				NOT = { has_valid_civic = civic_anarchism }
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_EGAL
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_egalitarian = yes
+				has_valid_civic = civic_anarchism
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_EGAL_ANARCHISM
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_authoritarian = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_AUTH
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_egalitarian = no
+				is_authoritarian = no
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_BLANK
+	}
+	default = CULTURE_WORKER_OUTPUT_BLANK
+}
+defined_text = {
+	name = GetCultureWorkerXenoOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_xenophobe = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_PHOB
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_xenophile = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_PHIL
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_xenophobe = no
+				is_xenophile = no
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_BLANK
+	}
+	default = CULTURE_WORKER_OUTPUT_BLANK
+}
+defined_text = {
+	name = GetCultureWorkerMilPacOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_militarist = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_MIL
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_pacifist = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_PAC
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_militarist = no
+				is_pacifist = no
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_BLANK
+	}
+	default = CULTURE_WORKER_OUTPUT_BLANK
+}
+defined_text = {
+	name = GetCultureWorkerSpiMatOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_spiritualist = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_SPI
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_materialist = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_MAT
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_spiritualist = no
+				is_materialist = no
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_BLANK
+	}
+	default = CULTURE_WORKER_OUTPUT_BLANK
+}
+defined_text = {
+	name = GetCultureWorkerSocCapOutput
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_socialism = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_SOC
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = { is_capitalism = yes }
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_CAP
+	}
+	text = {
+		trigger = {
+			is_scope_valid = yes
+			owner = {
+				is_spiritualist = no
+				is_materialist = no
+			}
+		}
+		localization_key = CULTURE_WORKER_OUTPUT_BLANK
+	}
+	default = CULTURE_WORKER_OUTPUT_BLANK
+}
+
+#开局设置
+defined_text = {
+	name = EthicAscensionPerks
+	text = {
+		trigger = { NOT = { has_global_flag = eci_ap_yes } }
+		localization_key = eci_ap_no
+	}
+	text = {
+		trigger = { has_global_flag = eci_ap_yes }
+		localization_key = eci_ap_yes
+	}
+}
+defined_text = {
+	name = EthicEducated
+	text = {
+		trigger = { NOT = { has_global_flag = eci_educated_no } }
+		localization_key = eci_educated_yes
+	}
+	text = {
+		trigger = { has_global_flag = eci_educated_no }
+		localization_key = eci_educated_no
+	}
+}
+
+#用于地下起源与地下事件链的独特交互
+defined_text = {
+	name = GetSubMantleLower
+	text = {
+		trigger = {
+			NOR = {
+				has_origin = origin_subterranean
+				has_origin = origin_mining_machinery
+			}
+		}
+		localization_key = submantle_sub
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_origin = origin_subterranean
+				has_origin = origin_mining_machinery
+			}
+		}
+		localization_key = submantle_mantle
+	}
+}
+defined_text = {
+	name = GetSubMantleUpper
+	text = {
+		trigger = {
+			NOR = {
+				has_origin = origin_subterranean
+				has_origin = origin_mining_machinery
+			}
+		}
+		localization_key = SubMantle_Sub
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_origin = origin_subterranean
+				has_origin = origin_mining_machinery
+			}
+		}
+		localization_key = SubMantle_Mantle
+	}
+}
+
+#影响的资源
+defined_text = {
+	name = EconomicCrisis_1
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_10_01
+		}
+		localization_key = economic_crisis_10_01.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_10_02
+		}
+		localization_key = economic_crisis_10_02.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_10_03
+		}
+		localization_key = economic_crisis_10_03.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_10_04
+		}
+		localization_key = economic_crisis_10_04.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_510_05
+		}
+		localization_key = economic_crisis_10_05.desc
+	}
+}
+
+#评论
+defined_text = {
+	name = EconomicCrisis_2
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_510_A
+		}
+		localization_key = economic_crisis_510_A.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_510_B
+		}
+		localization_key = economic_crisis_510_B.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_510_C
+		}
+		localization_key = economic_crisis_510_C.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_510_D
+		}
+		localization_key = economic_crisis_510_D.desc
+	}
+}
+
+#后续事件标题
+defined_text = {
+	name = EconomicCrisis_4
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_01
+		}
+		localization_key = economic_crisis_550_01_title.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_02
+		}
+		localization_key = economic_crisis_550_02_title.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_03
+		}
+		localization_key = economic_crisis_550_03_title.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_04
+		}
+		localization_key = economic_crisis_550_04_title.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_05
+		}
+		localization_key = economic_crisis_550_05_title.desc
+	}
+}
+
+#后续事件正文
+defined_text = {
+	name = EconomicCrisis_5
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_01
+		}
+		localization_key = economic_crisis_550_01.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_02
+		}
+		localization_key = economic_crisis_550_02.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_03
+		}
+		localization_key = economic_crisis_550_03.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_04
+		}
+		localization_key = economic_crisis_550_04.desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = economic_crisis_550_05
+		}
+		localization_key = economic_crisis_550_05.desc
+	}
+}
+
+#特工对你的称呼
+defined_text = {
+	name = GetRulerCall
+	text = {
+		trigger = {
+			NOR = {
+				has_civic = civic_shared_burden
+				has_ethic = ethic_fanatic_socialism
+			}
+		}
+		localization_key = observation.3124.ruler
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_civic = civic_shared_burden
+				has_ethic = ethic_fanatic_socialism
+			}
+		}
+		localization_key = observation.3124.comrade
+	}
+}
+
+
+#祭司产出|教权|非教权
+defined_text = {
+	name = PriestProduces
+	text = {
+		trigger = {
+			exists = owner 
+			owner = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_valid_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		localization_key = priest.with_admin
+	}
+	text = {
+		trigger = {
+			exists = owner 
+			owner = {
+				NOR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_valid_civic = civic_exalted_priesthood
+				}
+			}
+		}
+		localization_key = priest.without_admin
+	}
+}

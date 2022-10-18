@@ -27,7 +27,7 @@ civic_feudal_realm = {
 		country_vassal_naval_capacity_contribution_mult = 0.5
 		country_subject_power_penalty_mult = -0.5
 		pop_government_ethic_attraction = -0.5
-		job_noble_per_pop = 0.03
+		job_knight_commander_per_pop = 0.03
 		pop_ethic_authoritarian_attraction_mult = 0.25
 	}
 	possible = {
@@ -150,6 +150,9 @@ civic_shared_burden = {
 		trigger = {
 			has_ascension_perk = ap_future_society
 		}
+		modifier = {
+			empire_size_penalty_mult = -1
+		}
 	}
 	potential = {
 		ethics = {
@@ -226,10 +229,8 @@ civic_shared_burden = {
 	modifier = {
 		pop_cat_worker_happiness = 0.1
 		pop_demotion_time_mult = -1
-		planet_pops_unemployed_consumer_goods_upkeep_add = 1
 		job_labour_hero_per_pop = 0.04
-		pop_ethic_egalitarian_attraction_mult = 0.15
-		pop_ethic_socialism_attraction_mult = 0.25
+		pop_category_workers_society_research_produces_add = 1
 	}
 	random_weight = {
 		base = 50
@@ -349,6 +350,19 @@ civic_nazbol = {
 		}
 	}
 	possible = {
+		ethics = {
+			value = ethic_fanatic_socialism
+			OR = {
+				text = civic_tooltip_xenophobe
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+			NOR = {
+				text = civic_tooltip_not_pacifist
+				value = ethic_pacifist
+				value = ethic_fanatic_pacifist
+			}
+		}
 		civics = {
 			NOR = {
 				text = civic_tooltip_not_theme_civic_if_not_anarchism
@@ -375,18 +389,9 @@ civic_nazbol = {
 				value = civic_science_directorate
 				value = civic_cyber_dictatorship
 			}
-		}
-		ethics = {
-			value = ethic_fanatic_socialism
-			OR = {
-				text = civic_tooltip_xenophobe
-				value = ethic_xenophobe
-				value = ethic_fanatic_xenophobe
-			}
 			NOR = {
-				text = civic_tooltip_not_pacifist
-				value = ethic_pacifist
-				value = ethic_fanatic_pacifist
+				value = civic_glorious_pioneer
+				value = civic_peoples_republic
 			}
 		}
 	}
@@ -1346,7 +1351,7 @@ civic_imperial_cult = {
 	}
 }
 
-#网络民主（黄标）
+#共识算法（黄标）
 civic_cyber_demos_cratos = {
 	description = civic_tooltip_cyber_demos_cratos_effects
 	potential = {

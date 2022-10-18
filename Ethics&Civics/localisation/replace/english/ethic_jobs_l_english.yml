@@ -1,6 +1,30 @@
 ﻿l_english:
+ job_student:0 "Student"
+ job_student_plural:0 "Students"
+ job_student_effect_desc:0 "£job_student£ $job_student_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into small amounts of £unity£ §Y$unity$§!. Only Pops with the §YBasic Education§! modifier can take this job, and each five years they have the opportunity to acquire a higher §YEducation Modifier§! and move on to another job."
+ job_student_desc:0 "These populations are receiving secondary education for jobs that require a higher level of knowledge."
+ mod_job_student_add:0 "$job_student$ Jobs"
+ 
+ job_university_student:0 "University Student"
+ job_university_student_plural:0 "University Students"
+ job_university_student_effect_desc:0 "£job_researcher£ $job_researcher_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into small amounts of £physics£ £society£ £engineering£ §YResearch Points§!. Only Pops with the §YSecondary Education§! modifier can take this job, and each five years they have the opportunity to acquire a higher §YEducation Modifier§! and move on to another job."
+ job_university_student_desc:0 "These pops are pursuing higher education for jobs that require a higher level of knowledge."
+ mod_job_university_student_add:0 "$job_university_student$ Jobs"
 
  job_criminal_effect_desc:0 "The criminals certainly did not produce anything, but we can still count on them to pay some taxes."
+ 
+ job_knight:0 "Knight"
+ job_knight_plural:0 "Knights"
+ job_knight_desc:1 "Trained for combat; well educated; virtuous. These knights represent the very best of our society, only to seek the way of one's own knighthood."
+ job_knight_effect_desc:1 "£job_knight£ $job_knight_plural$ use $r_alloys$ to provide £mod_country_naval_cap_add£ §YNaval Capacity§!, £defense_army£ §YDefense Armies§!, £unity£ §YUnity§! and £physics_research£ £society_research£ £engineering_research£ §YResearch Points§!.\nCompleting §YKnightly Quests§! can further improve their output."
+ mod_job_knight_add:0 "$job_knight$ Jobs"
+ mod_job_knight_per_pop:0 "§G+1§! $job_knight$ Job per $VALUE$ Pops"
+ mod_job_knight_per_pop_short:0 "\n§G+1§! £job_knight£ per $VALUE$ £pop£"
+ knights_independent_category:0 "Knights"
+ 
+ job_vanguard:0 "Immortal"
+ job_vanguard_desc:0 "These pioneers of consciousness uploading are still influencing the civilizations they love in another form."
+ job_vanguard_plural:0 "$job_vanguard$"
  
  job_re_acolyte_metallurgists:0 "Acolyte of the Furnac"
  job_re_acolyte_metallurgists_plural:0 "Acolyte of the Furnac"
@@ -107,7 +131,20 @@
  job_culture_worker:0 "Culture Worker"
  job_culture_worker_plural:0 "Culture Workers"
  job_culture_worker_desc:1 "Maintaining the arts is the realm of these workers, vital for the inner development and social expression of citizens."
- job_culture_worker_effect_desc:0 "£job_culture_worker£ $job_culture_worker_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§! and £society£ §Y$society_research$§!, and reduce $MOD_POP_AMENITIES_USAGE_BASE$"
+ job_culture_worker_effect_desc:2 "£job_culture_worker£ $job_culture_worker_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!, [GetCultureWorkerSpiMatOutput][GetCultureWorkerEgalAuthOutput][GetCultureWorkerMilPacOutput][GetCultureWorkerXenoOutput]and £mod_ethic_attraction_mult£ §YGoverning Ethics Attraction§!.\n\n£job_culture_worker£ Culture Workers' effects vary depending on the Empire's ethics."
+ 
+ CULTURE_WORKER_OUTPUT_AUTH:1 "§Y£mod_planet_stability_add£ $PLANET_STABILITY_TITLE$§!， "
+ CULTURE_WORKER_OUTPUT_EGAL:1 "§Y$MOD_POP_CATEGORY_RULERS_CONSUMER_GOODS_UPKEEP_ADD$ Reduction§!， "
+ CULTURE_WORKER_OUTPUT_EGAL_ANARCHISM:1 "§Y£mod_pop_citizen_happiness£ $MOD_POP_CAT_WORKER_HAPPINESS$§!， "
+ CULTURE_WORKER_OUTPUT_PHOB:1 "§Y£mod_pop_citizen_happiness£ $pop_citizen_happiness$§!， "
+ CULTURE_WORKER_OUTPUT_PHIL:2 "§Y£intel_decryption£ $mod_add_base_country_intel$§!， "
+ CULTURE_WORKER_OUTPUT_MIL:0 "§Y£mod_country_naval_cap_add£ $MOD_COUNTRY_NAVAL_CAP_ADD$§!， "
+ CULTURE_WORKER_OUTPUT_PAC:1 "§Y£pop£ $mod_pop_growth_speed_reduction$§!， "
+ CULTURE_WORKER_OUTPUT_SPI:1 "§Y£pop£ $mod_planet_pops_upkeep_mult$ Reduction§!， "
+ CULTURE_WORKER_OUTPUT_MAT:0 "§Y£mod_pop_amenities_usage_mult£ $MOD_POP_AMENITIES_USAGE_MULT$ Reduction§!， "
+ CULTURE_WORKER_OUTPUT_SOC:2 "§Y$mod_pop_cat_worker_political_power$§!， "
+ CULTURE_WORKER_OUTPUT_CAP:2 "§Y$mod_pop_lifestyle_trade_mult$§!， "
+ CULTURE_WORKER_OUTPUT_BLANK:0 ""
 
  job_synapse_drone:0 "Synapse Drone"
  job_synapse_drone_plural:0 "Synapse Drones"
@@ -120,10 +157,6 @@
  job_coordinator:0 "Coordinator"
  job_coordinator_plural:0 "Coordinators"
  job_coordinator_effect_desc:2 "£job_coordinator£ $job_coordinator_plural$ turn £energy£ §Y$energy$§! into £unity£ §YUnity§! and £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!"
-
- job_priest:0 "Priest"
- job_priest_plural:0 "Priests"
- job_priest_effect_desc:1 "£job_priest£ $job_priest_plural$ turn £consumer_goods£ §Y$consumer_goods$§! into £unity£ §Y$unity$§!,£mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§! and £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!"
  
  job_manager:1 "Manager"
  job_manager_plural:1 "Managers"

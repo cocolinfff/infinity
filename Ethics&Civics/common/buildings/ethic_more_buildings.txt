@@ -1,0 +1,1145 @@
+@buildings_t1 = 2
+@buildings_t2 = 4
+@buildings_t3 = 8
+@buildings_t4 = 12
+#器械繁殖厂
+building_equipment_breeding_plant = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+
+	category = pop_assembly
+
+	icon = building_spawning_pool
+
+	potential = {
+		exists = owner
+		OR = {
+			owner = { is_ai = no }
+			NOT = { exists = assembling_species }
+			assembling_species = { is_organic_species = yes }
+		}
+		OR = {
+			owner = { is_ai = no }
+			NAND = {
+				free_district_slots = 0
+				free_building_slots <= 1
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+		owner = {
+			OR = {
+				is_regular_empire = yes
+				has_civic = civic_network_of_the_mind
+				has_civic = civic_network_of_the_mind_true_hive
+			}
+			has_valid_civic = civic_libido_equipment
+		}
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = { has_valid_civic = civic_libido_equipment }
+			}
+			AND = {
+				owner = { is_ai = yes }
+				free_district_slots = 0
+				free_building_slots = 0
+				free_housing <= 0
+				free_jobs <= 0
+			}
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_tentacle_seedbed_add = 2
+		}
+	}
+	
+	#三级首都
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+			OR = {
+				has_building = building_major_capital
+				has_building = building_hab_system_capital
+				has_building = building_resort_major_capital
+			}
+		}
+		modifier = {
+			job_tentacle_seedbed_add = 1
+		}
+	}
+	
+	#四级首都
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+			has_building = building_system_capital
+		}
+		modifier = {
+			job_tentacle_seedbed_add = 1
+		}
+	}
+	
+	#帝国首都
+	triggered_planet_modifier = {
+		potential = {
+			owner = { is_regular_empire = yes }
+			OR = {
+				has_building = building_imperial_capital
+				has_building = building_hab_imperial_capital
+			}
+		}
+		modifier = {
+			job_tentacle_seedbed_add = 1
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b1_minerals
+		}
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+
+	triggered_desc = {
+		text = job_tentacle_seedbed_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			OR = {
+				has_building = building_robot_assembly_plant
+				AND = {
+					exists = assembling_species
+					assembling_species = { is_robotic_species = yes }
+				}
+			}
+		}
+		text = tooltip_organic_and_artificial_assembly_warning
+	}
+}
+
+#宇宙尽头的餐馆
+building_ethic_akx_worm_4 = {
+	base_buildtime = 900
+	base_cap_amount = 1
+	can_demolish = no
+	can_be_ruined = no
+	can_be_disabled = no
+
+	potential = {
+		exists = planet
+		planet = { is_capital = yes }
+		NOT = { has_modifier = slave_colony }
+	}
+
+	planet_modifier = {
+		planet_amenities_mult = 1
+	}
+
+	prerequisites = {
+		"tech_akx_worm_1"
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		upkeep = {
+			energy = @b3_upkeep
+		}
+	}
+}
+
+#光子运算中枢
+building_photon_computing_center = {
+	base_buildtime = @b2_time
+
+	empire_limit = {
+		base = 1
+	}
+
+	category = research
+
+	potential = {
+		exists = owner
+		NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_major_upgraded_capital = yes
+	}
+
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			has_modifier = slave_colony
+			buildings_no_crystals = yes
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+		produces = {
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			multiplier = owner.trigger:empire_size
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 3
+			society_research = 3
+			engineering_research = 3
+			multiplier = owner.trigger:num_ascension_perks
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+		}
+		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_society_research_produces_mult = 0.15
+		planet_jobs_engineering_research_produces_mult = 0.15
+	}
+
+	triggered_desc = {
+		text = building_photon_computing_center_1_effect
+	}
+
+	triggered_desc = {
+		text = building_photon_computing_center_2_effect
+	}
+
+	prerequisites = {
+		"tech_global_research_initiative"
+	}
+}
+#地热钻井
+building_thermal_borehole = {
+	base_buildtime = 600
+	base_cap_amount = 1
+	category = resource
+	potential = {
+		NOT = {
+			has_modifier = resort_colony
+		}
+		NOR = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+		}
+		NOT = {
+			has_modifier = slave_colony
+		}
+	}
+	planet_modifier = {
+		job_deep_miner_add = 4
+		pop_environment_tolerance = -0.1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+			alloys = 200
+		}
+	}
+	prerequisites = {
+		"tech_thermal_borehole"
+	}
+	triggered_desc = {
+		text = job_deep_miner_effect_desc
+	}
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = minerals
+					value < 5
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 5
+				}
+			}
+		}
+		# No one to work it
+		modifier = {
+			factor = 0
+			count_owned_pops = {
+				limit = {
+					OR = {
+						is_unemployed = yes
+						has_job = servant
+					}
+				}
+				count < 1
+			}
+		}
+	}
+	ai_resource_production = {
+		minerals = 1
+		energy = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#死亡竞技场
+building_colliseum = {
+	base_buildtime = 480
+	base_cap_amount = 1
+	category = amenity
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_reeducated_labor
+			not = {
+				has_ethic = ethic_fanatic_pacifist
+			}
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+		has_building = building_slave_processing
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			not = {
+				has_building = building_slave_processing
+			}
+			owner = {
+				not = {
+					has_valid_civic = civic_reeducated_labor
+				}
+			}
+		}
+	}
+	planet_modifier = {
+		job_gladiator_add = 2
+		trade_value_add = 4
+		planet_housing_add = 1
+	}
+	army_modifier = {
+		army_damage_mult = 0.1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_valid_civic = civic_warrior_culture
+			}
+		}
+		modifier = {
+			job_gladiator_add = 1
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			alloys = 50
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	triggered_desc = {
+		text = job_gladiator_effect_desc
+	}
+	ai_weight = {
+		weight = 1
+	}
+	on_built = {
+		planet = {
+			owner = {
+				set_timed_country_flag = {
+					flag = buildings_new_alloys_building
+					days = 480
+				}
+			}
+		}
+	}
+}
+
+#星球网络节点
+building_planet_network_node = {
+	base_buildtime = @b1_time
+	category = government
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_OGAS
+			NOT = { has_technology = tech_sapient_ai }
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			OR = {
+				NOT = { has_valid_civic = civic_OGAS }
+				has_technology = tech_sapient_ai
+			}
+		}
+	}
+
+	convert_to = {
+		building_planetary_management_center
+		building_bureaucratic_1
+		building_hive_node
+		building_uplink_node
+		building_temple
+		building_information_tower
+	}
+
+	#一级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_colony_shelter
+				has_building = building_hab_capital
+			}
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.01
+			job_democratic_politician_add = 1
+		}
+	}
+
+	#二级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_capital
+				has_building = building_hab_major_capital
+				has_building = building_resort_capital
+			}
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.03
+			job_democratic_politician_add = 2
+		}
+	}
+	
+	#三级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_major_capital
+				has_building = building_hab_system_capital
+				has_building = building_resort_major_capital
+			}
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.05
+			job_democratic_politician_add = 3
+		}
+	}
+	
+	#四级首都
+	triggered_planet_modifier = {
+		potential = {
+			has_building = building_system_capital
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.07
+			job_democratic_politician_add = 4
+		}
+	}
+	
+	#帝国首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_imperial_capital
+				has_building = building_hab_imperial_capital
+			}
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.1
+			job_democratic_politician_add = 6
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_capital
+					has_building = building_hab_major_capital
+					has_building = building_resort_capital
+				}
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_major_capital
+					has_building = building_hab_system_capital
+					has_building = building_resort_major_capital
+				}
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				has_building = building_system_capital
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_imperial_capital
+					has_building = building_hab_imperial_capital
+				}
+			}
+			energy = 2
+		}
+	}
+
+	upgrades = {
+		building_planetary_management_center
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOT = { has_technology = tech_sapient_ai }
+			}
+		}
+		text = job_democratic_politician_effect_desc
+	}
+	ai_weight = {
+		weight = 5000
+	}
+}
+
+#星球管理中枢
+building_planetary_management_center = {
+	base_buildtime = @b2_time
+	category = government
+	potential = {
+		exists = owner
+		owner = {
+			has_valid_civic = civic_OGAS
+			has_technology = tech_sapient_ai
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			NOT = { has_valid_civic = civic_OGAS }
+		}
+	}
+
+	convert_to = {
+		building_hive_cluster
+		building_network_junction
+		building_bureaucratic_2
+		building_information_tower
+	}
+
+	country_modifier = {
+		country_admin_cap_add = 50
+	}
+
+	#一级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_colony_shelter
+				has_building = building_hab_capital
+			}
+		}
+		modifier = {
+			job_researcher_add = 2
+			planet_researchers_physics_research_produces_add = 0.1
+			planet_researchers_society_research_produces_add = 0.1
+			planet_researchers_engineering_research_produces_add = 0.1
+			planet_researchers_energy_upkeep_add = 0.3
+		}
+	}
+
+	#二级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_capital
+				has_building = building_hab_major_capital
+				has_building = building_resort_capital
+			}
+		}
+		modifier = {
+			job_researcher_add = 2
+			planet_jobs_unity_produces_mult = 0.05
+			planet_researchers_physics_research_produces_add = 0.3
+			planet_researchers_society_research_produces_add = 0.3
+			planet_researchers_engineering_research_produces_add = 0.3
+			planet_researchers_energy_upkeep_add = 1
+		}
+	}
+	
+	#三级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_major_capital
+				has_building = building_hab_system_capital
+				has_building = building_resort_major_capital
+			}
+		}
+		modifier = {
+			job_researcher_add = 4
+			planet_jobs_unity_produces_mult = 0.1
+			planet_researchers_physics_research_produces_add = 0.5
+			planet_researchers_society_research_produces_add = 0.5
+			planet_researchers_engineering_research_produces_add = 0.5
+			planet_researchers_energy_upkeep_add = 2
+		}
+	}
+	
+	#四级首都
+	triggered_planet_modifier = {
+		potential = {
+			has_building = building_system_capital
+		}
+		modifier = {
+			job_researcher_add = 4
+			planet_jobs_unity_produces_mult = 0.15
+			planet_researchers_physics_research_produces_add = 0.75
+			planet_researchers_society_research_produces_add = 0.75
+			planet_researchers_engineering_research_produces_add = 0.75
+			planet_researchers_energy_upkeep_add = 2.5
+		}
+	}
+	
+	#帝国首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_imperial_capital
+				has_building = building_hab_imperial_capital
+			}
+		}
+		modifier = {
+			job_researcher_add = 6
+			planet_jobs_unity_produces_mult = 0.2
+			planet_researchers_physics_research_produces_add = 1
+			planet_researchers_society_research_produces_add = 1
+			planet_researchers_engineering_research_produces_add = 1
+			planet_researchers_energy_upkeep_add = 3.5
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		produces = {
+			unity = 5
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_capital
+					has_building = building_hab_major_capital
+					has_building = building_resort_capital
+				}
+			}
+			unity = 10
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_major_capital
+					has_building = building_hab_system_capital
+					has_building = building_resort_major_capital
+				}
+			}
+			unity = 15
+		}
+		produces = {
+			trigger = {
+				has_building = building_system_capital
+			}
+			unity = 20
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_imperial_capital
+					has_building = building_hab_imperial_capital
+				}
+			}
+			unity = 25
+		}
+		upkeep = {
+			energy = 4
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_capital
+					has_building = building_hab_major_capital
+					has_building = building_resort_capital
+				}
+			}
+			energy = 3
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_major_capital
+					has_building = building_hab_system_capital
+					has_building = building_resort_major_capital
+				}
+			}
+			energy = 3
+		}
+		upkeep = {
+			trigger = {
+				has_building = building_system_capital
+			}
+			energy = 3
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_imperial_capital
+					has_building = building_hab_imperial_capital
+				}
+			}
+			energy = 3
+		}
+	}
+
+	triggered_desc = {
+		text = job_researcher_effect_desc
+	}
+	ai_weight = {
+		weight = 5000
+	}
+}
+
+#信息大厦
+building_information_tower = {
+	base_buildtime = 480
+	base_cap_amount = 1
+	category = government
+	icon = holding_franchise_headquarters
+	potential = {
+		exists = owner
+		owner = {
+			OR = {
+				has_valid_civic = civic_cybercap
+				has_valid_civic = civic_corporate_cybercap
+			}
+			
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+
+	country_modifier = {
+		country_admin_cap_add = 20
+	}
+
+	#一级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_colony_shelter
+				has_building = building_hab_capital
+			}
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.4
+			planet_amenities_mult = 0.15
+			trade_value_mult = 0.4
+			planet_pops_consumer_goods_upkeep_mult = 0.15
+		}
+	}
+	
+	#二级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_capital
+				has_building = building_hab_major_capital
+				has_building = building_resort_capital
+			}
+		}
+		modifier = {
+			pop_government_ethic_attraction = 0.8
+			planet_amenities_mult = 0.3
+			trade_value_mult = 0.8
+			planet_pops_consumer_goods_upkeep_mult = 0.3
+		}
+	}
+		
+	#三级首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_major_capital
+				has_building = building_hab_system_capital
+				has_building = building_resort_major_capital
+			}
+		}
+		modifier = {
+			pop_government_ethic_attraction = 1.2
+			planet_amenities_mult = 0.45
+			trade_value_mult = 1.2
+			planet_pops_consumer_goods_upkeep_mult = 0.45
+		}
+	}
+		
+	#四级首都
+	triggered_planet_modifier = {
+		potential = {
+			has_building = building_system_capital
+		}
+		modifier = {
+			pop_government_ethic_attraction = 1.6
+			planet_amenities_mult = 0.6
+			trade_value_mult = 1.6
+			planet_pops_consumer_goods_upkeep_mult = 0.6
+		}
+	}
+		
+	#帝国首都
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_imperial_capital
+				has_building = building_hab_imperial_capital
+			}
+		}
+		modifier = {
+			pop_government_ethic_attraction = 2
+			planet_amenities_mult = 0.75
+			trade_value_mult = 2
+			planet_pops_consumer_goods_upkeep_mult = 0.75
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		produces = {
+			unity = 10
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_capital
+					has_building = building_hab_major_capital
+					has_building = building_resort_capital
+				}
+			}
+			unity = 10
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_major_capital
+					has_building = building_hab_system_capital
+					has_building = building_resort_major_capital
+				}
+			}
+			unity = 20
+		}
+		produces = {
+			trigger = {
+				has_building = building_system_capital
+			}
+			unity = 30
+		}
+		produces = {
+			trigger = {
+				OR = {
+					has_building = building_imperial_capital
+					has_building = building_hab_imperial_capital
+				}
+			}
+			unity = 40
+		}
+		upkeep = {
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_capital
+					has_building = building_hab_major_capital
+					has_building = building_resort_capital
+				}
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_major_capital
+					has_building = building_hab_system_capital
+					has_building = building_resort_major_capital
+				}
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				has_building = building_system_capital
+			}
+			energy = 2
+		}
+		upkeep = {
+			trigger = {
+				OR = {
+					has_building = building_imperial_capital
+					has_building = building_hab_imperial_capital
+				}
+			}
+			energy = 2
+		}
+	}
+	ai_weight = {
+		weight = 5000
+	}
+}
+
+#拜金教神龛
+building_nuumismatic_shrine = {
+	base_buildtime = 180
+	can_demolish = yes
+	base_cap_amount = 1
+
+	potential = {
+		OR = {
+			AND = {
+				owner = { has_country_flag = nuumismatic_shrine }
+				NOT = { has_modifier = slave_colony }
+			}
+			owner = { has_civic = civic_corpus }
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			is_regular_empire = no
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				NOR = {
+					has_valid_civic = civic_corpus
+				}
+			}
+		}
+		modifier = {
+			job_merchant_add = 2
+			job_priest_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_corpus
+				}
+			}
+		}
+		modifier = {
+			job_executive_add = 1
+			job_high_priest_add = 1
+			job_reemployment_HR_supervisor_add = 1
+		}
+	}
+
+	resources = {
+		cost = {
+			minerals = 1000
+		}
+		category = planet_buildings
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				NOR = {
+					has_civic = civic_corpus
+				}
+			}
+		}
+		text = job_priest_effect_desc
+		text = job_merchant_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				OR = {
+					has_civic = civic_corpus
+				}
+			}
+		}
+		text = job_high_priest_effect_desc
+		text = job_executive_effect_desc
+		text = job_reemployment_HR_supervisor_effect_desc
+	}
+}
+
+#机械修道院
+building_mecha_monastery = {
+	base_buildtime = 360
+	base_cap_amount = 3
+	category = pop_assembly
+	potential = {
+		owner = {
+			has_origin = origin_machine_cult
+		}
+		NOT = {
+			has_modifier = slave_colony
+		}
+	}
+	allow = {
+		has_upgraded_capital = yes
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = { owner = { has_origin = origin_machine_cult } }
+			}
+		}
+	}
+	convert_to = {
+		building_temple
+		building_robot_assembly_plant
+	}
+	planet_modifier = {
+		job_techno_priest_add = 2
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	triggered_desc = {
+		text = job_techno_priest_effect_desc
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			free_jobs > 0
+		}
+	}
+}
+
+#机械圣堂
+building_mechanical_sanctuary = {
+	base_buildtime = @b1_time
+	category = unity
+	potential = {
+		owner = {
+			has_civic = civic_machine_soul_servant
+		}
+		NOT = {
+			has_modifier = slave_colony
+		}
+	}
+	destroy_trigger = {
+		exists = owner
+		OR = {
+			owner = {
+				NOT = { owner = { has_valid_civic = civic_machine_soul_servant } }
+			}
+		}
+	}
+	planet_modifier = {
+		job_machine_soul_add = 10
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	triggered_desc = {
+		text = job_machine_soul_effect_desc
+	}
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			free_jobs > 0
+		}
+	}
+}

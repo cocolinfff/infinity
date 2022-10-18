@@ -95,8 +95,8 @@
  gov_technocratic_dictatorship_desc:0 "未来主义的专制政府，科学精英以效率和技术进步之名控制整个国家。"
  gov_science_directorate:0 "科学理事会"
  gov_science_directorate_desc:0 "未来主义的寡头政府，科学家委员会监督政府机构以达到最大效率。"
- gov_cyber_democracy:0 "网络民主"
- gov_cyber_democracy_desc:0 "未来主义的民主政府，公民使用计算机网络直接对国家的大部分事项投票。"
+ gov_cyber_democracy:0 "理性共识制"
+ gov_cyber_democracy_desc:0 "未来主义的民主政府，技术专家与民间骇客利用网络大数据进行社会建模，以此得到基于大部分民众潜意识共识的政策。"
 
  gov_dictatorship_of_the_people:0 "人民专政 "
  gov_dictatorship_of_the_people_desc:0 "社会主义的专制政府，由一位受人民爱戴的终身领袖领导独立政治权力——所谓“先锋队”监督着社会运行，防止决策损害人民的利益。"
@@ -141,6 +141,9 @@
  gov_anarchocommunism_desc:0 "一种社会形态，无产阶级采用直接民主制和工会、工人委员会、基层政权、公民议会等手段，将信息与决策权完全下放至每一个人的手中。"
  gov_anarchocapitalism:0 "无政府资本主义"
  gov_anarchocapitalism_desc:0 "一种社会形态，国家机构的规模和权威被削减到最低限度，自由市场提供所有公共产品和服务，包括法律和秩序。"
+ 
+ gov_social_democracy:0 "社会民主主义"
+ gov_social_democracy_desc:0 "一个民主选举官员产生的政府，实行混合经济。虽然在市场经济框架内运作，但政府进行干预，以确保一定程度的权利再分配，保护人民福利。"
 
  gov_parting_consciousness:0 "分形意识"
  gov_parting_consciousness_desc:0 "极致的威权主义社会形态，文明中的所有个体仅有最基本的自我意识，社会活动均受到某种强大灵能力量的支配。"

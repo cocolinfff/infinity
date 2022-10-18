@@ -1,0 +1,335 @@
+#First is set to default
+#
+#AI市场
+trade_league_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_trade_AI_economic_stance_market
+	}
+	weight = {
+		weight = 100
+	}
+	conversion_rate = {
+		energy = 0.3
+		food = 0.3
+		minerals = 0.2
+		consumer_goods = 0.15
+		alloys = 0.075
+		unity = 0.1
+		society_research = 0.15
+		physics_research = 0.075
+		engineering_research = 0.075
+	}
+	economic_category = trade_routes
+}
+
+#AI计划
+trade_league_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_trade_AI_economic_stance_planned
+	}
+	weight = {
+		weight = 100
+	}
+	conversion_rate = {
+		energy = 0.5
+		food = 0.5
+		minerals = 0.5
+		consumer_goods = 0.2
+		alloys = 0.1
+		society_research = 0.2
+		physics_research = 0.2
+		engineering_research = 0.2
+		unity = 0.2
+	}
+	economic_category = trade_routes
+}
+
+#合作贸易联盟
+trade_league_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_trade_league
+	}
+	weight = {
+		weight = 100
+	}
+	conversion_rate = {
+		energy = 0.3
+		food = 0.3
+		minerals = 0.2
+		consumer_goods = 0.15
+		alloys = 0.075
+		unity = 0.1
+		society_research = 0.15
+		physics_research = 0.075
+		engineering_research = 0.075
+	}
+	economic_category = trade_routes
+}
+
+
+#民族经济学
+trade_national_economy = {
+	potential = {
+		has_policy_flag = trade_conversion_national_economy
+	}
+	weight = {
+		weight = 100
+	}
+	conversion_rate = {
+		energy = 0.2
+		food = 0.2
+		minerals = 0.2
+		consumer_goods = 0.1
+		alloys = 0.05
+		unity = 0.25
+		society_research = 0.06
+		physics_research = 0.03
+		engineering_research = 0.03
+	}
+	economic_category = trade_routes
+}
+
+#自行调节
+basic_conversion = {
+	potential = {
+		always = yes
+	}
+	weight = {
+		weight = 1
+	}
+	conversion_rate = {
+		energy = 0.4
+		food = 0.5
+		minerals = 0.3
+		consumer_goods = 0.1
+		alloys = 0.05
+		unity = 0.03
+		society_research = 0.03
+		physics_research = 0.03
+		engineering_research = 0.03
+	}
+	economic_category = trade_routes
+}
+
+#基础投资
+trade_infrastructure = {
+	potential = {
+		has_policy_flag = trade_conversion_infrastructure
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.5
+		food = 0.4
+		minerals = 0.2
+		consumer_goods = 0.05
+		alloys = 0.1
+		unity = 0.03
+		society_research = 0.02
+		physics_research = 0.03
+		engineering_research = 0.04
+	}
+	economic_category = trade_routes
+}
+
+#工业投资
+trade_factory = {
+	potential = {
+		has_policy_flag = trade_conversion_factory
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.5
+		food = 0.4
+		minerals = 0.2
+		consumer_goods = 0.05
+		alloys = 0.1
+		unity = 0.03
+		society_research = 0.02
+		physics_research = 0.03
+		engineering_research = 0.04
+	}
+	economic_category = trade_routes
+}
+
+#消费升级
+consumer_goods_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_consumer_goods
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.05
+		food = 0.4
+		minerals = 0.05
+		consumer_goods = 0.4
+		alloys = 0.05
+		unity = 0.08
+		society_research = 0.02
+		physics_research = 0.03
+		engineering_research = 0.04
+	}
+	economic_category = trade_routes
+}
+#文化经济
+culture_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_culture
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.5
+		food = 0.1
+		minerals = 0.1
+		consumer_goods = 0.1
+		alloys = 0.05
+		unity = 0.1
+		society_research = 0.1
+		physics_research = 0.1
+		engineering_research = 0.1
+	}
+	economic_category = trade_routes
+}
+
+#重工业革新
+alloys_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_alloys
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.2
+		food = 0.05
+		minerals = 0.5
+		consumer_goods = 0.05
+		alloys = 0.25
+		unity = -0.1
+		society_research = -0.05
+		physics_research = 0
+		engineering_research = 0.05
+	}
+	economic_category = trade_routes
+}
+
+#创新经济学
+unity_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_new_economy
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.2
+		food = 0.05
+		minerals = 0.05
+		consumer_goods = -0.1
+		alloys = 0.05
+		unity = 0.15
+		society_research = 0.25
+		physics_research = 0.25
+		engineering_research = 0.25
+	}
+	economic_category = trade_routes
+}
+
+#供给侧改革
+innovation_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_innovation
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.1
+		food = 0.2
+		minerals = 0.5
+		consumer_goods = 0.2
+		alloys = 0.1
+		unity = 0.03
+		society_research = -0.06
+		physics_research = -0.03
+		engineering_research = 0
+	}
+	economic_category = trade_routes
+}
+
+#平庸富国论
+normal_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_normal
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.4
+		food = 0.3
+		minerals = 0.5
+		consumer_goods = 0.12
+		alloys = 0.06
+		unity = 0.04
+		society_research = 0.04
+		physics_research = 0.04
+		engineering_research = 0.04
+	}
+	economic_category = trade_routes
+}
+
+#社会发展
+growth_dev_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_growth_dev
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		unity = 0.3
+		society_research = 0.25
+		engineering_research = 0.25
+		physics_research = 0.25
+	}
+	economic_category = trade_routes
+}
+
+#产业建设
+development_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_development
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		energy = 0.7
+		food = 0.7
+		minerals = 0.7
+	}
+	economic_category = trade_routes
+}
+
+#工业进步
+industrial_progress_conversion = {
+	potential = {
+		has_policy_flag = trade_conversion_industrial_progress
+	}
+	weight = {
+		weight = 10
+	}
+	conversion_rate = {
+		alloys = 0.4
+		consumer_goods = 0.4
+	}
+	economic_category = trade_routes
+}

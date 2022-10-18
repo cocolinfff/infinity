@@ -945,8 +945,8 @@ civic_ultravisionary_socialism = {
 	modifier = {
 		job_researcher_per_pop = 0.03
 		all_technology_research_speed = 0.15
-		planet_researchers_produces_mult = 0.3
-		planet_jobs_produces_mult = -0.15
+		planet_researchers_produces_mult = 0.6
+		planet_jobs_produces_mult = -0.3
 		pop_ethic_socialism_attraction_mult = 0.15
 	}
 }
@@ -1243,6 +1243,60 @@ civic_curse_of_blood_kin = {
 
 	random_weight = {
 		base = 50
+	}
+}
+
+#朝闻道
+civic_zhaowen_dao = {
+	modification = no
+	description = civic_tooltip_zhaowen_dao_effects
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		ethics = {
+			value = ethic_fanatic_materialist
+			NOT = { value = ethic_fanatic_pacifist }
+		}
+	}
+
+	modifier = {
+		all_technology_research_speed = 0.3
+		planet_researchers_produces_mult = 0.3
+		pop_growth_speed_reduction = 0.3
+		leader_age = 30
+	}
+
+	random_weight = {
+		base = 0
+	}
+}
+
+#拾荒者
+civic_scavengers = {
+	playable = {
+		OR = {
+			has_toxoids = yes
+			has_overlord_dlc = yes
+		}
+	}
+	ai_playable = {
+		OR = {
+			has_toxoids = yes
+			has_overlord_dlc = yes
+		}
+	}
+	description = "civic_scavengers_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
 	}
 }
 

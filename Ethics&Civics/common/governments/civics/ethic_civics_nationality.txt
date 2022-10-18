@@ -37,7 +37,6 @@ civic_superhuman_economy = {
 	modifier = {
 		leaders_cost_mult = 0.15
 		leaders_upkeep_mult = 0.15
-		planet_jobs_productive_produces_mult = -0.15
 		pop_government_ethic_attraction = 0.15
 	}
 }
@@ -251,6 +250,7 @@ civic_army_production = {
 		}
 	}
 	modifier = {
+		planet_soldiers_alloys_produces_add = 2
 		job_soldier_per_pop = 0.03
 	}
 	random_weight = {
@@ -344,9 +344,8 @@ civic_science_knight = {
 		}
 	}
 	modifier = {
-		all_technology_research_speed = 0.15
-		leader_scientist_skill_levels = 2
-		country_num_tech_alternatives_add = -1
+		job_knight_per_pop = 0.02
+		all_technology_research_speed = 0.05
 		pop_cat_worker_happiness = -0.05
 	}
 	random_weight = {
@@ -391,7 +390,7 @@ civic_learning_society = {
 	}
 	modifier = {
 	    country_leader_pool_size = 2
-		species_leader_exp_gain = 0.25
+		species_leader_exp_gain = 0.50
 		planet_jobs_produces_mult = 0.1
 		planet_pops_consumer_goods_upkeep_mult = 0.15
 	}
@@ -439,7 +438,7 @@ civic_real_estate_market = {
 	}
 	modifier = {
 		pop_cat_worker_happiness = -0.05
-		job_mogul_per_pop = 0.01
+		job_mogul_per_pop = 0.03
 	}
 }
 
@@ -485,7 +484,7 @@ civic_internet_market = {
 		base = 5
 	}
 	modifier = {
-		country_society_tech_research_speed = 0.05
+		country_society_tech_research_speed = 0.15
 		pop_ethics_shift_speed_mult = 0.5
 		pop_cat_worker_happiness = -0.05
 	}
@@ -590,7 +589,7 @@ civic_environmentalist = {
 		planet_amenities_mult = 0.20
 		pop_environment_tolerance = 0.05
 		planet_pops_consumer_goods_upkeep_mult = -0.2
-		planet_building_refund_mult = 0.15
+		planet_building_refund_mult = 0.5s
 	}
 }
 
@@ -676,7 +675,7 @@ civic_characteristic_socialism = {
 		job_merchant_per_pop = 0.02
 		job_core_party_members_per_pop = 0.01
 		job_labour_hero_per_pop = 0.01
-		planet_jobs_slave_produces_mult = 0.1
+		planet_jobs_slave_produces_mult = 0.05
 		planet_emigration_push_mult = 0.5
 	}
 	random_weight = {
@@ -801,6 +800,11 @@ civic_production_community = {
 			}
 		}
 	}
+	modifier = {
+		planet_farmers_food_produces_add = 0.5
+		planet_miners_minerals_produces_add = 0.5
+		planet_technician_energy_priduces_add = 0.5
+	}
 	random_weight = {
 		base = 5
 	}
@@ -854,6 +858,40 @@ civic_underworld_society = {
 	}
 	random_weight = {
 		base = 1
+	}
+}
+
+#慈善医院
+civic_toxic_baths = {
+	playable = { has_toxoids = yes }
+	ai_playable = { has_toxoids = yes }
+	description = "civic_tooltip_toxic_baths_effects"
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_galactic_sovereign_megacorp
+				value = civic_family_business
+				value = civic_world_cooperative
+			}
+		}
+	}
+	possible = {
+		civics = {
+			value = civic_underworld_society
+			NOR = {
+				value = civic_environmentalist
+			}
+		}
 	}
 }
 
@@ -1118,7 +1156,7 @@ civic_democracy_and_clean_government = {
 		}
 	}
 	modifier = {
-		empire_size_penalty_mult = -0.10
+		empire_size_penalty_mult = -0.3
 	}
 }
 
@@ -1431,7 +1469,6 @@ civic_industrial_automatation = {
 	modifier = {
 		country_physics_tech_research_speed = 0.1
 		country_engineering_tech_research_speed = 0.1
-		country_unity_produces_mult = -0.05
 	}
 }
 
@@ -1645,6 +1682,7 @@ civic_mining_guilds = {
 	}
 	modifier = {
 		planet_miners_minerals_produces_add = 1.5
+		planet_miners_energy_upkeep_add = 0.5
 		#job_miner_per_pop = 0.02
 	}
 }
@@ -2253,13 +2291,14 @@ civic_innovative_economy = {
 		num_tech_alternatives_add = 1
 		job_researcher_per_pop = 0.03
 		planet_researchers_upkeep_mult = 0.1
-		pop_ethic_socialism_attraction_mult = 0.15
 	}
 }
 
 #无情工业化
 civic_industrial_economy = {
 	description = civic_tooltip_industrial_economy_effects
+	playable = { has_toxoids = yes }
+	ai_playable = { has_toxoids = yes }
 	potential = {
 		ethics = {
 			NOT = {
@@ -2281,26 +2320,17 @@ civic_industrial_economy = {
 	}
 	possible = {
 		ethics = {
-			OR = {
-				value = ethic_fanatic_materialist
-			}
+			value = ethic_fanatic_materialist
 		}
 		civics = {
 			NOR = {
 				value = civic_environmentalist
-				value = civic_mining_guilds
 				value = civic_agrarian_idyll
 			}
 		}
 	}
 	random_weight = {
 		base = 5
-	}
-	modifier = {
-		country_minerals_produces_mult = 0.15
-		planet_building_build_speed_mult = 0.25
-		country_engineering_tech_research_speed = 0.1
-		country_society_tech_research_speed = -0.1
 	}
 }
 
@@ -2349,8 +2379,8 @@ civic_big_industrial_farming = {
 		base = 5
 	}
 	modifier = {
-		planet_farmers_food_produces_add = 6
-		planet_farmers_energy_upkeep_add = 2
+		planet_farmers_food_produces_add = 3
+		planet_farmers_energy_upkeep_add = 3
 	}
 }
 
@@ -2459,9 +2489,9 @@ civic_efficient_bureaucracy = {
 		}
 	}
 	modifier = {
-		country_admin_cap_mult = 0.25
+		country_unity_produces_mult = 0.2
 		starbases_upkeep_mult = -0.1
-		decisions_cost_mult = -0.1
+		decisions_cost_mult = -0.25
 		#planet_bureaucrats_upkeep_mult = 0.1
 	}
 }

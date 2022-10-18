@@ -4,6 +4,31 @@
 #    岗位
 ###############
 
+ job_student:0 "学生"
+ job_student_plural:0 "学生"
+ job_student_effect_desc:0 "£job_student£ $job_student$将 £consumer_goods£ §Y$consumer_goods$§!转化为少量 £unity£ §Y凝聚力§!，只有拥有§Y基础教育§!修正的人口才能从事此岗位，每五年他们都有机会获得更高一级的§Y教育修正§!并前往别的岗位。"
+ job_student_desc:0 "这些人口正在接受中等教育以便从事需要更高知识水平的岗位。"
+ mod_job_student_add:0 "$job_student$岗位"
+ 
+ job_university_student:0 "大学生"
+ job_university_student_plural:0 "大学生"
+ job_university_student_effect_desc:0 "£job_university_student£ $job_university_student$将 £consumer_goods£ §Y$consumer_goods$§!转化为少量 £physics£ £society£ £engineering£ §Y研究点数§!，只有拥有§Y中等教育§!特质且生活水平不是§Y基本保障§!的人口才能从事此岗位，每五年他们都有机会获得更高一级的§Y教育修正§!并前往别的岗位。"
+ job_university_student_desc:0 "这些人口正在接受高等教育以便从事需要更高知识水平的岗位。"
+ mod_job_university_student_add:0 "$job_university_student$岗位"
+
+ job_knight:0 "骑士"
+ job_knight_plural:0 "骑士"
+ job_knight_desc:1 "为战而训，品学兼优。这些骑士们代表着我们社会的精粹，他们全身心地奉献一切，只为寻求自己的骑士之道。"
+ job_knight_effect_desc:1 "£job_knight£ $job_knight_plural$消耗$r_alloys$提供£mod_country_naval_cap_add£ §Y海军容量§!，£defense_army£ §Y防御部队§!，£unity£ §Y凝聚力§!，以及£physics_research£ £society_research£ £engineering_research£§Y研究点数§!\n完成§Y骑士誓言试炼§!能够进一步改善他们的产出。"
+ mod_job_knight_add:0 "$job_knight$岗位"
+ mod_job_knight_per_pop:0 "每$VALUE$个人口§G+1§!$job_knight$岗位"
+ mod_job_knight_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§!£job_knight£"
+ knights_independent_category:0 "骑士"
+ 
+ job_vanguard:0 "不朽者"
+ job_vanguard_desc:0 "这些意识上传的先驱者仍然在以另一种形式影响着他们所爱着的文明。"
+ job_vanguard_plural:0 "$job_vanguard$"
+
  job_re_acolyte_metallurgists:0 "圣炉侍者"
  job_re_acolyte_metallurgists_plural:0 "圣炉侍者"
  job_re_acolyte_metallurgists_desc:1 "扎克兰从圣炉中取出了圣犁、焰锤和圣钳，将它们交到穷苦的人手中，于是最初的圣徒就此诞生。"
@@ -107,7 +132,20 @@
 
  job_culture_worker:0 "文化工作者"
  job_culture_worker_plural:0 "文化工作者"
- job_culture_worker_effect_desc:0 "£job_culture_worker£ $job_culture_worker_plural$将£consumer_goods£ §Y$consumer_goods$§!转化为£unity£ §Y$unity$§!和£society£ §Y$society_research$§!，并减少$MOD_POP_AMENITIES_USAGE_BASE$"
+ job_culture_worker_effect_desc:2 "£job_culture_worker£ $job_culture_worker_plural$将£consumer_goods£ §Y$consumer_goods$§!转化为£unity£ §Y$unity$§!，[GetCultureWorkerSpiMatOutput][GetCultureWorkerEgalAuthOutput][GetCultureWorkerMilPacOutput][GetCultureWorkerXenoOutput][GetCultureWorkerSocCapOutput]以及£mod_ethic_attraction_mult£ §Y主流思潮吸引力§!。\n\n£job_culture_worker£文化工作者的效果会随着帝国的思潮而发生改变。"
+ 
+ CULTURE_WORKER_OUTPUT_AUTH:1 "§Y£mod_planet_stability_add£ $PLANET_STABILITY_TITLE$§!， "
+ CULTURE_WORKER_OUTPUT_EGAL:1 "§Y$MOD_POP_CATEGORY_RULERS_CONSUMER_GOODS_UPKEEP_ADD$减少§!， "
+ CULTURE_WORKER_OUTPUT_EGAL_ANARCHISM:1 "§Y£mod_pop_citizen_happiness£ $MOD_POP_CAT_WORKER_HAPPINESS$§!， "
+ CULTURE_WORKER_OUTPUT_PHOB:1 "§Y£mod_pop_citizen_happiness£ $pop_citizen_happiness$§!， "
+ CULTURE_WORKER_OUTPUT_PHIL:2 "§Y£intel_decryption£ $mod_add_base_country_intel$§!， "
+ CULTURE_WORKER_OUTPUT_MIL:0 "§Y£mod_country_naval_cap_add£ $MOD_COUNTRY_NAVAL_CAP_ADD$§!， "
+ CULTURE_WORKER_OUTPUT_PAC:1 "§Y£pop£ $mod_pop_growth_speed_reduction$§!， "
+ CULTURE_WORKER_OUTPUT_SPI:1 "§Y£pop£ $mod_planet_pops_upkeep_mult$减少§!， "
+ CULTURE_WORKER_OUTPUT_MAT:0 "§Y£mod_pop_amenities_usage_mult£ $MOD_POP_AMENITIES_USAGE_MULT$减少§!， "
+ CULTURE_WORKER_OUTPUT_SOC:2 "§Y$mod_pop_cat_worker_political_power$§!， "
+ CULTURE_WORKER_OUTPUT_CAP:2 "§Y$mod_pop_lifestyle_trade_mult$§!， "
+ CULTURE_WORKER_OUTPUT_BLANK:0 ""
 
  job_synapse_drone:0 "突触子个体"
  job_synapse_drone_plural:0 "突触子个体"
@@ -116,13 +154,6 @@
  job_coordinator:0 "协调者"
  job_coordinator_plural:0 "协调者"
  job_coordinator_effect_desc:2 "£job_coordinator£ $job_coordinator_plural$将 £energy£ §Y$energy$§!转化为£unity£ §Y凝聚力§!以及 £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!"
-
- job_priest:0 "祭司"
- job_priest_plural:0 "祭司"
- job_priest_effect_desc:1 "[Root.PriestProduces]"
- priest.with_admin:1 "£job_priest£ $job_priest_plural$将 £consumer_goods£ §Y$consumer_goods$§!转化为 £unity£ §Y$unity$§!、£mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!以及 £mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!"
- priest.without_admin:1 "£job_priest£ $job_priest_plural$将 £consumer_goods£ §Y$consumer_goods$§!转化为 £unity£ §Y$unity$§!、£mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!"
- mod_job_priest_add:0 "$job_priest$岗位"
 
  job_manager:1 "经理"
  job_manager_plural:1 "经理"
@@ -397,8 +428,6 @@
  mod_job_manufacturing_workers_per_pop_short:0 "\n每$VALUE$ £pop£ §G+1§! £mod_job_manufacturing_workers_add£ "
  
  job_criminal_effect_desc:0 "罪犯当然没有任何产出，但我们还是可以指望他们缴点税的。"
- 
- 
  
  mod_planet_metallurgists_produces_mult:0 "£job_foundry£ $job_foundry_plural$与£job_smelting_workers£ $job_smelting_workers_plural$产出"
  mod_planet_artisans_produces_mult:0 "£job_artisan£ $job_artisan_plural$与£job_manufacturing_workers£ $job_manufacturing_workers_plural$产出"

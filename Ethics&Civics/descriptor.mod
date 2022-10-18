@@ -3,5 +3,6 @@ picture="thumbnail.png"
 tags={
 	"Overhaul"
 }
-name=" Infinity : Ethics and Civics "
-supported_version="3.4.*"
+name=" Infinity : Ethics and Civics | 无限思潮 "
+supported_version="3.5.*"
+remote_file_id="2876684228"

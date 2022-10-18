@@ -112,6 +112,7 @@ guiTypes = {
 			position = { x = 170 y = 50 }
 			size = { width = 850 height = 265 }
 			margin = { top = 1 bottom = 1 }
+			verticalScrollBar = "right_vertical_slider"
 
 			background = {
 				name = "background"
@@ -850,7 +851,6 @@ guiTypes = {
 				text =	 "POINTS_LEFT"
 				format = left
 				alwaysTransparent = yes
-			#text_color_code = "E"
 		}
 
 		instantTextBoxType = {
@@ -872,7 +872,6 @@ guiTypes = {
 				text =	 "PICKS_LEFT"
 				format = left
 				alwaysTransparent = yes
-			#text_color_code = "E"
 		}
 
 		instantTextBoxType = {
@@ -913,8 +912,10 @@ guiTypes = {
 				font = "cg_16b"
 				position = { x = 10 y = 30 }
 				maxWidth = 395
+				maxHeight = 185
 				text = ""
 				format = left
+				scrollbartype = "standardtext_slider_small"
 			}
 		}
 
@@ -1095,13 +1096,20 @@ guiTypes = {
 			buttonType = {
 				name = "male"
 				quadTextureSprite = "GFX_button_male"
-				position = { x = 150 y = 1 }
+				position = { x = 115 y = 1 }
 				clicksound = select_click
 			}
 
 			buttonType = {
 				name = "female"
 				quadTextureSprite = "GFX_button_female"
+				position = { x = 150 y = 1 }
+				clicksound = select_click
+			}
+
+			buttonType = {
+				name = "indeterminable"
+				quadTextureSprite = "GFX_button_no_gender" #TODO
 				position = { x = 185 y = 1 }
 				clicksound = select_click
 			}
@@ -1342,9 +1350,9 @@ guiTypes = {
 			}
 		}
 
-		### hair style
+		### attachment style
 		containerWindowType = {
-			name = "hair_style"
+			name = "attachments"
 			position = { x = 700 y = 70 }
 			size = { width = @subselect_w height = 70 }
 
@@ -1361,7 +1369,7 @@ guiTypes = {
 				font = "malgun_goth_24"
 				maxWidth = 200
 				maxHeight = 20
-				text = "HAIR_STYLE"
+				text = "ATTACHMENTS"
 				format = center
 				orientation = "CENTER_UP"
 				text_color_code = "H"
@@ -1405,7 +1413,7 @@ guiTypes = {
 				}
 			}
 		}
-
+		
 
 		### variation
 		containerWindowType = {

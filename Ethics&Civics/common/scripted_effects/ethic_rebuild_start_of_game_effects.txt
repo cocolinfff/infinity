@@ -49,7 +49,7 @@ generate_start_pops = {
 		remove_building = building_temple
 		while = {
 			limit = {
-				num_pops < 33
+				num_pops < 28
 			}
 			create_pop = {
 				species = owner_main_species
@@ -308,7 +308,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { is_hive_empire = yes } }
 		while = {
-			limit = { num_pops < 33 }
+			limit = { num_pops < 28 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -318,7 +318,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { has_valid_civic = civic_machine_servitor } }
 		while = {
-			limit = { num_pops < 33 }
+			limit = { num_pops < 28 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -328,7 +328,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { is_machine_empire = yes } }
 		while = {
-			limit = { num_pops < 29 }
+			limit = { num_pops < 28 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random

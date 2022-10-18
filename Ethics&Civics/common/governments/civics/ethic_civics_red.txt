@@ -79,7 +79,7 @@ civic_anarchism = {
 		job_culture_worker_per_pop = 0.03
 		edicts_unity_upkeep_mult = 0.5
 		pop_ethic_egalitarian_attraction_mult = 0.25
-		empire_size_penalty_mult=-2
+		empire_size_penalty_mult = -2
 	}
 	random_weight = {
 		base = 100
@@ -124,6 +124,7 @@ civic_network_of_the_mind = {
 				value = civic_anarchism
 				value = civic_network_of_the_mind_machine
 				value = civic_network_of_the_mind_true_hive
+				value = civic_forever_with_us
 				value = civic_aristocratic_elite
 				value = civic_shared_burden
 				value = civic_socialistic
@@ -399,6 +400,7 @@ civic_fanatic_purifiers = {
 		country_naval_cap_mult = 1
 		pop_ethic_xenophobe_attraction_mult = 1
 		pop_ethic_militarist_attraction_mult = 1
+		country_starbase_influence_cost_mult = -0.2
 	}
 }
 
@@ -546,29 +548,53 @@ civic_du_contrat_social = {
 	}
 }
 
-#朝闻道（红标）
-civic_zhaowen_dao = {
+#永远同在（红标）
+civic_forever_with_us = {
 	modification = no
-	description = civic_zhaowen_dao_effects
+	description = civic_tooltip_forever_with_us_effects
 	potential = {
 		ethics = {
 			NOT = {
 				value = ethic_gestalt_consciousness
 			}
 		}
-	}
-	possible = {
-		ethics = {
-			value = ethic_fanatic_materialist
-			NOT = { value = ethic_fanatic_pacifist }
+		authority = {
+			NOT = {
+				value = auth_corporate
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_galactic_sovereign_megacorp
+				value = civic_family_business
+				value = civic_world_cooperative
+			}
 		}
 	}
-
-	modifier = {
-		planet_researchers_produces_mult = 1
+	possible = {
+		origin = {
+			NOT = { value = origin_overtuned }
+		}
+		civics = {
+			NOR = { value = civic_anarchism }
+			NOR = {
+				text = civic_tooltip_not_network_of_the_mind
+				value = civic_network_of_the_mind
+				value = civic_network_of_the_mind_machine
+				value = civic_network_of_the_mind_true_hive
+			}
+		}
+		ethics = {
+			value = ethic_fanatic_materialist
+		}
 	}
-
 	random_weight = {
-		base = 0
+		base = 100
+	}
+	modifier = {
+		leader_age = 1000
+		leader_skill_levels = 5
+		leaders_upkeep_mult = -0.75
+		leaders_cost_mult = 0.75
 	}
 }

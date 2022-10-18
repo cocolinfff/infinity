@@ -1,314 +1,72 @@
 
-
-#法令
-edicts = {
-	use_for_ai_budget = yes
-	parent = country
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-}
-rare_edicts = {
-	use_for_ai_budget = no
-	parent = edicts
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-}
-ship_edicts = {
-	parent = rare_edicts
-	use_for_ai_budget = yes
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-}
-campaigns = {
-	use_for_ai_budget = yes
-	parent = edicts
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-}
-
-decisions = {
-	use_for_ai_budget = yes
-	parent = country
-	generate_mult_modifiers = {
-		cost
-		upkeep
-	}
-}
-
-#巨构
-megastructures = {
-	use_for_ai_budget = yes
-	ai_use_parent_for_resources_upkeep = {
-		energy
-		consumer_goods
-	}
-	parent = country
-	generate_mult_modifiers = {
-		cost
-		produces
-		upkeep
-	}
-	generate_add_modifiers = {
-		cost
-		produces
-		upkeep
-	}
-	triggered_cost_modifier = {
-		key = megastructure_build
-		modifier_types = { mult }
-	}
-    	triggered_produces_modifier = {
-		key = megastructure
-		modifier_types = { mult }
-	}
-    	triggered_upkeep_modifier = {
-		key = megastructure
-		modifier_types = { mult }
-	}
-	triggered_produces_modifier = {
-		key = megastructure_dyson_sphere
-		modifier_types = {
-			mult
-		}
-		trigger = {
-			OR = {
-				is_megastructure_type = dyson_sphere_restored
-				is_megastructure_type = dyson_sphere_2
-				is_megastructure_type = dyson_sphere_3
-				is_megastructure_type = dyson_sphere_4
-				is_megastructure_type = dyson_sphere_5
-
-				is_megastructure_type = dyson_sphere_2_O
-				is_megastructure_type = dyson_sphere_3_O
-				is_megastructure_type = dyson_sphere_4_O
-				is_megastructure_type = dyson_sphere_5_O
-
-				is_megastructure_type = dyson_sphere_2_B
-				is_megastructure_type = dyson_sphere_3_B
-				is_megastructure_type = dyson_sphere_4_B
-				is_megastructure_type = dyson_sphere_5_B
-
-				is_megastructure_type = dyson_sphere_2_A
-				is_megastructure_type = dyson_sphere_3_A
-				is_megastructure_type = dyson_sphere_4_A
-				is_megastructure_type = dyson_sphere_5_A
-
-				is_megastructure_type = dyson_sphere_2_F
-				is_megastructure_type = dyson_sphere_3_F
-				is_megastructure_type = dyson_sphere_4_F
-				is_megastructure_type = dyson_sphere_5_F
-
-				is_megastructure_type = dyson_sphere_2_G
-				is_megastructure_type = dyson_sphere_3_G
-				is_megastructure_type = dyson_sphere_4_G
-				is_megastructure_type = dyson_sphere_5_G
-
-				is_megastructure_type = dyson_sphere_2_K
-				is_megastructure_type = dyson_sphere_3_K
-				is_megastructure_type = dyson_sphere_4_K
-				is_megastructure_type = dyson_sphere_5_K
-
-				is_megastructure_type = dyson_sphere_2_M
-				is_megastructure_type = dyson_sphere_3_M
-				is_megastructure_type = dyson_sphere_4_M
-				is_megastructure_type = dyson_sphere_5_M
-			}
-		}
-	}
-}
-
-#巨企分部
-planet_branch_office_buildings = {
-	parent = planets
-	generate_mult_modifiers = {
-		produces
-		cost
-		upkeep
-	}
-	generate_add_modifiers = {
-		produces
-		cost
-		upkeep
-	}
-}
-
-#力量投射
-country_power_projection = {
-	parent = country_container
-	generate_add_modifiers = {
-		produces
-	}
-	generate_mult_modifiers = {
-		produces
-	}
-}
-
-#海军覆盖
-country_navy_coverage = {
-	parent = country_container
-	generate_add_modifiers = {
-		produces
-	}
-	generate_mult_modifiers = {
-		produces
-	}
-}
-
-
 ##阶级##
 pop_category_workers = {
 	parent = planet_pops
 	generate_mult_modifiers = {
 		upkeep
-		produces
 	}
 	generate_add_modifiers = {
 		upkeep
 		produces
 	}
+	modifier_category = pop
 }
 
 pop_category_specialists = {
 	parent = planet_pops
 	generate_mult_modifiers = {
 		upkeep
-		produces
 	}
 	generate_add_modifiers = {
 		upkeep
 		produces
 	}
+	modifier_category = pop
 }
 
 pop_category_rulers = {
 	parent = planet_pops
 	generate_mult_modifiers = {
 		upkeep
-		produces
 	}
 	generate_add_modifiers = {
 		upkeep
 		produces
 	}
+	modifier_category = pop
 }
 
 pop_category_bio_trophy = {
 	parent = planet_pops
 	generate_mult_modifiers = {
 		upkeep
-		produces
 	}
 	generate_add_modifiers = {
 		upkeep
 		produces
 	}
+	modifier_category = pop
 }
 
 pop_category_slave = {
 	parent = planet_pops
 	generate_mult_modifiers = {
 		upkeep
-		produces
 	}
 	generate_add_modifiers = {
 		upkeep
 		produces
 	}
+	modifier_category = pop
 }
 
 
 ##岗位##
-planet_bio_trophies = {
+planet_media_worker = {
 	parent = planet_jobs
-    generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
+	modifier_category = pop
 }
 
-planet_pop_assemblers = {
-	parent = planet_jobs
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_farmers = {
-	parent = planet_jobs_productive
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_miners = {
-	parent = planet_jobs_productive
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_sr_miners = { #added because we don't want miners_minerals_produces_add to apply to these
-	parent = planet_miners
-	generate_add_modifiers = {
-		produces
-		upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_livestock = {
-	parent = planet_jobs_productive
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_technician = {
-	parent = planet_jobs_productive
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
 
 planet_politicians = {
 	parent = planet_jobs_productive
@@ -320,13 +78,13 @@ planet_politicians = {
 		produces
 		upkeep
 	}
+	modifier_category = pop
 }
 
 planet_administrators = {
 	icon = "job_bureaucrat"
 	parent = planet_jobs_productive
 	generate_mult_modifiers = {
-		produces
 		upkeep
 	}
 	generate_add_modifiers = {
@@ -390,18 +148,6 @@ planet_researchers = {
 
 planet_metallurgists = {
 	icon = "job_foundry"
-	parent = planet_jobs_productive
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_culture_workers = {
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
 		produces
@@ -497,18 +243,6 @@ planet_soldiers = {
 	}
 }
 
-planet_necromancers = { #Removed in 3.3? need more info.
-	parent = planet_researchers
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
 planet_priests = {
 	parent = planet_administrators
 	generate_add_modifiers = {
@@ -535,18 +269,6 @@ planet_enforcers = {
 
 planet_telepaths = {
 	parent = planet_enforcers
-	generate_add_modifiers = {
-		produces
-        upkeep
-	}
-	generate_mult_modifiers = {
-		produces
-		upkeep
-	}
-}
-
-planet_doctors = {
-	parent = planet_jobs
 	generate_add_modifiers = {
 		produces
         upkeep
@@ -585,7 +307,6 @@ planet_chemists = {
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
 		produces
-        upkeep
 	}
 	generate_mult_modifiers = {
 		produces

@@ -51,6 +51,13 @@
  building_alien_medical_center_desc:0 "这座庞大的由外星文明开办的医学机构忠实的履行着自己的使命，只要你付出资金，就能在这里收获健康。"
  building_peoples_hospital:0 "人民医院"
  building_peoples_hospital_desc:0 "这座庞大的企业医疗机构以为人民服务为宗旨，为任何人提供可承受的医疗保障服务。"
+
+ building_bureaucratic_1_coalition:0 "行政办公楼"
+ building_bureaucratic_1_coalition_desc:0 "一个错综复杂的政府机构，包含官僚部门，次级官僚部门，以及次次级部门。"
+ building_bureaucratic_2_coalition:0 "行政园区"
+ building_bureaucratic_2_coalition_desc:0 "一个满是专用于执行高效而细致的文书工作建筑的区域。"
+ building_bureaucratic_3_coalition:0 "复合型行政区"
+ building_bureaucratic_3_coalition_desc:0 "一片广袤的土地，其上修建的是包含着无数办公室的官僚机构。"
  
  building_planet_network_node:0 "星球网络节点"
  building_planet_network_node_desc:0 "这里是星球管理网络的一个主要节点站，小半个星球的数据在此汇聚并集中处理。"
@@ -62,10 +69,19 @@
  
  building_art_club:0 "艺术俱乐部"
  building_art_club_desc:0 "艺术爱好者们在这里聚集，其中产生的艺术品忠实地反映了当代社会的精神面貌。"
- building_art_club_effect:0 "帝国每采用一个§Y飞升天赋§!就产生 £physics£ £society£ £engineering£ §G0.5§!。"
  building_art_building:0 "艺术大楼"
  building_art_building_desc:0 "富有感性的头脑在此交流、碰撞，产生的火花点亮了时代的精神。"
+ 
+ building_art_club_effect:0 "帝国每采用一个§Y飞升天赋§!就产生 £physics£ £society£ £engineering£ §G0.5§!。"
  building_art_building_effect:0 "帝国每采用一个§Y飞升天赋§!就产生 £physics£ £society£ £engineering£ §G1§!。"
+ building_art_max_effect:0 "帝国每采用一个§Y飞升天赋§!就产生 £physics£ £society£ £engineering£ §G1.5§!。"
+ 
+ building_media_worker_1:0 "媒体大楼"
+ building_media_worker_1_desc:0 "这些玩弄信息与言语的人聚集在这里，替统治阶级管理社会舆论。"
+ building_media_worker_2:0 "媒体园区"
+ building_media_worker_2_desc:0 "来自全国各地的信息在这里汇聚，然后推送到应该得到它们的人的手里。"
+ building_media_worker_3:0 "复合媒体中枢"
+ building_media_worker_3_desc:0 "这座庞大的园区是国家意志的发声器官，在某些时候，里面的人比国王还尊贵。"
  
  building_autocurating_vault_effect:0 "§Y帝国规模§!额外产生 £unity£ §G1§!。"
  
@@ -77,6 +93,13 @@
  building_automated_defense_system:0 "自动化防御系统"
  building_automated_defense_system_desc:0 "完全自动化的星球防御系统，同时也能为帝国舰队后勤提供一定程度的保障。"
  building_automated_defense_system_effect:0 "£job_soldier£ $job_conscript_plural$与£job_soldier£ $job_soldier_plural$额外§G+2§!$MOD_POP_DEFENSE_ARMIES_ADD$"
+ 
+ building_school_1:0 "教育中心"
+ building_school_1_desc:0 "我们的新一代在这里接受教育，以便他们能胜任需要更多专业知识的工作。"
+ building_school_2:0 "教育园区"
+ building_school_2_desc:0 "一片容纳多所教育设施的区域，可以让更多学生接受教育。"
+ building_school_3:0 "复合型教育区"
+ building_school_3_desc:0 "一片广袤的土地，其上修建的是无数培育下一代的学府。"
  
  building_thermal_borehole:0 "地热钻井"
  building_thermal_borehole_desc:0 "地热钻井挖穿地幔直达星球核心，虽然这可以提供大量的矿物和能源，但大量热量会对自然环境造成严重伤害。"
@@ -103,6 +126,13 @@
  building_automated_power_plant_desc:1 "这片无人区域之中的所有能源设备皆由自动化设备维护。"
  building_automated_smelter:0 "自动化冶炼厂"
  building_automated_smelter_desc:1 "早在前太空时期，我们就能在实验室中实现全自动合金冶炼——我们如今只是稍微扩大了规模。"
+ 
+ building_order_keep_2:0 "骑士团城堡"
+ building_order_keep_2_desc:0 "骑士团的宅邸是骑士成员的归家。它收录了海量的数据，装满了其漫长而闪耀的历史长河中缴获的各类战利品。"
+ building_order_keep_imperial:0 "骑士团圣殿"
+ building_order_keep_imperial_desc:0 "愿星海帝国的荣光归于伟大的皇帝与祂忠诚的骑士团！"
+ holding_knight_commandery:0 "骑士团支部"
+ holding_knight_commandery_desc:0 "在这个加固的哨站中，我们的骑士同我们的附庸通力合作，维持社会治安。我们的附属应当提供给我们资源和数据，以支持教团的工作。"
  
  mod_planet_building_hydroponics_farm_build_speed_mult:0 "$building_hydroponics_farm$建造速度"
  

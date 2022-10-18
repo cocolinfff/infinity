@@ -104,7 +104,7 @@
  ETHIC_XENOPHOBE_UNITY:0 "§E§H未被奴役的主体种族§!额外产出§Y$unity$§!§!"
  ETHIC_XENOPHILE_UNITY:0 "§E国境内没有§H被奴役的外星种族§!时，人口额外产出§Y$unity$§!§!"
  ETHIC_MILITARIST_UNITY:0 "§E§H$job_soldier_plural$§!岗位与§H$job_conscript_plural$§!岗位额外产出§Y$unity$§!§!"
- ETHIC_PACIFIST_UNITY:0 "§E§H$job_entertainer_plural$§!岗位与§H$job_culture_worker_plural$§!岗位额外产出§Y$unity$§!§!"
+ ETHIC_PACIFIST_UNITY:0 "§E§H$job_entertainer_plural$§!岗位与§H$job_media_worker_plural$§!岗位额外产出§Y$unity$§!§!"
  ETHIC_MATERIALIST_UNITY:0 "§E§H$scientist$§!额外产出£physics£ £society£ £engineering£ §Y研究点数§!，随等级提升而增加§!"
  ETHIC_SOCIALISM_UNITY:0 "§E§Y工农劳动者§!额外产出§Y$unity$§!§!"
  ETHIC_CAPITALISM_UNITY:0 "§E§H$job_merchant_plural$§!岗位额外产出§Y$unity$§!§!\n§E如果$MOD_POP_HAPPINESS$高于§Y40§!，则§H$job_clerk_plural$§!岗位额外产出§Y$unity$§!§!"
@@ -173,8 +173,9 @@
  
  civic_tooltip_not_theme_civic_and_culture:0 "不具备其它任何§Y主题理念§!、§E次主题理念§!与§P国民文化§!"
  civic_tooltip_not_theme_civic:0 "不具备其它任何§Y主题理念§!"
- civic_tooltip_not_theme_civic_if_not_anarchism:0 "不具备除了§Y$civic_anarchism$§!以外的其它任何§Y主题理念§!"
+ civic_tooltip_not_theme_civic_if_not_anarchism:0 "不具备除了§H$civic_anarchism$§!以外的其它任何§Y主题理念§!"
  civic_tooltip_not_theme_civic_if_not_free:0 "不具备除了§Y$civic_shared_burden$§!或§Y$civic_beacon_of_liberty$§!以外的其它任何§Y主题理念§!"
+ civic_tooltip_not_theme_civic_if_not_feudal:0 "不具备除了§Y$civic_feudal_realm$§!以外的其它任何§Y主题理念§!"
  civic_tooltip_not_subtopic_civic:0 "不具备其它任何§E次主题理念§!"
  
  civic_tooltip_not_network_of_the_mind:0 "没有国民理念：§Y$civic_network_of_the_mind$§!"

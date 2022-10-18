@@ -218,6 +218,7 @@ can_build_gaiaseeder_machine = {
 		}
 	}
 }
+
 can_build_overlord_gaiaseeder_machine = {
 	# Can always build on ideal worlds
 	if = {
@@ -390,6 +391,13 @@ can_build_overlord_gaiaseeder_machine = {
 			fail_text = gaiaseeders_special_habitability_preference
 			owner = { has_technology = tech_ecological_adaptation }
 		}
+	}
+}
+
+is_relentless_industrialist_empire = {
+	OR = {
+		has_valid_civic = civic_industrial_economy
+		has_valid_civic = civic_industrial_economy_corporate
 	}
 }
 
@@ -797,5 +805,77 @@ not_has_building_foundry = {
 	NOR = {
 		has_building = building_foundry_2
 		has_building = building_foundry_3
+	}
+}
+
+allow_bureaucratic_building = { # NOT corporate & regular empire
+	owner = { is_regular_empire = yes }
+	NOT = {	has_modifier = slave_colony	}
+	OR = {
+		owner = {
+			OR = {
+				has_policy_flag = full_decentralization
+				has_policy_flag = high_decentralization
+			}
+		}
+		AND = {
+			owner = {
+				OR = {
+					has_policy_flag = partial_decentralization
+					has_policy_flag = concentration_of_power
+				}
+			}
+			planet = {
+				OR = {
+					is_capital = yes
+					is_sector_capital = yes
+				}
+			}
+		}
+		AND = {
+			owner = {
+				OR = {
+					has_policy_flag = centralized_state
+					has_policy_flag = excessive_centralization
+				}
+			}
+			planet = { is_capital = yes }
+		}
+	}
+}
+
+is_eci_megacorp = {
+	owner = {
+		OR = {
+			is_megacorp = yes
+			has_authority = auth_corporate
+			has_civic = civic_galactic_sovereign_megacorp
+			has_civic = civic_family_business
+			has_civic = civic_world_cooperative
+		}
+	}
+}
+
+is_adminless_country = { # 自动化行政国家
+	owner = {
+		OR = {
+			has_valid_civic = civic_OGAS
+			has_valid_civic = civic_cybercap
+			has_valid_civic = civic_corporate_cybercap
+			has_valid_civic = civic_anarchism
+			AND = {
+				has_valid_civic = civic_shared_burden
+				has_ascension_perk = ap_future_society
+			}
+		}
+	}
+}
+
+is_clean_government_country = { # 民主廉政国家
+	owner = {
+		OR = {
+			has_valid_civic = civic_democracy_and_clean_government
+			has_valid_civic = civic_business_reporting_administration
+		}
 	}
 }
