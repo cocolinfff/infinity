@@ -633,11 +633,10 @@ civic_consumerism = {
 	}
 	modifier = {
 		pop_lifestyle_trade_mult = 0.25
-		pop_category_rulers_consumer_goods_upkeep_add = 1.5
-		pop_category_specialists_consumer_goods_upkeep_add = 0.75
-		pop_category_workers_consumer_goods_upkeep_add = 0.25
-		planet_artisans_minerals_upkeep_add = 1
-		pop_ethic_capitalism_attraction_mult = 0.15
+		pop_category_rulers_consumer_goods_upkeep_add = 0.5
+		pop_category_specialists_consumer_goods_upkeep_add = 0.20
+		pop_category_workers_consumer_goods_upkeep_add = 0.05
+		planet_merchants_consumer_goods_produces_add = 1
 	}
 }
 
@@ -676,11 +675,9 @@ civic_super_fast_paced_life = {
 		base = 5
 	}
 	modifier = {
-		pop_growth_speed_reduction = 0.2
-		planet_pops_consumer_goods_upkeep_mult = 0.1
-		planet_pops_organics_food_upkeep_mult = 0.1
-		planet_pops_minerals_upkeep_mult = 0.1
-		pop_ethic_capitalism_attraction_mult = 0.15
+		pop_growth_speed = -0.2
+		pop_lifestyle_trade_mult = 0.25
+		planet_jobs_worker_produces_mult = 0.25
 	}
 }
 
@@ -860,62 +857,6 @@ civic_idyllic_bloom = {
 	}
 }
 
-#调和主义
-civic_conciliatory = {
-	description = civic_tooltip_conciliatory_effects
-	potential = {
-		ethics = {
-			NOT = {
-				value = ethic_gestalt_consciousness
-			}
-		}
-	}
-	possible = {
-		civics = {
-			NOR = {
-				text = civic_tooltip_not_theme_civic
-				value = civic_anarchism
-				value = civic_network_of_the_mind
-				value = civic_network_of_the_mind_machine
-				value = civic_network_of_the_mind_true_hive
-				value = civic_feudal_realm
-				value = civic_eternal_kingship
-				value = civic_shared_burden
-				value = civic_socialistic
-				value = civic_ultimate_collective
-				value = civic_beacon_of_liberty
-				value = civic_state_monopoly
-				value = civic_citizen_service
-				value = civic_military_junta
-				value = civic_military_dictatorship
-				value = civic_peaceful_republic
-				value = civic_executive_committee
-				value = civic_philosopher_king
-				value = civic_spiritual_democracy
-				value = civic_divine_council
-				value = civic_imperial_cult
-				value = civic_cyber_demos_cratos
-				value = civic_science_directorate
-				value = civic_cyber_dictatorship
-			}
-			NOR = {
-				text = civic_tooltip_not_subtopic_civic
-				value = civic_feudal_realm
-				value = civic_stratocracy
-				value = civic_byzantine_bureaucracy
-				value = civic_technocracy
-				value = civic_exalted_priesthood
-				value = civic_merchant_guilds
-				value = civic_peoples_republic
-				value = civic_glorious_pioneer
-			}
-		}
-	}
-	random_weight = {
-		base = 5
-	}
-}
-
 #远视主义
 civic_ultravisionary_socialism = {
 	description = civic_tooltip_ultravisionary_socialism_effects
@@ -1028,6 +969,7 @@ civic_futuristic_art = {
 		base = 5
 	}
 	modifier = {
+		planet_researchers_unity_produces_add = 1
 		country_unity_produces_mult = 0.10
 	}
 }
@@ -1162,6 +1104,11 @@ civic_art_country = {
 				value = civic_corpus
 			}
 		}
+	}
+	modifier = {
+		planet_entertainers_unity_produces_add = 1
+		planet_entertainers_society_produces_add = 3
+		planet_culture_workers_unity_produces_add = 2
 	}
 }
 
@@ -1331,6 +1278,9 @@ civic_machine_soul_servant = {
 			}
 		}
 	}
+	modifier = {
+		#planet_pop_assembly_add = 0.5
+	}
 	modification = no
 	random_weight = {
 		base = 15
@@ -1437,6 +1387,12 @@ civic_knowledge_seeker = {
 				value = civic_defenders_faith
 			}
 		}
+	}
+	modifier = {
+		planet_priests_unity_produces_add = -1
+		planet_priests_physics_research_produces_add = 2
+		planet_priests_society_research_produces_add = 2
+		planet_priests_engineering_research_produces_add = 2
 	}
 	random_weight = {
 		base = 15
@@ -1639,7 +1595,6 @@ civic_eternal_jihad = {
 		country_power_projection_influence_produces_add = 0.5
 		pop_factions_unity_produces_add = -0.25
 		country_unity_produces_mult = -0.1
-		pop_cat_ruler_political_power = 2
 	}
 }
 
@@ -1672,11 +1627,12 @@ civic_liberation_theology = {
 		base = 15
 	}
 	modifier = {
-		job_priest_per_pop = 0.03
+		planet_priests_unity_produces_add = -1
+		planet_priests_energy_produces_add = 2
+		planet_priests_food_produces_add = 2
 		country_unity_produces_mult = 0.2
 		planet_jobs_worker_produces_mult = 0.25
 		planet_pops_organics_food_upkeep_mult = 0.15
 		planet_pops_organics_minerals_upkeep_mult = 0.15
-		pop_ethic_socialism_attraction_mult = 0.15
 	}
 }

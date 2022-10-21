@@ -568,3 +568,7 @@
  factions.2000.desc.traditionalist:0 "由于政府接纳了这个派系，他们表面上显得更加§H教权主义§!。\n\n"
  factions.2000.desc.xenoist:0 "由于政府接纳了这个派系，他们表面上显得更加§H崇外主义§!。\n\n"
  
+
+ vanguard_unit:0 "不朽者"
+ vanguard_unit_plural:0 "不朽者"
+ pop_category_vanguard_unit:0 "不朽者"

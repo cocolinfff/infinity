@@ -1,3 +1,54 @@
+machine_soul = {
+	rank = 0
+	clothes_texture_index = 1
+
+	change_job_threshold = 1.25
+
+	assign_to_pop = {
+		exists = owner
+		owner = {
+			has_civic = civic_machine_soul_servant
+		}
+		has_trait = "trait_mechanical"
+	}
+	weight = {
+		weight = 5
+	}
+
+	# scope: pop to be resettled
+	allow_resettlement = {
+		always = yes
+	}
+
+	resettlement_cost = {
+		energy = 100
+		unity = 50
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			can_assemble_budding_pop = yes
+		}
+		planet_pop_assembly_organic_add = @plantoid_budding_rate
+	}
+
+	pop_modifier = {
+		pop_political_power = 10
+		pop_housing_usage_base = 1
+		pop_amenities_usage_no_happiness_base = 1
+	}
+	resources = {
+		category = pop_category_bio_trophy
+		upkeep = {
+			trigger = {
+				has_trait = "trait_mechanical"
+			}
+			energy = @living_standard_phototrophic_normal
+			consumer_goods = @living_standard_luxuries_very_high
+		}
+	}
+}
+
 guerrilla = {
 	rank = 1
 	clothes_texture_index = 2
@@ -72,18 +123,6 @@ guerrilla = {
 	resources = {
 		category = pop_category_workers
 
-		# Utopian living standards
-		produces = {
-			trigger = {
-				has_living_standard = { type = living_standard_utopian }
-			}
-			unity = 1
-		}
-
-		#人口凝聚力消耗
-		upkeep = {
-			unity = 1
-		}
 
 		# Organic Upkeep
 		upkeep = {
@@ -302,6 +341,48 @@ guerrilla = {
 			}
 			energy = @living_standard_energy_normal
 			consumer_goods = @living_standard_luxuries_very_low
+		}
+	}
+}
+
+vanguard_unit = {
+	rank = 10
+	clothes_texture_index = 1
+	change_job_threshold = 3
+	assign_to_pop = {
+		exists = owner
+		owner = {
+			has_civic = civic_forever_with_us
+		}
+		has_trait = trait_vanguard_hive_mind
+	}
+	weight = {
+		weight = 10000
+	}
+	allow_resettlement = {
+		always = yes
+	}
+
+	resettlement_cost = {
+		unity = 1000
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			can_assemble_budding_pop = yes
+		}
+		planet_pop_assembly_organic_add = @plantoid_budding_rate
+	}
+
+	pop_modifier = {
+		pop_political_power = 5
+		pop_housing_usage_base = 1
+		pop_amenities_usage_no_happiness_base = 1
+	}
+	resources = {
+		category = pop_category_vanguard_unit
+		upkeep = {
+			energy = 1
 		}
 	}
 }

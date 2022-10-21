@@ -1,0 +1,1070 @@
+namespace = ethic_base
+
+country_event = { # 1-10 月检 | 地块 | 自迭代
+	id = ethic_base.1
+	is_triggered_only = yes
+	hide_window = yes 
+	immediate = {
+		every_owned_planet = {
+			planet_event = { id = ethic_base.2 days = 5 }
+		}
+		country_event = { id = ethic_base.1 days = 60 }
+	}
+}
+
+planet_event = { # 1-10 月检 | 地块 | 自迭代
+	id = ethic_base.2
+	is_triggered_only = yes
+	hide_window = yes 
+	immediate = {
+		if = {
+			limit = {
+				has_building = building_colony_shelter #殖民地中心
+				NOT = { has_deposit = d_ethic_building_1 }
+			}
+			remove_deposit = d_ethic_building_2
+			remove_deposit = d_ethic_building_3
+			remove_deposit = d_ethic_building_4
+			remove_deposit = d_ethic_building_5
+			add_deposit = d_ethic_building_1
+		}
+
+		else_if = {
+			limit = {
+				has_building = building_capital #行星机关
+				NOT = { has_deposit = d_ethic_building_2 }
+			}
+			remove_deposit = d_ethic_building_3
+			remove_deposit = d_ethic_building_4
+			remove_deposit = d_ethic_building_1
+			remove_deposit = d_ethic_building_5
+			add_deposit = d_ethic_building_2
+		}
+
+		else_if = {
+			limit = {
+				has_building = building_major_capital #星球首府
+				NOT = { has_deposit = d_ethic_building_3 }
+			}
+			remove_deposit = d_ethic_building_4
+			remove_deposit = d_ethic_building_2
+			remove_deposit = d_ethic_building_1
+			remove_deposit = d_ethic_building_5
+			add_deposit = d_ethic_building_3
+		}
+
+		else_if = {
+			limit = {
+				has_building = building_system_capital #星系首都
+				NOT = { has_deposit = d_ethic_building_4 }
+			}
+			remove_deposit = d_ethic_building_3
+			remove_deposit = d_ethic_building_2
+			remove_deposit = d_ethic_building_1
+			remove_deposit = d_ethic_building_5
+			add_deposit = d_ethic_building_4
+		}
+
+		else_if = {
+			limit = {
+				has_building = building_imperial_capital #帝国宫殿
+				NOT = { has_deposit = d_ethic_building_5 }
+			}
+			remove_deposit = d_ethic_building_4
+			remove_deposit = d_ethic_building_3
+			remove_deposit = d_ethic_building_2
+			remove_deposit = d_ethic_building_1
+			add_deposit = d_ethic_building_5
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_building = building_hab_major_capital #原版T2居住站
+					has_building = building_hab_system_capital #居住站行政枢纽
+				}	
+				NOR = {  
+					has_deposit = d_ethic_building_11 
+					has_deposit = d_ethic_building_13
+				}
+			}
+			remove_deposit = d_ethic_building_11
+			remove_deposit = d_ethic_building_12
+			add_deposit = d_ethic_building_13
+		}
+		else_if = {
+			limit = {
+				has_building = building_hab_major_capital #居住站首都
+				NOR = {  #原版的居住站首府是对应T2T3，考虑到升级不能突然到T3，这样写应该没有问题
+					has_deposit = d_ethic_building_11 
+					has_deposit = d_ethic_building_13
+				}
+			}
+			remove_deposit = d_ethic_building_12
+			remove_deposit = d_ethic_building_13
+			add_deposit = d_ethic_building_11
+		}
+
+		else_if = {
+			limit = {
+				has_building = building_hab_capital #居住站行政中心  #原版T1
+				NOT = { has_deposit = d_ethic_building_12 }
+			}
+			remove_deposit = d_ethic_building_11
+			remove_deposit = d_ethic_building_13
+			add_deposit = d_ethic_building_12
+		}
+	}
+}
+
+country_event = { # 11-100 年检 | 朝闻道
+	id = ethic_base.11
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {	has_valid_civic = civic_zhaowen_dao	}
+
+	immediate = {
+		random_list = {
+			67 = {	}
+			33 = {
+				country_event = { id = ethic_base.12 random = 360 }
+			}
+		}
+	}
+}
+
+country_event = { # 朝闻道 具体事件
+	id = ethic_base.12
+	is_triggered_only = yes
+	desc = ethic_civic_yearly.20.desc
+	title = ethic_civic_yearly.20.title
+    trigger = { years_passed > 10 }
+	immediate = {
+		random_owned_leader = { save_event_target_as = dedication_leader }
+	}
+	option = {
+		name = ethic_civic_yearly.20.a
+		add_resource = {
+			physics_research = 1000
+			society_research = 1000
+			engineering_research = 1000
+			multiplier = event_target:dedication_leader.trigger:has_skill
+		}
+		event_target:dedication_leader = { kill_leader = { show_notification = no } }
+	}
+}
+
+country_event = { # 永远同在
+	id = ethic_base.13
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {	has_valid_civic = civic_forever_with_us }
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_flag = vanguard_set_started } }
+			set_variable = { which = vanguard_num value = 0 }
+			set_country_flag = vanguard_set_started
+		}
+		capital_scope = {
+			if = {
+				limit = {	years_passed < 10	}
+				add_vanguard_pop = { POSSIBILITY = 0 }
+			}
+			else_if = {
+				limit = { check_variable = { which = vanguard_num value < trigger:num_ascension_perks } }
+				add_vanguard_pop = { POSSIBILITY = 75 }
+			}
+			else = {
+				add_vanguard_pop = { POSSIBILITY = 5 }
+			}
+		}		
+	}
+}
+
+country_event = { # 永远同在 具体事件
+	id = ethic_base.14
+	is_triggered_only = yes
+	desc = ethic_civic_yearly.4.desc
+	title = ethic_civic_yearly.4.title
+	option = {
+		name = ethic_civic_yearly.4.a
+	}
+	option = {
+		name = ethic_civic_yearly.4.b
+		hidden_effect = {
+			set_country_flag = vanguard_no_window
+		}
+	}
+}
+
+
+country_event = { # 资本狂热 同化
+	id = ethic_base.15
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {	has_civic = civic_corpus }
+	
+	immediate = {
+		every_owned_planet = {
+			if = {
+				limit = {
+					num_assigned_jobs = {
+						job = reemployment_HR_supervisor
+						value >= 1
+					}
+				}
+				while = {
+					count = 1
+					random_owned_pop = {
+						limit = {
+							OR = {
+								is_pop_category = specialist
+								is_pop_category = worker
+								is_pop_category = slave
+							}
+							NOT = { has_job = reemployment_HR_supervisor }
+							is_robotic_species = no
+							NOR = {
+								has_trait = trait_nerve_stapled
+								has_trait = trait_zombie
+							}
+						}
+						modify_species = {
+							species = this
+							add_trait = trait_flesh_components
+							add_traits_at_start_of_list = yes
+						}
+						if = {
+							limit = {
+								has_trait = trait_syncretic_proles
+							}
+							modify_species = {
+								species = this
+								remove_trait = trait_syncretic_proles
+							}	
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # 清除奴性
+	id = ethic_base.16
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			is_egalitarian = yes
+			has_ascension_perk = ap_evolutionary_mastery
+			has_edict = equal_gift
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+	immediate = {
+		every_owned_pop = {
+			if = {
+				limit = {
+					is_same_species = root
+					has_trait = trait_syncretic_proles
+				}
+				modify_species = {
+					species = this
+					remove_trait = trait_syncretic_proles
+				}
+			}
+			if = {
+				limit = {
+					is_same_species = root
+					has_trait = trait_slave_gene
+				}
+				modify_species = {
+					species = this
+					remove_trait = trait_slave_gene
+				}
+			}
+		}
+	}
+}
+
+country_event = {  # 100-1000 开局 | machine paradise start set
+    id = ethic_base.101
+    hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_civic = civic_machine_paradise_lost }
+	immediate = {
+		give_technology = { tech = tech_terrestrial_sculpting }
+		give_technology = { tech = tech_paradise_dome }
+        random_owned_pop = {
+			limit = { has_citizenship_type = { type = citizenship_organic_trophy } }
+			species = { set_species_flag = original_organic_species_of_@root }
+		}
+	}
+}
+
+event = { # base technology & modifiers & values
+	id = ethic_base.102
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {	has_country_flag = flag_startertech_set	}
+				is_country_type = default
+			}
+			if = {
+				limit = { has_civic = civic_forever_with_us }
+				give_technology = {	tech = tech_synthetic_leaders }
+			}
+			if = {
+				limit = {	has_civic = civic_star_settlers	}
+				give_technology = {	tech = tech_galactic_ambitions }
+			}
+			if = {
+				limit = {	has_civic = civic_industrial_economy }
+				give_technology = {	tech = tech_mineral_purification_1 }
+			}
+			if = {
+				limit = { has_origin = origin_slave_race }
+				give_technology = {	tech = tech_neural_implants }
+				give_technology = {	tech = tech_genome_mapping }
+			}
+			if = {
+                limit = {	has_civic = civic_exploration }
+				give_technology = {	tech = tech_automated_exploration }
+			}
+			if = {
+				limit = { has_civic = civic_warrior_culture	}
+				give_technology = {	tech = tech_centralized_command }
+			}
+			if = {
+				limit = { has_civic = civic_exalted_priesthood }
+				give_technology = {	tech = tech_holographic_rituals }
+			}
+			if = {
+				limit = { has_civic = civic_industrial_automatation }
+				give_technology = {	tech = tech_innovations }
+			}
+			if = {
+				limit = { has_origin = origin_machine_cult	}
+				give_technology = {	tech = tech_robotic_workers }
+			}
+			if = {
+				limit = { has_origin = origin_symbiotic_race }
+				give_technology = {	tech = tech_genome_mapping	}
+			}
+			if = {
+				limit = { has_civic = civic_corporate_dominion }
+				give_technology = {	tech = tech_space_trading }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_civic = civic_environmentalist
+						has_civic = civic_keepers_harmony
+					}
+				}
+				give_technology = {	tech = tech_paradise_dome }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_civic = civic_democracy_and_clean_government
+						has_civic = civic_business_reporting_administration
+					}
+				}
+				give_technology = {	tech = tech_effective_bureaucracy }
+			}
+			if = {
+				limit = {
+					has_civic = civic_terraforming
+				}
+				give_technology = {
+					tech = tech_terrestrial_sculpting
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_enlightment
+					nor = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+				give_technology = {
+					tech = tech_heritage_site
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_enlightment
+					or = {
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+				give_technology = {
+					tech = tech_holographic_rituals
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_cyber_dictatorship
+				}
+				give_technology = {
+					tech = tech_administrative_ai
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_biochemical_warrior
+				}
+				give_technology = {
+					tech = tech_dangerous_wildlife
+				}
+				give_technology = {
+					tech = tech_dense_jungle
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_information_warrior
+				}
+				give_technology = {
+					tech = tech_decryption_1
+				}
+				give_technology = {
+					tech = tech_decryption_2
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_corpus
+				}
+				give_technology = {
+					tech = tech_tracking_implants
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_curse_of_blood_kin
+				}
+				give_technology = {
+					tech = tech_selected_lineages
+				}
+			}
+			if = {
+				limit = {
+					has_civic = civic_hive_devouring_swarm
+				}
+				give_technology = {
+					tech = tech_gene_tailoring
+				}
+				set_variable = {
+					which = species_eaten
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_origin = origin_taking_care_of_god
+						has_origin = origin_galaxy_light
+						has_origin = origin_zarqlanism_idea
+					}
+				}
+				while = {
+					count = 15
+					add_random_research_option = {
+						add_progress = 0.6
+						ignore_prereqs = yes
+						area = engineering
+						tier = 1
+						fail_effects = {
+							add_random_research_option = {
+								add_progress = 0.6
+								ignore_prereqs = yes
+								area = engineering
+								tier = 2
+								fail_effects = {
+									add_random_research_option = {
+										add_progress = 0.6
+										ignore_prereqs = yes
+										area = engineering
+										tier = 3
+										fail_effects = {
+											add_random_research_option = {
+												add_progress = 0.6
+												ignore_prereqs = yes
+												area = engineering
+												tier = 4
+												fail_effects = {
+													add_random_research_option = {
+														add_progress = 0.6
+														ignore_prereqs = yes
+														area = engineering
+														tier = 5
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					add_random_research_option = {
+						add_progress = 0.6
+						ignore_prereqs = yes
+						area = physics
+						tier = 1
+						fail_effects = {
+							add_random_research_option = {
+								add_progress = 0.6
+								ignore_prereqs = yes
+								area = physics
+								tier = 2
+								fail_effects = {
+									add_random_research_option = {
+										add_progress = 0.6
+										ignore_prereqs = yes
+										area = physics
+										tier = 3
+										fail_effects = {
+											add_random_research_option = {
+												add_progress = 0.6
+												ignore_prereqs = yes
+												area = physics
+												tier = 4
+												fail_effects = {
+													add_random_research_option = {
+														add_progress = 0.6
+														ignore_prereqs = yes
+														area = physics
+														tier = 5
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					add_random_research_option = {
+						add_progress = 0.6
+						ignore_prereqs = yes
+						area = society
+						tier = 1
+						fail_effects = {
+							add_random_research_option = {
+								add_progress = 0.6
+								ignore_prereqs = yes
+								area = society
+								tier = 2
+								fail_effects = {
+									add_random_research_option = {
+										add_progress = 0.6
+										ignore_prereqs = yes
+										area = society
+										tier = 3
+										fail_effects = {
+											add_random_research_option = {
+												add_progress = 0.6
+												ignore_prereqs = yes
+												area = society
+												tier = 4
+												fail_effects = {
+													add_random_research_option = {
+														add_progress = 0.6
+														ignore_prereqs = yes
+														area = society
+														tier = 5
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_origin = origin_zarqlanism_idea
+				}
+				add_relic = r_severed_head
+				set_global_flag = player_gets_zarqlan
+			}
+            if = {
+                limit = { has_valid_civic = civic_anarchism }
+                add_modifier = { modifier = anarchism_society_leaders days = -1 }
+            }
+            if = {
+                limit = {
+					OR = {
+						has_valid_civic = civic_aristocratic_elite
+						has_valid_civic = civic_coalition_government
+					}
+				}
+                add_modifier = { modifier = coalition_government_society_leaders days = -1 }
+            }
+			set_country_flag = flag_startertech_set
+		}
+	}
+}
+
+event = { # 隔离黄线
+	id = ethic_base.99999
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {}
+}
+
+event = { # 隔离黄线
+	id = ethic_base.99998
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {}
+}
+
+event = { # set base building 
+	id = ethic_base.103
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_update_modifiers_batch = begin
+		every_country = {
+			limit = {
+				OR = {
+					has_authority = auth_corporate
+					has_civic = civic_galactic_sovereign_megacorp
+					has_civic = civic_family_business
+					has_civic = civic_world_cooperative
+					has_valid_civic = civic_triple_the_profit
+				}
+			}
+			capital_scope = {
+				remove_building = building_bureaucratic_1
+				add_building = building_corporate_monument
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_anarchism
+					has_valid_civic = civic_democracy_and_clean_government
+				}
+				NOT = { has_valid_civic = civic_OGAS }
+			}
+			civic_anarchism_start_buildings = yes
+		}
+		every_country = {
+			limit = {
+				has_valid_civic = civic_OGAS
+			}
+			civic_OGAS_start_buildings = yes
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_cybercap
+					has_valid_civic = civic_corporate_cybercap
+				}
+			}
+			civic_cybercap_start_buildings = yes
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_anglers_lithoid
+				}
+			}
+			civic_anglers_lithoid_start_buildings = yes
+		}
+		every_country = {
+			limit = {
+				has_civic = civic_machine_liberator
+			}
+			civic_machine_liberator_start_buildings = yes
+		}
+		every_country = {
+			limit = {
+				has_origin = origin_wizarding_world
+			}
+			capital_scope = {
+				add_modifier = { modifier = "ley_rift" days = -1 }
+			}
+		}
+		every_country = {
+			limit = {
+				is_ai = yes
+				has_origin = origin_imperial_vassal
+			}
+			country_event = { id = origin.5711 }
+		}
+		every_country = {
+			limit = {
+				has_civic = civic_forever_with_us
+			}
+			civic_forever_with_us_start_set = yes
+		}
+		every_country = {
+			limit = {
+				has_civic = civic_feudal_realm
+				NOT = { has_origin = origin_toxic_knights }
+			}
+			capital_scope = {
+				remove_building = building_capital
+				add_building = building_order_keep
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+event = { # job overhaul
+    id = ethic_base.104
+    hide_window = yes
+    fire_only_once = yes
+    immediate = {
+		every_country = {
+		    add_modifier = {
+		    	modifier = post_adjustment_patch
+		    	days = 10
+		    }
+		}
+	}
+}
+
+
+country_event = { # 1000-1100 后发先至 | start set
+    id = ethic_base.1001
+	hide_window = yes
+	is_triggered_only = yes
+    trigger = { has_civic = civic_procrastination }
+	immediate = {
+        set_variable = { which = ethic_civic_procrastination_value value = 1 }
+		country_event = { id = ethic_base.1002 days = 7200 }
+	}
+}
+
+country_event = { # 后发先至 | yearly
+    id = ethic_base.1002
+	title = "ethic_civic_procrastination.name"
+	desc = "ethic_civic_procrastination.desc"
+	picture = GFX_evt_arguing_senate
+	is_triggered_only = yes
+    trigger = { has_civic = civic_procrastination }
+    option = {
+		name = "ethic_civic_procrastination.a"
+		add_modifier = {
+			modifier = ethic_civic_procrastination_1
+            multiplier = ethic_civic_procrastination_value
+			days = -1
+		}
+		force_remove_civic = civic_procrastination
+		change_government = {
+			cooldown = no
+			remove_invalid_civics = yes
+		}
+	}
+	
+	option = {
+		name = "ethic_civic_procrastination.b"
+		custom_tooltip = ethic_civic_procrastination_effects
+		hidden_effect = { 
+            change_variable = { which = ethic_civic_procrastination_value value = 1 }
+            country_event = { id = ethic_base.1002 days = 7200 } 
+        }
+	}
+}
+
+country_event = { # 1200-1300 | 领袖基础等级 | 国策 | 刷新
+    id = ethic_base.1200 
+    hide_window = yes
+	is_triggered_only = yes
+    trigger = {
+        OR = {
+            has_valid_civic = civic_military_dictatorship
+            has_valid_civic = civic_meritocracy
+            has_valid_civic = civic_science_knight
+        }
+    }
+	immediate = {
+        if = {
+            limit = {
+                has_valid_civic = civic_military_dictatorship
+	            from = {
+	            	OR = {
+	            		leader_class = admiral
+	            		leader_class = general
+	            	}
+	            }
+            }
+            from = {
+			    add_skill = 2
+		    }
+        }
+		if = {
+            limit = {
+                has_valid_civic = civic_meritocracy
+		        from = {
+		        	OR = {
+		        		leader_class = admiral
+		        		leader_class = general
+		        		leader_class = scientist
+		        		leader_class = governor
+		        	}
+		        }
+            }
+            from = {
+			    add_skill = 1
+		    }
+        }
+        if = {
+            limit = {
+                has_valid_civic = civic_science_knight
+		        from = {
+		        	leader_class = scientist
+		        }
+            }
+            from = {
+		    	add_skill = 1
+		    }
+        }
+	}
+}
+
+
+country_event = { # 1200-1300 | 领袖基础等级 | 国策 | 一次性调整
+    id = ethic_base.1201 
+    hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+        if = {
+            limit = {
+                has_valid_civic = civic_military_dictatorship
+            }
+            every_pool_leader = {
+                limit = {
+                    OR = {
+	            		leader_class = admiral
+	            		leader_class = general
+	            	}
+                }
+			    add_skill = 2
+		    }
+        }
+		if = {
+            limit = {
+                has_valid_civic = civic_meritocracy
+            }
+            every_pool_leader = {
+                limit = {
+                    OR = {
+	            		leader_class = admiral
+		        		leader_class = general
+		        		leader_class = scientist
+		        		leader_class = governor
+	            	}
+                }
+			    add_skill = 1
+		    }
+        }
+        if = {
+            limit = {
+                has_valid_civic = civic_science_knight
+            }
+            every_pool_leader = {
+                limit = { leader_class = scientist }
+		    	add_skill = 1
+		    }
+        }
+	}
+}
+
+country_event = { # 1200-1300 | 领袖基础等级 | 未来 | 刷新
+    id = ethic_base.1202 
+    hide_window = yes
+	is_triggered_only = yes
+    trigger = { has_technology = tech_ascension_theory }
+	immediate = {
+        if = {
+            limit = {
+                has_active_tradition = tr_future_military
+            }
+            from = {
+                limit = {
+                    OR = {
+	            		leader_class = admiral
+	            		leader_class = general
+	            	}
+                }
+			    set_skill = 5
+		    }
+        }
+        if = {
+            limit = {
+                OR = {
+		        	has_active_tradition = tr_future_technology
+		        	has_active_tradition = tr_future_technology_soc
+		        }
+            }
+            from = {
+                limit = {
+                    OR = {
+	            		leader_class = scientist
+	            	}
+                }
+			    set_skill = 3
+		    }
+        }
+        if = {
+            limit = {
+                OR = {
+		        	has_active_tradition = tr_future_economy
+		        	has_active_tradition = tr_future_economy_soc
+		        	has_active_tradition = tr_future_economy_state_owned_enterprises
+		        	has_active_tradition = tr_future_economy_ges
+		        }
+            }
+            from = {
+                limit = {
+                    OR = {
+	            		leader_class = governor
+	            	}
+                }
+			    set_skill = 3
+		    }
+        }
+	}
+}
+
+country_event = { # 1200-1300 | 领袖基础等级 | 未来 | 一次性调整
+    id = ethic_base.1203 
+    hide_window = yes
+	is_triggered_only = yes
+    trigger = { has_technology = tech_ascension_theory }
+	immediate = {
+        if = {
+            limit = {
+                has_active_tradition = tr_future_military
+            }
+            every_pool_leader = {
+                limit = {
+                    OR = {
+	            		leader_class = admiral
+	            		leader_class = general
+	            	}
+                }
+			    set_skill = 5
+		    }
+        }
+        if = {
+            limit = {
+                OR = {
+		        	has_active_tradition = tr_future_technology
+		        	has_active_tradition = tr_future_technology_soc
+		        }
+            }
+            every_pool_leader = {
+                limit = {
+                    OR = {
+	            		leader_class = scientist
+	            	}
+                }
+			    set_skill = 3
+		    }
+        }
+        if = {
+            limit = {
+                OR = {
+		        	has_active_tradition = tr_future_economy
+		        	has_active_tradition = tr_future_economy_soc
+		        	has_active_tradition = tr_future_economy_state_owned_enterprises
+		        	has_active_tradition = tr_future_economy_ges
+		        }
+            }
+            every_pool_leader = {
+                limit = {
+                    OR = {
+	            		leader_class = governor
+	            	}
+                }
+			    set_skill = 3
+		    }
+        }
+	}
+}
+
+country_event = { # 1300-1400 | modifier | 刷新
+    id = ethic_base.1301
+    hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				has_valid_civic = civic_anarchism
+			}
+			add_modifier = { modifier = anarchism_society_leaders days = -1 }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_valid_civic = civic_aristocratic_elite
+					has_valid_civic = civic_coalition_government
+				}
+			}
+			add_modifier = { modifier = coalition_government_society_leaders days = -1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_valid_civic = civic_anarchism }
+				has_modifier = anarchism_society_leaders
+			}
+			remove_modifier = { modifier = anarchism_society_leaders }
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_valid_civic = civic_aristocratic_elite
+					has_valid_civic = civic_coalition_government
+				}
+				has_modifier = coalition_government_society_leaders
+			}
+			remove_modifier = { modifier = coalition_government_society_leaders }
+		}
+	}
+}
+
+country_event = { # 1300-1400 | modifier | 刷新 | 安人飞升
+	id = ethic_base.1302
+	is_triggered_only = yes
+	hide_window = yes 
+	trigger = {	is_ai = no }
+	immediate = {
+		if = {
+			limit = {
+				has_ascension_perk = ap_anarchy_utopia
+				NOT = { has_valid_civic = civic_anarchism }
+				has_modifier = mod_tr_tr_ancom_firm_ideal_no
+			}
+			remove_modifier = mod_tr_tr_ancom_firm_ideal_no
+			add_modifier = { modifier = mod_tr_tr_ancom_firm_ideal }
+		}
+		if = {
+			limit = {
+				has_ascension_perk = ap_anarchy_utopia
+				has_valid_civic = civic_anarchism 
+				has_modifier = mod_tr_tr_ancom_firm_ideal
+			}
+			remove_modifier = mod_tr_tr_ancom_firm_ideal
+			add_modifier = { modifier = mod_tr_tr_ancom_firm_ideal_no }
+		}
+	}
+}

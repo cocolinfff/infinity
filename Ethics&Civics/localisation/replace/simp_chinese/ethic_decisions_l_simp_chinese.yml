@@ -42,9 +42,6 @@
  decision_environment_fix_effects:0 "允许消除以下星球异常：§Y不稳定的构造§!、§Y弱磁场§!、§Y潮汐锁定§!、§Y辐照天地§!、§Y生态受损§!、§Y废土辐射§!、§Y废弃的环境改造§!。"
  decision_environment_fix_effects_short:0 "允许消除以下星球异常：§Y不稳定的构造§!、§Y弱磁场§!、§Y潮汐锁定§!、§Y辐照天地§!、§Y生态受损§!、§Y废土辐射§!、§Y废弃的环境改造§!。"
  decision_environment_fix_desc:0 "这个星球已经破败不堪，但我们认为可以修复它。"
- 
- #戒严
- decision_martial_law_effects_custom:0 "星球上的每个£job_soldier£ §Y$job_soldier_plural$§!都将提供§G+5§!£stability£ §Y$PLANET_STABILITY_TITLE$§!\n£mod_job_soldier_add£ $mod_job_soldier_add$：§G+2§!\n§Y$mod_planet_jobs_produces_mult$§!减少§R33%§!\n任何种类的£mod_pop_growth_speed£ §Y人口增长§!都将减少§R50%§!\n如果幸福度大于§Y35%§!，那么£job_conscript£ §Y$job_conscript_plural$§!将提供§G+1§!£stability£ §Y$PLANET_STABILITY_TITLE$§!，反之则§R-1§!£stability£ §Y$PLANET_STABILITY_TITLE$§!"
 
  decision_economic_zone:0 "创建经济特区"
  decision_economic_zone_desc:0 "经济特区将促进该星球的经济发展，但会影响其他星球的经济状况。"

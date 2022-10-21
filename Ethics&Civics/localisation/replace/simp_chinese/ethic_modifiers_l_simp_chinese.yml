@@ -245,7 +245,25 @@
  mod_planet_jobs_ruler_unity_produces_add:0 "$pop_cat_ruler$产生的 £unity£ $unity$"
  mod_planet_jobs_media_worker_unity_produces_add:0 "£job_media_worker£ $job_media_worker$产生的 £unity£ $unity$"
  mod_planet_administrators_unity_produces_add:0 "$mod_planet_administrators_unity_produces_mult$"
+
+ mod_planet_priests_unity_produces_add:0 "£job_priest£ $job_priest$产生的 £unity£ $unity$"
+ mod_planet_priests_minerals_produces_add:0 "£job_priest£ $job_priest$产生的 £minerals£ $minerals$"
+ mod_planet_priests_energy_produces_add:0 "£job_priest£ $job_priest$产生的 £energy£ $energy$"
+ mod_planet_priests_food_produces_add:0 "£job_priest£ $job_priest$产生的 £food£ $food$"
+ mod_planet_priests_physcis_research_produces_add:0 "£job_priest£ $job_priest$产生的 £physcis_research£ $physcis_research$"
+ mod_planet_priests_society_research_produces_add:0 "£job_priest£ $job_priest$产生的 £society_research£ $society_research$"
+ mod_planet_priests_engineering_research_produces_add:0 "£job_priest£ $job_priest$产生的 £engineering_research£ $engineering_research$"
  
+ mod_planet_soldiers_unity_produces_add:0 "£job_soldier£ $job_soldier$产生的 £unity£ $unity$"
+ mod_planet_merchants_unity_produces_add:0 "£job_merchant£ $job_merchant$产生的 £unity£ $unity$"
+ mod_planet_merchants_consumer_goods_produces_add:0 "£job_merchant£ $job_merchant$产生的 £consumer_goods£ $consumer_goods$"
+
+ mod_planet_enforcers_unity_produces_add:0 "£job_enforcer£ $job_enforcer$产生的 £unity£ $unity$"
+ mod_planet_culture_workers_unity_produces_add:0 "£job_culture_worker£ $job_culture_worker$产生的 £unity£ $unity$"
+ mod_planet_entertainers_unity_produces_add:0 "£job_entertainer£ $job_entertainer$产生的 £unity£ $unity$"
+ mod_planet_culture_workers_society_research_produces_add:0 "£job_culture_worker£ $job_culture_worker$产生的 £society_research£ $society_research$"
+ pop_cat_workers_unity_produces_add:0 "£pop_cat_worker£ $pop_cat_workers$产生的 £unity£ $unity$"
+ mod_pop_category_workers_society_research_produces_add:0 "£pop_cat_worker£ $pop_cat_worker$产生的 £society_research£ $society_research$"
  pop_cat_pre_sapients_political_power:1 "$pop_cat_pre_sapients$政治权力"
  
  mod_decisions_cost_mult:0 "决策成本"
@@ -286,3 +304,5 @@
  
  admin_reform_modifier:0 "行政改革"
  admin_reform_modifier_desc:0 "行政改革导致了严重的行政负担，我们临时聘用了许多协作者进行管理，即使代价高昂"
+
+ 

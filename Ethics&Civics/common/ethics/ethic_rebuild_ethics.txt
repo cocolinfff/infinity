@@ -15,11 +15,10 @@ ethic_fanatic_socialism = {
 
 	country_modifier = {
 		planet_jobs_produces_mult = 0.10
-		country_trade_fee = 0.10
+		country_trade_fee = 0.2
 	}
 
 	tags = {
-		ETHIC_SOCIALISM_UNITY
 		EGALITARIAN_ETHIC_ALLOWS_UTOPIA
 		PROHIBITS_DECENT
 	}
@@ -38,11 +37,10 @@ ethic_socialism = {
 
 	country_modifier = {
 		planet_jobs_produces_mult = 0.05
-		country_trade_fee = 0.05
+		country_trade_fee = 0.10
 	}
 
 	tags = {
-		ETHIC_SOCIALISM_UNITY
 		EGALITARIAN_ETHIC_ALLOWS_SHARED_BURDEN
 	}
 
@@ -307,16 +305,14 @@ ethic_fanatic_capitalism = {
 	use_for_pops = no
 
 	tags = {
-		ETHIC_CAPITALISM_UNITY
 		ELITIST_ETHIC_ALLOWS_STRATIFIED
 		PROHIBITS_WELFARE
 		NO_CAMPAIGNS
-		REDUCED_TRADE_OUTPUT_PENALTY_PLUS
 	}
 
 	country_modifier = {
-		trade_value_mult = 0.40
-		planet_pops_consumer_goods_upkeep_mult = 0.2
+		trade_value_mult = 0.20
+		planet_jobs_upkeep_mult = -0.1
 	}
 
 	random_weight = {
@@ -334,13 +330,12 @@ ethic_capitalism = {
 	category_opposite = yes
 
 	tags = {
-		ETHIC_CAPITALISM_UNITY
-		REDUCED_TRADE_OUTPUT_PENALTY
+		PROHIBITS_WELFARE
 	}
 
 	country_modifier = {
-		trade_value_mult = 0.20
-		planet_pops_consumer_goods_upkeep_mult = 0.1
+		trade_value_mult = 0.10
+		planet_jobs_upkeep_mult = -0.05
 	}
 
 	random_weight = {

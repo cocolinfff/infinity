@@ -60,6 +60,9 @@ pop_category_slave = {
 	modifier_category = pop
 }
 
+pop_category_vanguard_unit = {
+	parent = planet_pops
+}
 
 ##岗位##
 planet_media_worker = {
@@ -242,7 +245,15 @@ planet_soldiers = {
 		upkeep
 	}
 }
-
+planet_culture_workers = {
+	parent = planet_administrators
+	generate_add_modifiers = {
+		produces
+	}
+	generate_mult_modifiers = {
+		produces
+	}
+}
 planet_priests = {
 	parent = planet_administrators
 	generate_add_modifiers = {

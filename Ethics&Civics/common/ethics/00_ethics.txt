@@ -2598,7 +2598,7 @@ ethic_gestalt_consciousness = {
 		}
 	}
 
-	cost = 5
+	cost = 3
 	category = "hive"
 	category_value = 0
 	use_for_pops = no

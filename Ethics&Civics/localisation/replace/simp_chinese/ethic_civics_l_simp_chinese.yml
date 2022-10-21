@@ -6,8 +6,8 @@
  
  civic_anarchism:1 "§E§H无政府主义§!§!"
  civic_anarchism_desc:1 "§R主题理念§!\n在很久以前，这个社会便消灭了的一切政府组织，并以人民自治原则和定期的全民集会取而代之。经过数代人的发展，这一社会模式最终成为了他们组织文明的唯一制度。\n\n"
- civic_tooltip_anarchism_effects:2 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为£job_clerk£ §Y$job_clerk$§!岗位和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - §Y人口§!额外产出§Y0.5§!£unity£ 凝聚力\n - 每一个£job_bureaucrat£ §Y$job_bureaucrat_plural$§!和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位§R-5%§!$mod_pop_cat_worker_happiness$\n - 每一个§Y$pop_cat_ruler_plural$§!岗位§R-5%§!$mod_pop_cat_specialist_happiness$\n - §R无法建造§Y$building_bureaucratic_1$§!和§Y$building_precinct_house$§!§!\n - 自愿承担工作的§Y领袖§!不需要任何招聘代价，但维护所需的£unity£ 凝聚力大幅度提高\n"
- civic_tooltip_communist_anarchism_effects:2 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - §Y人口§!额外产出§Y0.5§!£unity£ 凝聚力\n - 每一个£job_bureaucrat£ §Y$job_bureaucrat_plural$§!和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位§R-5%§!$mod_pop_cat_worker_happiness$\n - 每一个§Y$pop_cat_ruler_plural$§!岗位§R-5%§!$mod_pop_cat_specialist_happiness$\n - §R无法建造§Y$building_bureaucratic_1$§!和§Y$building_precinct_house$§!§!\n - 自愿承担工作的§Y领袖§!不需要任何招聘代价，但维护所需的£unity£ 凝聚力大幅度提高\n"
+ civic_tooltip_anarchism_effects:2 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为£job_clerk£ §Y$job_clerk$§!岗位和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - 自愿承担工作的§Y领袖§!不需要任何招聘代价，但维护所需的£unity£ 凝聚力大幅度提高\n"
+ civic_tooltip_communist_anarchism_effects:2 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - 自愿承担工作的§Y领袖§!不需要任何招聘代价，但维护所需的£unity£ 凝聚力大幅度提高\n"
  anarchism_society_leaders:1 "$civic_anarchism$"
  
  civic_network_of_the_mind:0 "§E§H意识之海§!§!"
@@ -28,15 +28,11 @@
  
  civic_altruism:0 "§E§H利他主义§!§!"
  civic_altruism_desc:0 "§R主题理念§!\n这个社会遵循其他文明嗤之以鼻的爱与友谊的精神，对朋友无私奉献，时刻准备着捍卫他人的利益。"
- civic_tooltip_altruism_effects:14 " - 对§H非灭绝者文明§!的好感§G+1000§!\n - 每个大使馆§G+10§! £unity£ 凝聚力\n - 你的§Y附庸§!可以通过修建§Y恒星基地§!以扩张领土\n - §Y失业人口§!额外产出§Y2§!£unity£ 凝聚力\n - 不能§Y要求其他国家成为朝贡国§!\n - 不能§Y关闭边界§!\n"
+ civic_tooltip_altruism_effects:14 " - 对§H非灭绝者文明§!的好感§G+1000§!\n - 每个大使馆§G+10§! £unity£ 凝聚力\n - 你的§Y附庸§!可以通过修建§Y恒星基地§!以扩张领土\n - 不能§Y要求其他国家成为朝贡国§!\n"
  
  civic_triple_the_profit:0 "§E§H三倍利润§!§!"
  civic_triple_the_profit_desc:0 "§R主题理念§!\n社会的进步产生了在过去无论如何描述都显得苍白的财富，在利润面前，资本家终于彻底撕开了蒙在自己脸上的道德面纱。"
- civic_tooltip_triple_the_profit_effects:14 " - 能够无视思潮与国策的限制进行剥削\n - 开始游戏时解锁§Y$tech_artificial_moral_codes$§!科技\n - 对其它所有帝国拥有§Y“$casus_belli_cb_despoliation$”§!宣战理由\n - $allow_raiding$\n - §Y奴隶§!人口额外产出§Y3§!£trade_value£ $TRADE_VALUE$\n$job_mogul_plural$政治权力: §Y+300%§!\n$job_merchant_plural$政治权力: §Y+300%§!\n - §Y市场经济§!下，即使处于经济危机时，$economic_factor_market$依旧会提供$economic_situation_improve$。\n - §Y市场经济§!下，无经济危机时，提供§Y+3.0§!$economic_situation_improve$和§Y+3.0§!$economic_crisis_accumulate$。"
- 
- civic_du_contrat_social:0 "§E§H第三条路§!§!"
- civic_du_contrat_social_desc:0 "§R主题理念§!\n这个文明由于其奇特的历史渊源，将共产主义理想、拜金主义消费、极权主义政治与理想主义民主奇妙的杂糅在一起，构建出了让其他文明的社会学家闻风丧胆的美丽新世界。"
- civic_tooltip_du_contrat_social_effects:14 " - 奴隶可以担任所有的岗位\n - §Y奴隶§!人口额外产出§Y1§!£trade_value£ $TRADE_VALUE$\n"
+ civic_tooltip_triple_the_profit_effects:14 " - 能够无视思潮与国策的限制进行剥削\n - 开始游戏时解锁§Y$tech_artificial_moral_codes$§!科技\n - 对其它所有帝国拥有§Y“$casus_belli_cb_despoliation$”§!宣战理由\n - $allow_raiding$\n - §Y市场经济§!下，即使处于经济危机时，$economic_factor_market$依旧会提供$economic_situation_improve$。\n - §Y市场经济§!下，无经济危机时，提供§Y+3.0§!$economic_situation_improve$和§Y+3.0§!$economic_crisis_accumulate$。"
  
  civic_forever_with_us:0 "§E§H永远同在§!§!"
  civic_forever_with_us_desc:0 "§R主题理念§!\n在这个文明很早就破解了意识的奥秘，他们通过将意识上传至网络的方式，让那些能力出众的人才在死后也能继续为人民服务。"
@@ -44,7 +40,7 @@
  
  civic_philosopher_king:1 "§H§Y哲人王§!§!"
  civic_philosopher_king_desc:0 "§Y主题理念§!\n仅仅统治是不够的。国家的航船必须由一个拥有足够智慧和知识的国王来掌舵。"
- civic_tooltip_philosopher_king_effects:0 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_supervisor£ §Y$job_supervisor_plural$§!，产出 £unity£ 凝聚力，提高 £mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$，并大幅增加$mod_planet_jobs_society_research_produces_mult$\n - £job_bureaucrat£ §Y$job_bureaucrat_plural$§!额外提高§Y1§! £stability£ $PLANET_STABILITY_TITLE$\n - 你的§Y统治者§!与§Y总督§!都更不可能获得负面特质\n"
+ civic_tooltip_philosopher_king_effects:0 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_supervisor£ §Y$job_supervisor_plural$§!，产出 £unity£ 凝聚力，提高 £mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$，并大幅增加$mod_planet_jobs_society_research_produces_mult$\n - 你的§Y统治者§!与§Y总督§!都更不可能获得负面特质\n"
  
  civic_military_dictatorship:0 "§H§Y战争领主§!§!"
  civic_military_dictatorship_desc:0 "§Y主题理念§!\n该社会中的统治者传统上是军队的现役总司令，他们会有选择性的招募精锐的新兵到他们中来。"
@@ -60,31 +56,31 @@
  
  civic_cyber_demos_cratos:0 "§H§Y共识算法§!§!"
  civic_cyber_demos_cratos_desc:0 "§Y主题理念§!\n在这个社会中，各项政策将信息技术和大众传播的高科技成果融合到民主治理中，为人民谋取幸福。但是这种技术依赖可能会导致偶尔爆发网络犯罪。"
- civic_tooltip_cyber_demos_cratos_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究和 £amenities£ 舒适度\n - £job_head_researcher£ $job_head_researcher_plural$和$job_researcher_plural$额外产出少量的§Y$MOD_COUNTRY_EDICT_FUND_ADD$§!\n"
+ civic_tooltip_cyber_demos_cratos_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究和 £amenities£ 舒适度\n"
  
  civic_divine_council:0 "§H§Y众神议会§!§!"
  civic_divine_council_desc:0 "§Y主题理念§!\n这个社会将领袖视为神灵在人间的化身，而他们的政权组织自然也延续着神话中众神裁决世界时的模式。"
- civic_tooltip_divine_council_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力和少量的 £society£ 社会学研究\n - £job_priest£ $job_priest_plural$会额外产出§Y1§! £unity£ 凝聚力\n - £job_high_priest£ $job_high_priest_plural$提供额外 £society£ 社会学研究和 £amenities£ 舒适度\n"
+ civic_tooltip_divine_council_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力\n"
  
  civic_science_directorate:0 "§H§Y科学理事会§!§!"
  civic_science_directorate_desc:0 "§Y主题理念§!\n这个国家的统治机构由最富盛名的科学家组成，这些文明的精英以绝对的理性指导着文明的进步和人民的生活。"
- civic_tooltip_science_directorate_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究和 £amenities£ 舒适度\n - £job_head_researcher£ $job_head_researcher_plural$和$job_researcher_plural$额外产出少量的§Y$MOD_COUNTRY_EDICT_FUND_ADD$§!\n"
+ civic_tooltip_science_directorate_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究和 £amenities£ 舒适度\n"
  
  civic_executive_committee:0 "§H§Y执行委员会§!§!"
  civic_executive_committee_desc:0 "§Y主题理念§!\n帝国的国家机器由统治阶级中最聪明、最尊贵的代表组成的委员会监督，其管理效率令人瞩目。"
- civic_tooltip_executive_committee_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_supervisor£ §Y$job_supervisor_plural$§!，产出 £unity£ 凝聚力，提高 £mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$，并大幅增加$mod_planet_jobs_society_research_produces_mult$\n - £job_bureaucrat£ §Y$job_bureaucrat_plural$§!额外提高§Y1§! £stability£ $PLANET_STABILITY_TITLE$\n"
+ civic_tooltip_executive_committee_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_supervisor£ §Y$job_supervisor_plural$§!，产出 £unity£ 凝聚力，提高 £mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$，并增加$mod_planet_jobs_society_research_produces_mult$\n"
  
  civic_cyber_dictatorship:0 "§H§Y科研世家§!§!"
  civic_cyber_dictatorship_desc:0 "§Y主题理念§!\n技术独裁形式的政府，科学家们组建了掌握先进技术的学阀世家，国家治理严重依赖这些被严格管控的科技，普通人对政务的影响力甚小。"
- civic_tooltip_cyber_dictatorship_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究和 £amenities£ 舒适度\n - £job_head_researcher£ $job_head_researcher_plural$和$job_researcher_plural$额外产出少量的§Y$MOD_COUNTRY_EDICT_FUND_ADD$§!\n - 开始游戏时解锁§Y人工智能管理§!科技\n"
+ civic_tooltip_cyber_dictatorship_effects:2 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_head_researcher£ §Y$job_head_researcher_plural$§!，产出少量的 £society£ 社会学研究，£engineering£ 工程学研究，£physics£ 物理学研究\n - 开始游戏时解锁§Y人工智能管理§!科技\n"
  
  civic_citizen_service:0 "§H§Y军阀共和国§!§!"
  civic_citizen_service_desc:0 "§Y主题理念§!\n仅限为军队服役的人才拥有完整的公民权和随之而来的政治责任。服役保证公民权和选举、从政的权利。"
- civic_tooltip_citizen_service_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_commandante£ §Y$job_commandante_plural$§!，增加帝国的£mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!，生成£defense_army£§Y防御部队§!，增加行星£stability£§Y$PLANET_STABILITY_TITLE$§!，减少§Y轨道轰炸§!伤害\n - £job_commandante£ $job_commandante_plural$提供额外的 £unity£ 凝聚力和 £amenities£ 舒适度\n"
+ civic_tooltip_citizen_service_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_commandante£ §Y$job_commandante_plural$§!，增加帝国的£mod_country_naval_cap_add£ §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!，生成£defense_army£§Y防御部队§!，增加行星£stability£§Y$PLANET_STABILITY_TITLE$§!，减少§Y轨道轰炸§!伤害\n"
  
  civic_feudal_realm:0 "§H§Y封建帝国§!§!"
  civic_feudal_realm_desc:0 "§Y主题理念§!\n该社会中根深蒂固的贵族阶级占据着社会上层，君主依靠强大的拥有封地和自主权的封臣们来维持统治。"
- civic_tooltip_feudal_realm_effects:4 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_knight_commander£ §Y$job_knight_commander_plural$§!岗位\n - 维护§Y领袖§!所需要的£unity£ 凝聚力替换为£consumer_goods£ §Y$consumer_goods$§!，同时你也无法再解雇他们\n - §Y总督§!将产出与等级挂钩的£unity£ 凝聚力\n - 你的§Y附属§!获得额外的§G1§!点$r_loyalty$加成，同时也不会因为你拥有过多附属而负担惩罚\n"
+ civic_tooltip_feudal_realm_effects:4 " - £building£ §Y首府建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_nobel£ §Y$job_nobel_plural$§!岗位\n - 维护§Y领袖§!所需要的£unity£ 凝聚力替换为£consumer_goods£ §Y$consumer_goods$§!，同时你也无法再解雇他们\n - §Y总督§!将产出与等级挂钩的£unity£ 凝聚力\n - 你的§Y附属§!获得额外的§G1§!点$r_loyalty$加成，同时也不会因为你拥有过多附属而负担惩罚\n"
  
  civic_eternal_kingship:0 "§H§Y永恒王权§!§!"
  civic_eternal_kingship_desc:0 "§Y主题理念§!\n这个社会遵从一位伟大的君主并忠诚于其高贵的后代，所有的贵族与民众都紧密的团结在王室的麾下。"
@@ -92,23 +88,23 @@
  
  civic_spiritual_democracy:0 "§H§Y神圣共和国§!§!"
  civic_spiritual_democracy_desc:0 "§Y主题理念§!\n这个社会坚信每个人都是圣灵的化身，每个人都能凭借信仰实现自由与梦想。"
- civic_tooltip_spiritual_democracy_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力和少量的 £society£ 社会学研究\n - £job_priest£ $job_priest_plural$会额外产出§Y1§! £unity£ 凝聚力\n - 禁止§Y奴役§!本种族人。不允许§Y人口控制§!\n"
+ civic_tooltip_spiritual_democracy_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力\n - 禁止§Y奴役§!本种族人。不允许§Y人口控制§!\n"
  
  civic_imperial_cult:0 "§H§Y国教崇拜§!§!"
  civic_imperial_cult_desc:0 "§Y主题理念§!\n这个社会只崇拜一个唯一的神明，而统治者被认为是神在人间的化身。"
- civic_tooltip_imperial_cult_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力和少量的 £society£ 社会学研究\n - £job_priest£ $job_priest_plural$会额外产出§Y1§! £unity£ 凝聚力\n - 允许特殊法令——§Y$edict_immortal_ruler$§!，能使当前的统治者不朽\n - 野望§Y科学革命§!不可用\n"
+ civic_tooltip_imperial_cult_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力\n - £job_priest£ $job_priest_plural$会额外产出§Y1§! £unity£ 凝聚力\n - 允许特殊法令——§Y$edict_immortal_ruler$§!，能使当前的统治者不朽\n - 野望§Y科学革命§!不可用\n"
  
  civic_shared_burden:1 "§H§Y先进社会主义§!§!"
  civic_shared_burden_desc:1 "§Y主题理念§!\n以先进的哲学、经济学理论为基础，这个文明在实践中摸索出了一套在星际时代行之有效的无产阶级当家作主的政治模式。"
- civic_tooltip_shared_burden_effects:3 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_labour_hero£ §Y$job_labour_hero$§!，产出少量的£minerals£ 矿物，£food£ 食物，£energy£ 能量币和£unity£ 凝聚力\n - £job_labour_hero£ §Y$job_labour_hero$§!额外产出§Y0.5§!£unity£ 凝聚力与§Y0.25§!£physics_research£ £engineering_research£ £society_research£ 研究点数\n - §Y$pop_cat_worker$§!阶级额外产出§Y0.25§!£unity£ 凝聚力，同时根据不同的职业分别产出§Y0.25§!£physics_research£ 物理学研究、£engineering_research£ 工程学研究或£society_research£ 社会学研究，并额外消耗§Y0.15§!£consumer_goods£ 消费品\n - 可采用§Y$living_standard_utopian$§!生活标准，无论其所属§Y阶层§!，在该标准下所有£pop£ 人口拥有丰富的£consumer_goods£ §Y$consumer_goods$§!维护费并享有同等§Y政治权力§!。\n"
+ civic_tooltip_shared_burden_effects:3 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_labour_hero£ §Y$job_labour_hero$§!，产出少量的£minerals£ 矿物，£food£ 食物，£energy£ 能量币和£unity£ 凝聚力\n - 可采用§Y$living_standard_utopian$§!生活标准\n"
  
  civic_communist_society:1 "§H§Y共产主义社会§!§!"
  civic_communist_society_desc:1 "§Y主题理念§!\n将生产资料与生活物资全面公有化并将资源公平分配，确保人人享有社会、政治和经济上的平等，这个社会真正实现了共产主义。"
- civic_tooltip_communist_society_effects:3 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为£job_labour_hero£ §Y$job_labour_hero$§!岗位和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - £job_labour_hero£ §Y$job_labour_hero$§!额外产出§Y0.5§!£unity£ 凝聚力与§Y0.25§!£physics_research£ £engineering_research£ £society_research£ 研究点数，同时§G-5§!$PLANET_CRIME_TITLE$\n - §Y$pop_cat_worker$§!阶级额外产出§Y0.5§!£unity£ 凝聚力和£mod_country_admin_cap_add£ §Y$MOD_COUNTRY_ADMIN_CAP_ADD$§!，同时根据不同的职业分别产出§Y0.25§!£physics_research£ 物理学研究、£engineering_research£ 工程学研究或£society_research£ 社会学研究，并额外消耗§Y0.15§!£consumer_goods£ 消费品\n - 必须采用§Y$living_standard_utopian$§!生活标准，无论其所属§Y阶层§!，在该标准下所有£pop£ 人口拥有丰富的£consumer_goods£ §Y$consumer_goods$§!维护费并享有同等§Y政治权力§!。\n - §R无法建造§Y$building_bureaucratic_1$§!和§Y$building_precinct_house$§!§!\n"
+ civic_tooltip_communist_society_effects:3 " - £building£ §Y首都建筑§!将所有的§Y$pop_cat_ruler_plural$§!岗位和 £job_enforcer£ §Y$job_enforcer_plural$§!岗位替换为£job_labour_hero£ §Y$job_labour_hero$§!岗位和 £job_culture_worker£ §Y$job_culture_worker_plural$§!岗位\n - 必须采用§Y$living_standard_utopian$§!生活标准，无论其所属§Y阶层§!，在该标准下所有£pop£ 人口拥有丰富的£consumer_goods£ §Y$consumer_goods$§!维护费并享有同等§Y政治权力§!。\n"
  
  civic_socialistic:0 "§H§Y革命先锋队§!§!"
  civic_socialistic_desc:0 "§Y主题理念§!\n这个社会传统上保留着共产主义的理想，虽然将行政的权力交由从劳动者中脱颖而出的少数个体，但却将这个体制视为通往真正平等社会的过渡形态。"
- civic_tooltip_socialistic_effects:3 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_labour_hero£ §Y$job_labour_hero$§!，产出少量的£minerals£ 矿物，£food£ 食物，£energy£ 能量币和£unity£ 凝聚力\n - £job_labour_hero£ §Y$job_labour_hero$§!额外产出§Y0.5§!£unity£ 凝聚力\n - §Y$pop_cat_worker$§!阶级额外产出§Y0.25§!£unity£ 凝聚力，同时根据不同的职业分别产出§Y0.25§!£physics_research£ 物理学研究、£engineering_research£ 工程学研究或£society_research£ 社会学研究，并额外消耗§Y0.15§!£consumer_goods£ 消费品\n"
+ civic_tooltip_socialistic_effects:3 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_labour_hero£ §Y$job_labour_hero$§!，产出少量的£minerals£ 矿物，£food£ 食物，£energy£ 能量币和£unity£ 凝聚力\n"
  civic_socialistic_ecc:0 "§H§Y劳工兄弟会§!§!"
  civic_socialistic_ecc_desc:0 "§Y主题理念§!\n在该社会中，经济单位由工人直接管理，以确保资源的公平分配，并基于此形成了一个基于集体主义和平等理想主义原则的全球性社区。"
  
@@ -126,7 +122,7 @@
  
  civic_nazbol:0 "§H§Y民族与阶级§!§!"
  civic_nazbol_desc:0 "§Y主题理念§!\n这一社会主张整个民族是一个必要且纯净的共同体，在他们看来，社会主义不是人民的统治，不是绩效和工资的平价，而是"为全民族之整体服务"的工具，是为了团结占据民族中大多数的工人阶级的手段。"
- civic_tooltip_nazbol:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_core_party_members£ §Y$job_core_party_members_plural$§!，提高星球£stability£§Y$PLANET_STABILITY_TITLE$§!并大幅度减少§Y£crime£ $PLANET_CRIME_TITLE$§!\n - 允许§Y末日审判§!轰炸姿态 \n - 所有社会主义国家的£opinion£§Y评价§!降低§R-100§! \n - 可以对其他国家使用§Y阶级斗争§!与§Y民族解放§!宣战借口 \n - 拥有§H$citizenship_full$§!的种族§Y$pop_cat_worker$§!阶级额外产出§Y0.5§!£unity£ 凝聚力，并额外消耗§Y0.15§!£consumer_goods£ 消费品\n - 拥有§H$citizenship_full$§!的种族可采用§Y$living_standard_utopian$§!生活标准，无论其所属§Y阶层§!，在该标准下所有£pop£ 人口拥有丰富的£consumer_goods£ §Y$consumer_goods$§!维护费并享有同等§Y政治权力§!。\n"
+ civic_tooltip_nazbol:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_core_party_members£ §Y$job_core_party_members_plural$§!，提高星球£stability£§Y$PLANET_STABILITY_TITLE$§!并大幅度减少§Y£crime£ $PLANET_CRIME_TITLE$§!\n - 允许§Y末日审判§!轰炸姿态 \n - 所有社会主义国家的£opinion£§Y评价§!降低§R-100§! \n - 可以对其他国家使用§Y阶级斗争§!与§Y民族解放§!宣战借口 \n - 拥有§H$citizenship_full$§!的种族可采用§Y$living_standard_utopian$§!生活标准，无论其所属§Y阶层§!，在该标准下所有£pop£ 人口拥有丰富的£consumer_goods£ §Y$consumer_goods$§!维护费并享有同等§Y政治权力§!。\n"
  
  
  civic_galactic_sovereign_people:0 "§H§Y共产星际§!§!"
@@ -141,11 +137,11 @@
  
  civic_merchant_guilds:1 "§Y§E金融精英§!§!"
  civic_merchant_guilds_desc:2 "§E次主题理念§!\n在该社会中，“财富”就是“权力”的代名词。上层社会被富人占据，而工人阶级则受到系统化地剥削。"
- civic_tooltip_merchant_guilds_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_mogul£ §Y$job_mogul$§!岗位，提高£mod_planet_amenities_add£ §Y$PLANET_AMENITIES_TITLE$§!，产出§Y$TRADE_VALUE$§!并提高§G5%§!当地劳工的£energy£ 能量币和 £minerals£ 矿物产出\n - 能在其他国家开设§H企业分部§!\n - §Y银河证券交易所§!建筑提供额外的 £job_mogul£ §Y$job_mogul$§!岗位，并提高星球§G+5%§!$TRADE_VALUE$\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$和§Y-0.1§!$economic_crisis_accumulate$。"
+ civic_tooltip_merchant_guilds_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_mogul£ §Y$job_mogul$§!岗位\n - 能在其他国家开设§H企业分部§!\n - §Y银河证券交易所§!建筑提供额外的 £job_mogul£ §Y$job_mogul$§!岗位，并提高星球§G+5%§!$TRADE_VALUE$\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$和§Y-0.1§!$economic_crisis_accumulate$。"
  
  civic_exalted_priesthood:0 "§Y§E神权政治§!§!"
  civic_exalted_priesthood_desc:0 "§E次主题理念§!\n为防止社会出现异端邪说，宗教领袖会预先占据行政职位。"
- civic_tooltip_exalted_priesthood_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力和少量的 £society£ 社会学研究\n"
+ civic_tooltip_exalted_priesthood_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_high_priest£ §Y$job_high_priest_plural$§!，产出 £unity£ 凝聚力\n"
  civic_tooltip_exalted_priesthood_communist_effects:2 " - £building£ §Y首都建筑§!会替换部分 £job_politician£ §Y$job_politician$§!岗位为 £job_priest£ §Y$job_priest_plural$§!，产出 £unity£ 凝聚力和少量的 £society£ 社会学研究\n - 无法建造§Y$building_bureaucratic_1$§!，£job_priest£ $job_priest_plural$将额外提供£mod_country_admin_cap_add£ $MOD_COUNTRY_ADMIN_CAP_ADD$\n"
  
  civic_aristocratic_elite:0 "§Y§E世袭贵族§!§!"
@@ -187,14 +183,14 @@
  
  civic_procrastination:0 "后发先至"
  civic_procrastination_desc:0 "§P国民文化§!\n这个文明在进入宇宙时没有立刻做出抉择，他们希望在探索星河时寻找到文明终极的目标。"
- civic_tooltip_procrastination_effects:2 "开始游戏时无效果，之后每过§Y20§!年便有一次选择的机会，可选择保留该§P国民文化§!或是移除该§P国民文化§!以换取额外的$MOD_COUNTRY_GOVERNMENT_CIVIC_POINTS_ADD$。每一次选择保留则下一次可换取的$MOD_COUNTRY_GOVERNMENT_CIVIC_POINTS_ADD$§G+1§!，上限§Y10§!个。\n"
+ civic_tooltip_procrastination_effects:2 "开始游戏时无效果，之后每过§Y20§!年便有一次选择的机会，可选择保留该§P国民文化§!或是移除该§P国民文化§!以换取额外的$MOD_COUNTRY_GOVERNMENT_CIVIC_POINTS_ADD$。每一次选择保留则下一次可换取的$MOD_COUNTRY_GOVERNMENT_CIVIC_POINTS_ADD$§G+1§!\n"
 
  civic_death_cult:0 "死亡教团"
  civic_death_cult_desc:0 "§P宗教教义§!\n该团体的宗教建立在周期性的献祭秘仪之上。自愿奉献的先行者花费整整十年全身心地投入到研习之中，然后在仪式中舍身赴死，他们的死亡使得整个群体的文化繁荣昌盛。"
  
  civic_art_country:0 "艺术国度"
  civic_art_country_desc:0 "§P国民文化§!\n这个文明的每一个人都发自内心的喜爱艺术，并且将艺术融入了生活中的点点滴滴。"
- civic_tooltip_art_country_effects:2 " - 提高§Y艺术家联盟§!飞地的评价\n - £job_entertainer£ $job_entertainer_plural$额外产出§Y1§!£unity£ $unity$和£society£ §Y社会学研究点数§!\n - £job_culture_worker£ $job_culture_worker_plural$额外提供§Y5§!£mod_planet_amenities_add£ $PLANET_AMENITIES_TITLE$\n"
+ civic_tooltip_art_country_effects:2 " - 提高§Y艺术家联盟§!飞地的评价\n"
  
  civic_machine_soul_servant:0 "受控人仆"
  civic_machine_soul_servant_desc:0 "§P宗教教义§!\n这个文明将机器人奉为神灵的使徒，并虔诚地为祂们服务。"
@@ -210,11 +206,11 @@
  
  civic_consumerism:0 "奢侈消费主义"
  civic_consumerism_desc:0 "§P国民文化§!\n这个社会沉迷于奢侈品的消费，并以此拓展出了一套基于消费主义的社会准则。在这个人工塑造的非自然环境中，为人们划分权利的标准不再是个人的能力，而是其持有的奢侈品的数量与质量。"
- civic_tooltip_consumerism_effects:2 " - £job_manufacturing_workers£ $job_manufacturing_workers_plural$与£job_artisan£ $job_artisan_plural$额外产出£trade_value£ $TRADE_VALUE$\n - §Y工业区划§!提供额外 £job_merchant£ $job_merchant_plural$岗位\n - §Y商业区§!、§Y商业复合体§!建筑和§Y城市区划§!提供额外£job_manufacturing_workers£ $job_manufacturing_workers_plural$岗位\n - §Y企业家派系§!会因§Y加强环境监管§!政策不悦，对§Y轻工业补贴§!税收投资政策感到愉悦\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$。"
+ civic_tooltip_consumerism_effects:2 " - §Y企业家派系§!会因§Y加强环境监管§!政策不悦，对§Y轻工业补贴§!税收投资政策感到愉悦\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$。"
  
  civic_super_fast_paced_life:0 "超节奏生活"
  civic_super_fast_paced_life_desc:0 "§P国民文化§!\n这个社会提倡高效率，认为对时间的浪费是及其可耻的，只有超额完成工作后才能心安理得地享受，以及在有限的假期中尽可能地将存款挥霍一空以满足自身的欲望。人们因此而拼命工作，并在短暂度假时消费一切——包括他们自身。"
- civic_tooltip_super_fast_paced_life_effects:2 " - §Y$pop_cat_worker$§!阶级额外产出§Y0.25§!£trade_value£ $TRADE_VALUE$\n - §Y$pop_cat_specialist$§!阶级额外产出§Y0.5§!£trade_value£ $TRADE_VALUE$\n - §Y$pop_cat_ruler$§!阶级额外产出§Y1§!£trade_value£ $TRADE_VALUE$\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$。"
+ civic_tooltip_super_fast_paced_life_effects:2 " §Y市场经济§!下, 无经济危机时, 提供§Y+0.3§!$economic_situation_improve$。"
  
  civic_globalism:0 "全球主义"
  civic_globalism_desc:0 "§P国民文化§!\n驱使我们进入太空的，不仅是对未知与不熟悉事物的痴迷，更是有利可图的交易，我们可以从中获益。\n\n"
@@ -294,11 +290,11 @@
  
  civic_liberation_theology:0 "解放神学"
  civic_liberation_theology_desc:0 "§P宗教教义§!\n这个社会把社会主义的社会分析作为解释神学的原则，认为神的本质乃是“劳动者”与“解放者”。他们要求神学不仅要反思世界，还要改造世界，更要通过了解神的话语，从而真正的解放世界。"
- civic_tooltip_liberation_theology_effects:2 " - £job_priest£ §Y$job_priest_plural$§!能够提高§Y$pop_cat_worker$§!阶级的£happiness£§Y幸福度§!，同时额外产出少量的 £minerals£ 矿物，£food£ 食物和 £unity£ 凝聚力\n - §Y$pop_cat_worker$§!阶级额外产出§Y0.25§!£unity£ 凝聚力，并额外消耗§Y0.15§!£consumer_goods£ 消费品\n - §Y宗教派系§!会因§Y社会平等§!或§Y乌托邦§!生活标准感到愉悦\n"
+ civic_tooltip_liberation_theology_effects:2 "- §Y宗教派系§!会因§Y社会平等§!或§Y乌托邦§!生活标准感到愉悦\n"
 
  civic_knowledge_seeker:0 "知识崇拜"
  civic_knowledge_seeker_desc:0 "§P宗教教义§!\n出于历史原因，这个文明将科学视为神学的一部分，并大力鼓励教士们在科学的道路上不断前进。"
- civic_tooltip_knowledge_seeker_effects:0 "£job_priest£ $job_priest_plural$岗位的£unity£ 凝聚力产出降低，但产出£society£ 社会学研究、£physics£ 物理学研究和£engineering£ 工程学研究\n允许使用特殊法令——§Y文物研究§!\n£job_priest£ $job_priest$岗位和£job_researcher£ $job_researcher_plural$不会互相产生干扰\n"
+ civic_tooltip_knowledge_seeker_effects:0 " - 允许使用特殊法令——§Y文物研究§!\n"
  
  civic_industry_pacesetter:0 "行业标兵"
  civic_industry_pacesetter_desc:0 "§P国民文化§!\n这个社会会表彰在劳动中具有突出表现的模范人物，并将其工作方法编纂成可复制的方案，向全社会推广。"
@@ -310,11 +306,11 @@
  
  civic_eternal_jihad:0 "无休之季"
  civic_eternal_jihad_desc:0 "§P宗教教义§!\n这个社会树立了无数的偶像，并为此分化出了大大小小的派系。以自我之名，人们为偶像进行着斩草除根、不死不休的圣战。"
- civic_tooltip_eternal_jihad_effects:2 " - 提供特殊岗位：£job_professional_star_fans£ §Y$job_professional_star_fans_plural$§!，$job_professional_star_fans_effect_desc$\n - 寺庙建筑将£job_priest£ §Y$job_priest_plural$§!替换为£job_manager£ §Y$job_manager_plural$§!和£job_entertainer£ $job_entertainer_plural$\n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.2§!$economic_situation_improve$。"
+ civic_tooltip_eternal_jihad_effects:2 " - 提供特殊岗位：£job_professional_star_fans£ §Y$job_professional_star_fans_plural$§!，$job_professional_star_fans_effect_desc$\n -解锁特殊的§Y狂欢区划§! \n - §Y市场经济§!下, 无经济危机时, 提供§Y+0.2§!$economic_situation_improve$。"
  
  civic_futuristic_art:0 "未来派艺术"
  civic_futuristic_art_desc:0 "§P国民文化§!\n这个文明的艺术文化与科技发展息息相关，他们的艺术家总是乐于尝试最前卫的艺术。"
- civic_tooltip_futuristic_art_effects:2 " - £job_researcher£ $job_researcher_plural$与£job_head_researcher£ $job_head_researcher_plural$额外产出§Y1§!£unity£ 凝聚力和§Y1§!£amenities£ 舒适度，并额外消耗§Y1§!£consumer_goods£ 消费品\n - §Y$building_autochthon_monument$§!与§Y$building_galactic_memorial_1$§!额外产生£physics£ £society£ £engineering£ \n"
+ civic_tooltip_futuristic_art_effects:2 ""
  
  civic_anglers:0 "渔夫"
  civic_anglers_desc:0 "§P国民文化§!\n这个社会善于利用大自然的恩惠，为自己提供稳定的生活资料和经济价值。"
@@ -447,7 +443,7 @@
 
  civic_big_industrial_farming:0 "大工业农作"
  civic_big_industrial_farming_desc:0 "这个社会精于农业生产，并结合工业化的浪潮将农作效率提高到了前无古人的水平。"
- civic_tooltip_big_industrial_farming_effects:0 "§Y农业§!区划将提供更少的岗位，并大幅增加$job_farmer$的产出"
+ civic_tooltip_big_industrial_farming_effects:0 ""
  
  civic_mining_company:0 "矿业公司"
  civic_mining_company_desc:0 "这个巨型企业从矿业当中崛起，他们也因此拥有最好的矿业设施。"
@@ -477,11 +473,11 @@
  
  civic_real_estate_market:0 "房产市场"
  civic_real_estate_market_desc:1 "这个文明的房地产市场是其保持经济活力的重要支柱，为了维持社会的繁荣，部分人不得不支付流离失所的代价。"
- civic_tooltip_real_estate_market_effects:3 " - §Y住房区划§!额外提供£trade_value£ $TRADE_VALUE$，但§R减少§!£housing£ $PLANET_HOUSING_TITLE$\n - §Y住房建筑§!额外提供£job_manager£ $job_manager_plural$岗位，但增加§R1§!£crime£ $PLANET_CRIME_TITLE$\n - §Y市场经济§!下, 无经济危机时, 提供§Y+120§!$economic_crisis_threshold$。"
+ civic_tooltip_real_estate_market_effects:3 " - 解锁特殊的§Y商品房§!区划\n- §Y市场经济§!下, 无经济危机时, 提供§Y+120§!$economic_crisis_threshold$。"
  
  civic_internet_market:0 "互联网市场"
  civic_internet_market_desc:1 "这个文明的通过发达的互联网支撑起了繁荣的贸易，大数据算法的定向推送引导的社会思潮为键盘社会学家们提供了宝贵的研究资料——虽然偶尔会有些人对我们的付费服务和惩罚措施发出一些小牢骚。"
- civic_tooltip_internet_market_effects:3 " - £job_merchant£ $job_merchant_plural$额外生产§Y1§!£trade_value£ $TRADE_VALUE$，但增加§R1§!£crime£ $PLANET_CRIME_TITLE$\n - §Y市场经济§!下，无经济危机时，提供§Y+0.1§!$economic_situation_improve$。"
+ civic_tooltip_internet_market_effects:3 "- §Y市场经济§!下，无经济危机时，提供§Y+0.1§!$economic_situation_improve$。"
  
  civic_spy_agency:0 "间谍机关"
  civic_spy_agency_desc:1 "这个文明在漫长的历史中学会了许多外交手段，他们认为最高效的外交是主动进攻。"
@@ -510,11 +506,11 @@
  
  civic_corporate_dominion:1 "和平商人"
  civic_corporate_dominion_desc:0 "这个社会的运作规则很简单：和气生财。为此，相当一部分治理是由独立商人和贸易者组成的松散联盟控制、影响，或者至少是管理，实现共同繁荣。"
- civic_tooltip_corporate_dominion_effects:4 " - §Y外星贸易公司§!恒星基地建筑产出额外§Y4§! £trade_value£ $TRADE_VALUE$，§Y贸易中心§!模块§Y$MOD_STARBASE_TRADE_COLLECTION_RANGE_ADD$§!提高§G+1§!\n - £job_merchant£ §Y$job_merchant_plural$§!额外产出§Y1§! £unity£ 凝聚力\n - 能在其他国家开设§H企业分部§!\n - 开始游戏时解锁§Y$tech_space_trading$§!科技\n"
+ civic_tooltip_corporate_dominion_effects:4 " - §Y外星贸易公司§!恒星基地建筑产出额外§Y4§! £trade_value£ $TRADE_VALUE$，§Y贸易中心§!模块§Y$MOD_STARBASE_TRADE_COLLECTION_RANGE_ADD$§!提高§G+1§!\n - 能在其他国家开设§H企业分部§!\n - 开始游戏时解锁§Y$tech_space_trading$§!科技\n"
  
  civic_environmentalist:0 "环保政策"
  civic_environmentalist_desc:0 "这个社会的人们对生态和环境问题的关注度很高，并倾向于通过政策手段来解决问题。"
- civic_tooltip_environmentalist_effects:4 " - 受益于可清除的§Y障碍§!，它们可提供一定的§Y住房§!和劳工岗位，例如§Y矿工§!（来自§Y高耸山脉§!）、§Y技工§!（来自§Y活火山§!）、§Y农民§!（来自§Y茂密丛林§!）等\n - 部分来自§Y障碍§!的负面影响降低\n - 天然§Y障碍§!提高§G+5%§!的§Y宜居度§!\n - 开始游戏时解锁§Y乐土园§!科技\n"
+ civic_tooltip_environmentalist_effects:4 " - 开始游戏时解锁§Y乐土园§!科技\n"
  
  civic_environmentalist_corporate:0 "环保企业"
  civic_environmentalist_corporate_desc:0 "这个巨型企业致力于研发环保且实用的新产品，并将其作为最适宜的生活方式进行推广。"
@@ -536,20 +532,21 @@
  
  civic_welfare_state:0 "福利国家"
  civic_welfare_state_desc:0 "在该社会中，国家传统上在保护和促进其公民的经济和社会福利方面发挥关键作用。"
- civic_tooltip_welfare_state_effects:4 " - §Y城市区划§!提供§G+1§! £housing£ 住房\n - £job_politician£ §Y$job_politician$§!岗位提供§G+2§! £amenities£ 舒适度\n - 每个§Y矿业§!，§Y农业§!和§Y发电§!区划提供§G+1§!住房\n - 不能使用§Y私人医疗§!或§Y私立教育§!政策\n - 必须使用§Y社会福利§!生活标准\n - §Y市场经济§!下，无经济危机时，提供§Y-0.1§!$economic_situation_improve$和§Y-10%§!$economic_crisis_accumulate$。"
+ civic_tooltip_welfare_state_effects:4 " - 不能使用§Y私人医疗§!或§Y私立教育§!政策\n - 必须使用§Y社会福利§!生活标准\n - §Y市场经济§!下，无经济危机时，提供§Y-0.1§!$economic_situation_improve$和§Y-10%§!$economic_crisis_accumulate$。"
  
  civic_nationalistic_zeal:1 "征服者"
  
  civic_agrarian_idyll:1 "田园牧歌"
  civic_agrarian_idyll_desc:1 "简单的生活往往饱含深意。这个农业社会在很大程度上避免了大规模的城市化和工业化。"
- civic_tooltip_agrarian_idyll_effects:5 " - §Y发电§!和§Y农业§!区划额外提供§G1§! £housing£ 住房\n - §Y农业区划§!额外提供 §R1§! £building£ 建筑位\n - §Y城市区划§!减少§R1§! £housing£ 住房\n - £job_farmer£ §Y$job_farmer_plural$§!同时产出§G2§! £amenities£ 舒适度和§G2§! £trade_value£ 贸易额。"
+  civic_tooltip_agrarian_idyll_effects:8 "$civic_tooltip_agrarian_idyll_start$£job_farmer£ §Y$job_farmer_plural$§!同时也会产出§G2§!£amenities£ §Y舒适度§!"
+ civic_tooltip_agrarian_anglers_effects:0 "$civic_tooltip_agrarian_idyll_start$£job_farmer£§Y$job_farmer_plural$§!、£job_angler£§Y$job_angler_plural$§!和£job_pearl_diver£§Y$job_pearl_diver_plural$§!同时也产出§G2§!£amenities£§Y舒适度§!"
  
  civic_naval_traditions:0 "海军传统"
  civic_naval_traditions_desc:0 "这个社会有着根植于心的荣耀舰队传统。"
  
  civic_police_state:0 "警察国度"
  civic_police_state_desc:0 "为了将任何反对的声音扼杀在摇篮，这个压抑的社会人民受到庞大的国内警察部队的严密监视与控制。"
- civic_tooltip_police_state_effects:1 " - £job_enforcer£ §Y$job_enforcer_plural$§!也会产出§Y1§!点 £unity£ 凝聚力\n - §Y警署§!和§Y审判厅§!建筑提供额外的 £job_enforcer£ §Y$job_enforcer_plural$§!岗位\n"
+ civic_tooltip_police_state_effects:1 " - §Y警署§!和§Y审判厅§!建筑提供额外的 £job_enforcer£ §Y$job_enforcer_plural$§!岗位\n"
  
  civic_private_prospectors:0 "民营勘探者"
  civic_private_prospectors_desc:0 "打造更美好的世界是很高风险的工作，所以此寰宇企业是通过民间勘探者为公司勘探有发展潜力的边境行星并在当地建立先遣基地。"
@@ -557,7 +554,7 @@
  
  
  civic_mining_guilds_desc:0 "几个大型矿业公会在该社会中占据了主导地位。政府严重依赖他们的支持。"
- civic_tooltip_mining_guilds_effects:2 " - §Y采矿§!区划提供§G+1§!岗位和§G+1§!住房，每个区划维护费§R+50%§!"
+ civic_tooltip_mining_guilds_effects:2 ""
  
  civic_divine_order:0 "种姓制度"
  civic_divine_order_desc:0 "这个社会以复杂的文化和宗教意识形态为基础，通过严格的等级制度组织起来。每个社会阶层都认为其服务于他们神圣且命中注定的使命。
@@ -652,11 +649,11 @@
  
  civic_galactic_uterus:0 "银河子宫"
  civic_galactic_uterus_desc:0 "这个国家曾经被一次危机拖入深渊，但他们仍然凭借着自身过硬的人口素质支撑起了国家的运转，直到星际时代的来临。"
- civic_galactic_uterus_effects:0 " - 每个£pop_cat_worker£ $pop_cat_worker_plural$提供§Y0.5§!£trade_value£ $TRADE_VALUE$，并让£pop_cat_ruler£ $pop_cat_ruler_plural$§G+1%§!$MOD_POP_GROWTH_SPEED$\n - 每个£pop_cat_specialist£ $pop_cat_specialist_plural$提供§Y1§!£trade_value£ $TRADE_VALUE$，并让£pop_cat_ruler£ $pop_cat_ruler_plural$§G-1%§!$MOD_POP_GROWTH_SPEED_REDUCTION$\n - 每个£pop_cat_ruler£ $pop_cat_ruler_plural$§G+5%§!$mod_planet_jobs_upkeep_mult$"
+ civic_galactic_uterus_effects:0 ""
  
  civic_hero_family:0 "英雄家庭"
  civic_hero_family_desc:0 "这个国家曾经被一次危机拖入深渊，为了促进经济恢复，国家通过各种手段奖励愿意去生育后代的家庭，一直持续到进入太空的今天。"
- civic_hero_family_effects:0 " - 每个£pop_cat_worker£ $pop_cat_worker_plural$提供§G+1%§!$MOD_POP_GROWTH_SPEED$\n - 每个£pop_cat_specialist£ $pop_cat_specialist_plural$提供§G-1%§!$MOD_POP_GROWTH_SPEED_REDUCTION$"
+ civic_hero_family_effects:0 ""
  
  civic_declaration_of_human_rights:0 "人权宣言"
  civic_declaration_of_human_rights_desc:0 "这个国家宣誓将以自己的政治制度捍卫一切人天然的自由。"

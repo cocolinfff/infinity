@@ -1122,6 +1122,7 @@ building_mechanical_sanctuary = {
 	}
 	planet_modifier = {
 		job_machine_soul_add = 10
+		job_techno_priest_add = 2
 	}
 	resources = {
 		category = planet_buildings

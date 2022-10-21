@@ -74,11 +74,9 @@ civic_anarchism = {
 		}
 	}
 	modifier = {
-		trade_value_mult = 0.25
-		pop_factions_unity_produces_add = 0.75
-		job_culture_worker_per_pop = 0.03
-		edicts_unity_upkeep_mult = 0.5
-		pop_ethic_egalitarian_attraction_mult = 0.25
+		job_politician_add = -1000
+		planet_administrators_unity_produces_add = -3
+		pop_factions_unity_produces_add = 0.5
 		empire_size_penalty_mult = -2
 	}
 	random_weight = {
@@ -398,8 +396,6 @@ civic_fanatic_purifiers = {
 		army_damage_mult = 0.66
 		starbase_shipyard_build_cost_mult = -0.25
 		country_naval_cap_mult = 1
-		pop_ethic_xenophobe_attraction_mult = 1
-		pop_ethic_militarist_attraction_mult = 1
 		country_starbase_influence_cost_mult = -0.2
 	}
 }
@@ -469,7 +465,6 @@ civic_altruism = {
 		max_rivalries = -250
 		subject_tribute_mult = -2.5
 		planet_pops_unemployed_consumer_goods_upkeep_add = 1
-		pop_ethic_xenophile_attraction_mult = 0.25
 	}
 }
 
@@ -496,51 +491,6 @@ civic_triple_the_profit = {
 		pop_cat_slave_happiness = -3
 		pop_category_rulers_consumer_goods_upkeep_add = 3
 		pop_growth_speed_reduction = 0.33
-	}
-
-	random_weight = {
-		base = 50
-	}
-}
-
-#第三条路（红标）
-civic_du_contrat_social = {
-	description = civic_tooltip_du_contrat_social_effects
-	potential = {
-		ethics = {
-			NOT = {
-				value = ethic_gestalt_consciousness
-			}
-		}
-		authority = {
-			NOT = {
-				value = auth_corporate
-			}
-		}
-		civics = {
-			NOR = {
-				value = civic_galactic_sovereign_megacorp
-				value = civic_family_business
-				value = civic_world_cooperative
-			}
-		}
-	}
-	possible = {
-		ethics = {
-			NOR = {
-				value = ethic_fanatic_egalitarian
-				value = ethic_fanatic_socialism
-				value = ethic_fanatic_authoritarian
-				value = ethic_fanatic_capitalism
-			}
-		}
-		authority = { value = auth_direct_democratic }
-	}
-
-	modifier = {
-		country_pop_enslaved_mult = 1
-		pop_cat_slave_happiness = 0.2
-		pop_category_slave_consumer_goods_upkeep_add = 0.4
 	}
 
 	random_weight = {

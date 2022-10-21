@@ -31,7 +31,7 @@ generate_start_pops = {
 	if = {
 		limit = {
 			owner = {
-				has_origin = origin_machine_cult
+				#has_origin = origin_machine_cult
 				has_valid_civic = civic_machine_soul_servant
 			}
 		}
@@ -49,7 +49,7 @@ generate_start_pops = {
 		remove_building = building_temple
 		while = {
 			limit = {
-				num_pops < 28
+				num_pops < 33
 			}
 			create_pop = {
 				species = owner_main_species
@@ -318,7 +318,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { has_valid_civic = civic_machine_servitor } }
 		while = {
-			limit = { num_pops < 28 }
+			limit = { num_pops < 33 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random

@@ -13,3 +13,11 @@
  district_arcology_administrative:0 "传媒理想城"
  district_arcology_administrative_plural:0 "传媒理想城"
  district_arcology_administrative_desc:0 "成群结队的媒体工作者在此捕风捉影，将全国各地的信息推送至全国各地。"
+
+ district_fan_city:0 "狂欢区划"
+ district_fan_city_plural:0 "$district_fan_city$"
+ district_fan_city_desc:0 "用于承接艺人们的轮流演出，为狂欢者提供极乐的场所"
+
+ district_commercial_housing:0 "商品房"
+ district_commercial_housing_plural:0 "$district_commercial_housing$"
+ district_commercial_housing_desc:0 "用于出售的住房区划，或许设计之初便没有考虑过实际居住问题"
