@@ -570,5 +570,6 @@
  
 
  vanguard_unit:0 "不朽者"
- vanguard_unit_plural:0 "不朽者"
- pop_category_vanguard_unit:0 "不朽者"
+ vanguard_unit_plural:0 "$vanguard_unit$"
+ pop_category_vanguard_unit:0 "$vanguard_unit$"
+ pop_cat_vanguard_unit:0 "$vanguard_unit$"

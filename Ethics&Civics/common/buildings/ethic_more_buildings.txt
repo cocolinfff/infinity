@@ -1068,12 +1068,11 @@ building_mecha_monastery = {
 		exists = owner
 		OR = {
 			owner = {
-				NOT = { owner = { has_origin = origin_machine_cult } }
+				NOT = { owner = { has_civic = civic_machine_soul_servant } }
 			}
 		}
 	}
 	convert_to = {
-		building_temple
 		building_robot_assembly_plant
 	}
 	planet_modifier = {
@@ -1122,7 +1121,6 @@ building_mechanical_sanctuary = {
 	}
 	planet_modifier = {
 		job_machine_soul_add = 10
-		job_techno_priest_add = 2
 	}
 	resources = {
 		category = planet_buildings
