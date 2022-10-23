@@ -463,7 +463,7 @@ civic_peoples_republic = {
 	modifier = {
 		pop_cat_worker_political_power = 2
 		job_labour_hero_per_pop = 0.02
-		pop_ethic_socialism_attraction_mult = 0.15
+		pop_category_workers_unity_produces_add = 0.2
 	}
 }
 

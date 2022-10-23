@@ -228,7 +228,8 @@ civic_shared_burden = {
 		pop_cat_worker_happiness = 0.1
 		pop_demotion_time_mult = -1
 		job_labour_hero_per_pop = 0.04
-		pop_category_workers_society_research_produces_add = 0.5
+		pop_category_workers_society_research_produces_add = 1
+		pop_category_workers_unity_produces_add = 0.25
 	}
 	random_weight = {
 		base = 50
@@ -320,6 +321,7 @@ civic_socialistic = {
 		pop_cat_worker_happiness = 0.1
 		leaders_upkeep_mult = 0.1
 		job_labour_hero_per_pop = 0.03
+		pop_category_workers_unity_produces_add = 0.3
 	}
 }
 
@@ -399,6 +401,7 @@ civic_nazbol = {
 		country_claim_influence_cost_mult = -0.25
 		country_trust_growth = -0.25
 		job_labour_hero_per_pop = 0.04
+		pop_category_workers_unity_produces_add = 0.5
 	}
 }
 

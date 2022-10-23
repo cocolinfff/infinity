@@ -1717,7 +1717,6 @@ trade_policy = {
 		}
 		modifier = {
 			country_unity_produces_mult = 0.05
-			planet_research_produces_mult = 0.05
 		}
 		AI_weight = {
 			factor = 3
@@ -1873,7 +1872,6 @@ trade_policy = {
 			}
 		}
 		modifier = {
-			planet_research_produces_mult = 0.2
 			country_unity_produces_mult = 0.1
 		}
 		AI_weight = {

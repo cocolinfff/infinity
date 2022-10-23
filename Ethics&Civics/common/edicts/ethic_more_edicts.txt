@@ -117,9 +117,8 @@ commercializing_academic_resources = {
 	}
 
 	modifier = {
-		planet_jobs_physics_research_produces_mult = -0.1
-		planet_jobs_society_research_produces_mult = -0.1
-		planet_jobs_engineering_research_produces_mult = -0.1
+		planet_researchers_produces_mult = -0.2
+		planet_researchers_upkeep_mult = -0.3
 	}
 
 	potential = {
@@ -148,9 +147,10 @@ academic_resources_open_access = {
 	}
 
 	modifier = {
-		planet_jobs_physics_research_produces_mult = 0.1
-		planet_jobs_society_research_produces_mult = 0.1
-		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.2
+		planet_jobs_society_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.2
+		planet_researchers_upkeep_mult = 0.2
 	}
 
 	potential = {
@@ -209,40 +209,6 @@ relics_research = {
 	}
 }
 
-recycling_campaign = {
-	length = @campaignDuration
-	icon = "GFX_edict_type_time"
-	resources = {
-		category = campaigns
-		upkeep = {
-			energy = @campaignCost
-			multiplier = value:edict_size_effect
-		}
-	}
-
-	modifier = {
-		planet_pops_consumer_goods_upkeep_mult = -0.10
-	}
-
-	potential = {
-		NOR = {
-			has_ethic = ethic_gestalt_consciousness
-			has_valid_civic = civic_industrial_economy
-		}
-		has_technology = tech_planetary_unification
-	}
-
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = @EdictLowPrio
-			has_monthly_income = {
-				resource = consumer_goods
-				value < 0
-			}
-		}
-	}
-}
 
 #Immortal Ruler
 immortal_ruler = {

@@ -725,7 +725,7 @@ event = { # job overhaul
 		every_country = {
 		    add_modifier = {
 		    	modifier = post_adjustment_patch
-		    	days = 10
+		    	days = 360
 		    }
 		}
 	}

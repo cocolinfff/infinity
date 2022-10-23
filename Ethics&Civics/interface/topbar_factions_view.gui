@@ -765,15 +765,29 @@ guiTypes = {
       }
     }
 
-    instantTextBoxType={
-      name = "influence_label"
-      position = { x = 835 y = 15 }
-      orientation = "UPPER_LEFT"
-      font = "cg_16b"
-      text = "INFLUENCE_GAIN_FROM_FACTION"
-      maxWidth = 100
-      maxHeight = 30
-    }
+    containerWindowType = {
+			name = "influence_hitbox"
+			size = { width = 100 height = 30 }
+			position = { x = 800 y = 8 }
+			
+			background = {
+				name = "influence_hitbox"
+				spriteType = "GFX_invisible"
+				clicksound = "interface"
+			}
+
+			instantTextBoxType={
+				name = "influence_label"
+				position = { x = 35 y = 0 }
+				orientation = "UPPER_LEFT"
+				font = "cg_16b"
+				text = "INFLUENCE_GAIN_FROM_FACTION"
+				vertical_alignment = center
+				maxWidth = 65
+				maxHeight = 30
+				alwaysTransparent = yes
+			}		
+		}
 
     gridBoxType = {
       name = "demands_list"

@@ -25,14 +25,9 @@ peoples_war = {
 	}
 
 	modifier = {
-		armies_cost_mult = -0.33
-		army_defense_morale_mult = 0.40
-		army_defense_health_mult = 1
-		planet_army_build_speed_mult = 0.20
+		armies_cost_mult = -0.50
 		defensive_war_influence_gain_add = 3	
 		force_disparity_fire_rate_mult = 0.50
-		#ship_speed_mult = 0.15
-		#starbase_shipyard_capacity_mult = 2
 	}
 
 	potential = {
@@ -59,7 +54,7 @@ peoples_war = {
 	}
 }
 
-# 反腐倡廉 - 目前不动，以后改成减腐化？
+# 反腐倡廉 - 图图了
 anti_corruption = {
 	length = @EdictPerpetual
 	icon = "GFX_edict_type_policy"
@@ -116,8 +111,6 @@ family_planning = {
 		empire_size_pops_mult = -0.2
 		pop_amenities_usage_mult = -0.2
 		pop_growth_speed_reduction = 0.50
-		planet_pop_assembly_mult = -0.33
-	    country_leader_pool_size = -1
 	}
 
 	potential = {
@@ -241,8 +234,8 @@ anti_triad_putting = {
 
 	modifier = {
 		planet_stability_add = 5
-		planet_crime_add = -15
-	    pop_citizen_happiness = 0.05
+		planet_crime_mult = -0.25
+	    pop_citizen_happiness = -0.05
 	}
 
 	potential = {
@@ -320,8 +313,6 @@ liberation_theology = {
 		country_unity_produces_mult = 0.20
 		all_technology_research_speed = -0.10
 		#planet_jobs_produces_mult = 0.10
-		pop_ethic_spiritualist_attraction_mult = 0.15
-		pop_ethic_socialism_attraction_mult = 0.05
 	}
 
 	potential = {

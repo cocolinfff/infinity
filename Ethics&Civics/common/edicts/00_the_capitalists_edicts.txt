@@ -26,8 +26,6 @@ enhanced_surveillance = {
 		trade_value_mult = 0.2
 		pop_citizen_happiness = 0.1
 		planet_crime_mult = 0.15
-		pop_ethic_spiritualist_attraction_mult = 0.15
-		pop_ethic_capitalism_attraction_mult = 0.05
 	}
 
 	potential = {
@@ -79,11 +77,10 @@ free_trade_act = {
 	}
 
 	modifier = {
-		trade_value_mult = 0.80
-		country_trade_attractiveness = 0.35
+		trade_value_mult = 0.50
+		country_trade_attractiveness = 0.50
 		planet_stability_add = -10
-		planet_crime_mult = 0.65
-		pop_ethic_capitalism_attraction_mult = 0.15
+		planet_crime_mult = 0.5
 	}
 
 	potential = {
@@ -144,7 +141,7 @@ business_competition_act = {
 		country_claim_influence_cost_mult = -0.25
 		all_technology_research_speed = 0.2
 		planet_stability_add = -10
-		pop_ethic_capitalism_attraction_mult = 0.1
+		country_trade_fee = 0.15
 	}
 
 	potential = {
@@ -197,11 +194,10 @@ the_flexible_seniority_act = {
 	}
 
 	modifier = {
-		planet_jobs_worker_produces_mult = 0.25
-		planet_jobs_specialist_produces_mult = 0.15
+		planet_jobs_worker_produces_mult = 0.2
+		planet_jobs_specialist_produces_mult = 0.1
 		leader_age = -10
 		pop_growth_speed_reduction = 0.2
-		pop_ethic_capitalism_attraction_mult = 0.1
 	}
 
 	potential = {
@@ -264,7 +260,6 @@ indefinite_patent_act = {
 		all_technology_research_speed = -0.05
 		planet_jobs_specialist_produces_mult = 0.2
 		country_leader_pool_size = -1
-		pop_ethic_capitalism_attraction_mult = 0.1
 	}
 
 	potential = {
@@ -317,13 +312,11 @@ blessings = {
 	}
 
 	modifier = {
-		planet_jobs_worker_produces_mult = 0.25
-		planet_jobs_specialist_produces_mult = 0.15
-		country_pop_enslaved_mult = 0.4
+		planet_jobs_worker_produces_mult = 0.2
+		planet_jobs_specialist_produces_mult = 0.1
 		pop_cat_ruler_happiness = 0.1
 		pop_cat_specialist_happiness = -0.1
 		pop_cat_worker_happiness = -0.15
-		pop_ethic_capitalism_attraction_mult = 0.25
 	}
 
 	potential = {
@@ -385,7 +378,6 @@ consumerist_propaganda = {
 		pop_citizen_happiness = 0.1
 		planet_pops_consumer_goods_upkeep_mult = 0.2
 		pop_amenities_usage_mult = 0.3
-		pop_ethic_capitalism_attraction_mult = 0.25
 	}
 
 	potential = {
@@ -433,7 +425,6 @@ iron_fist = {
 
 	modifier = {
 		job_enforcer_per_pop = 0.05
-		pop_cat_specialist_political_power = 1
 		pop_cat_slave_happiness = -0.20
 		pop_cat_worker_happiness = -0.10
 	}
