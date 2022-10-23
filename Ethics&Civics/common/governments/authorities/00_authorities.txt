@@ -124,12 +124,8 @@ auth_imperial = {
 		ethics = {
 			NOR = {
 				value = ethic_gestalt_consciousness
-				value = ethic_fanatic_pluralist
-			}
-			OR = {
-				value = ethic_authoritarian
-				value = ethic_fanatic_authoritarian
-				value = ethic_focused
+				value = ethic_egalitarian
+				value = ethic_fanatic_egalitarian
 			}
 		}
 	}
