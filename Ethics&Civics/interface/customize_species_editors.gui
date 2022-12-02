@@ -2585,7 +2585,7 @@ guiTypes = {
             name = "ethic_spi_selected"
             spriteType = "GFX_ethic_selected"
         }
-        iconType = {
+		iconType = {
             name = "ethic_soc_selected"
             spriteType = "GFX_ethic_selected"
         }
